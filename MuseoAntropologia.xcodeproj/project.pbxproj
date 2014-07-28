@@ -89,6 +89,9 @@
 		4ACEDA53198295E600B2B7F4 /* CompleteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACEDA52198295E600B2B7F4 /* CompleteViewController.m */; };
 		4ACEDA551982B11000B2B7F4 /* Prenotazioni.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4ACEDA541982B11000B2B7F4 /* Prenotazioni.plist */; };
 		4ACEDA581982B65500B2B7F4 /* HistoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACEDA571982B65500B2B7F4 /* HistoryTableViewController.m */; };
+		4ADB659619869A3200714E7C /* ComeRaggiungerciTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADB659519869A3200714E7C /* ComeRaggiungerciTableViewController.m */; };
+		4ADB659819869DCC00714E7C /* piano_terra_img2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4ADB659719869DCC00714E7C /* piano_terra_img2.jpg */; };
+		4ADB659B19869FF500714E7C /* MapTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADB659A19869FF500714E7C /* MapTableViewController.m */; };
 		F4D9AD1F1871725500E2D912 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D9AD1E1871725500E2D912 /* SWRevealViewController.m */; };
 		F4EECF12177C99F400778578 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4EECF11177C99F400778578 /* UIKit.framework */; };
 		F4EECF14177C99F400778578 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4EECF13177C99F400778578 /* Foundation.framework */; };
@@ -213,6 +216,11 @@
 		4ACEDA541982B11000B2B7F4 /* Prenotazioni.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Prenotazioni.plist; sourceTree = "<group>"; };
 		4ACEDA561982B65500B2B7F4 /* HistoryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryTableViewController.h; sourceTree = "<group>"; };
 		4ACEDA571982B65500B2B7F4 /* HistoryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryTableViewController.m; sourceTree = "<group>"; };
+		4ADB659419869A3200714E7C /* ComeRaggiungerciTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ComeRaggiungerciTableViewController.h; path = ../ComeRaggiungerciTableViewController.h; sourceTree = "<group>"; };
+		4ADB659519869A3200714E7C /* ComeRaggiungerciTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ComeRaggiungerciTableViewController.m; path = ../ComeRaggiungerciTableViewController.m; sourceTree = "<group>"; };
+		4ADB659719869DCC00714E7C /* piano_terra_img2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = piano_terra_img2.jpg; sourceTree = "<group>"; };
+		4ADB659919869FF500714E7C /* MapTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapTableViewController.h; sourceTree = "<group>"; };
+		4ADB659A19869FF500714E7C /* MapTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapTableViewController.m; sourceTree = "<group>"; };
 		F4D9AD1D1871725500E2D912 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		F4D9AD1E1871725500E2D912 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		F4EECF0E177C99F400778578 /* MuseoAntropologia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MuseoAntropologia.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -359,6 +367,8 @@
 		F4EECF17177C99F400778578 /* MuseoAntropologia */ = {
 			isa = PBXGroup;
 			children = (
+				4ADB659419869A3200714E7C /* ComeRaggiungerciTableViewController.h */,
+				4ADB659519869A3200714E7C /* ComeRaggiungerciTableViewController.m */,
 				4A81455719826B57006FB54E /* AnotherTableViewController.h */,
 				4A81455819826B57006FB54E /* AnotherTableViewController.m */,
 				4A81455919826B57006FB54E /* CalendarTableViewController.h */,
@@ -370,6 +380,8 @@
 				1B6985AD197C138C004023FF /* CranioTableViewCell.h */,
 				1B6985AE197C138C004023FF /* CranioTableViewCell.m */,
 				F4EECF29177C99F400778578 /* MainStoryboard.storyboard */,
+				4ADB659919869FF500714E7C /* MapTableViewController.h */,
+				4ADB659A19869FF500714E7C /* MapTableViewController.m */,
 				4AA93E2B19866102002B883A /* NotesTableViewController.h */,
 				4AA93E2C19866102002B883A /* NotesTableViewController.m */,
 				4ACEDA561982B65500B2B7F4 /* HistoryTableViewController.h */,
@@ -430,6 +442,7 @@
 		F4EECF53177F37CB00778578 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				4ADB659719869DCC00714E7C /* piano_terra_img2.jpg */,
 				1BF54B9519802762001CAF82 /* LogoMB.jpg */,
 				1BB79107197FF91E00DC42E9 /* guattari_logo.png */,
 				1BB790FF197FF74F00DC42E9 /* maiella_logo.png */,
@@ -570,6 +583,7 @@
 				4A81458619826B94006FB54E /* DSLCalendar-nextMonth@2x.png in Resources */,
 				4ACEDA551982B11000B2B7F4 /* Prenotazioni.plist in Resources */,
 				1BBA2E381977D6E300D142C0 /* sfondo.jpg in Resources */,
+				4ADB659819869DCC00714E7C /* piano_terra_img2.jpg in Resources */,
 				4A81458A19826B94006FB54E /* DSLCalendarDayCallout@2x.png in Resources */,
 				F4EECF6A177F4C0200778578 /* menu.png in Resources */,
 				4A81458819826B94006FB54E /* DSLCalendar-previousMonth@2x.png in Resources */,
@@ -618,7 +632,9 @@
 				1BB790FA197FC07400DC42E9 /* BDAppDelegate.m in Sources */,
 				F4EECF4A177DF87700778578 /* SidebarViewController.m in Sources */,
 				4A81458319826B94006FB54E /* DSLCalendarRange.m in Sources */,
+				4ADB659B19869FF500714E7C /* MapTableViewController.m in Sources */,
 				4AA577B7198290DE009C0F9B /* PrenotazioneTableViewController.m in Sources */,
+				4ADB659619869A3200714E7C /* ComeRaggiungerciTableViewController.m in Sources */,
 				4A81458419826B94006FB54E /* DSLCalendarView.m in Sources */,
 				1B3635EA195AE1C000B221DD /* CreditsViewController.m in Sources */,
 				4A81455B19826B57006FB54E /* AnotherTableViewController.m in Sources */,

@@ -169,7 +169,6 @@
         //not ok
         _submit.enabled = NO;
         _submit.userInteractionEnabled = NO;
-        
     } else {
         //ok
         _submit.enabled = YES;
