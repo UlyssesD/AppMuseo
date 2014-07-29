@@ -1282,6 +1282,7 @@
                                                     <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                     <connections>
                                                         <action selector="checkInput:" destination="a43-kv-ue8" eventType="editingDidEnd" id="urv-X9-Jad"/>
+                                                        <action selector="checkMailInput:" destination="a43-kv-ue8" eventType="editingDidEnd" id="f0r-P1-nn3"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
