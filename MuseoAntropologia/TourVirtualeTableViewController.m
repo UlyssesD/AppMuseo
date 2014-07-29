@@ -237,13 +237,14 @@
 //la variabile locked è in AppDelegate 
 - (void)updateTable:(UITableView *)tableView
 {
-    for (int i=1; i<=5; i++) {
-        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:i inSection:0];
-        CranioTableViewCell *cell = (CranioTableViewCell*)[tableView cellForRowAtIndexPath:indexPath];
-        cell.lockImg.image = [UIImage imageNamed:@"done.png"];
-    }
+    //Decomentare per riattivare sblocco dei crani
+//    for (int i=1; i<=5; i++) {
+//        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:i inSection:0];
+//        CranioTableViewCell *cell = (CranioTableViewCell*)[tableView cellForRowAtIndexPath:indexPath];
+//        cell.lockImg.image = [UIImage imageNamed:@"done.png"];
+//    }
     
-    lock1 = lock2 = lock3 = lock4 = lock5 =false;
+//    lock1 = lock2 = lock3 = lock4 = lock5 =false;
     
     [self.tableView reloadData];
     
