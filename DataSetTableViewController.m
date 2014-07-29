@@ -25,7 +25,6 @@
 @synthesize email = _email;
 @synthesize cellulare = _cellulare;
 @synthesize notes = _notes;
-bool oneAlert = YES;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -185,9 +184,8 @@ bool oneAlert = YES;
 
 - (IBAction)checkMailInput:(id)sender {
     
-    if (oneAlert || (![self isValidEmail:_email.text] && ![_email.text isEqual:@""])) {
+    if (![self isValidEmail:_email.text] && ![_email.text isEqual:@""]) {
         //TODO : allest malformed mail
-        oneAlert = NO;
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Formato email non corretto" message:@"Inserisci una mail valida per continuare" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
         [alert show];
     }
