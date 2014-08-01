@@ -58,11 +58,36 @@
     
     _locationManager = [[CLLocationManager alloc] init];
     _locationManager.delegate = self;
-    CLBeaconRegion *region;
+    
+    //Beacon 1.9
+    CLBeaconRegion *region1;
     //qui si definisce la regione dei beacon, questa è quella del beacon 1.
-    region = [[CLBeaconRegion alloc] initWithProximityUUID:[[NSUUID alloc] initWithUUIDString:@"EBEFD083-70A2-47C8-9837-E7B5634DF524"] major: 1 minor: 9 identifier: Ceprano];
-    region.notifyEntryStateOnDisplay = YES;
-    [_locationManager startMonitoringForRegion:region];
+    region1 = [[CLBeaconRegion alloc] initWithProximityUUID:[[NSUUID alloc] initWithUUIDString:@"EBEFD083-70A2-47C8-9837-E7B5634DF524"] major: 1 minor: 9 identifier: Ceprano];
+    region1.notifyEntryStateOnDisplay = YES;
+    [_locationManager startMonitoringForRegion:region1];
+    
+    //Beacon 1.1
+    CLBeaconRegion *region2;
+    //qui si definisce la regione dei beacon, questa è quella del beacon 1.
+    region2 = [[CLBeaconRegion alloc] initWithProximityUUID:[[NSUUID alloc] initWithUUIDString:@"EBEFD083-70A2-47C8-9837-E7B5634DF524"] major: 1 minor: 1 identifier: Saccop1];
+    region2.notifyEntryStateOnDisplay = YES;
+    [_locationManager startMonitoringForRegion:region2];
+    
+    //Beacon 1.2
+    CLBeaconRegion *region3;
+    //qui si definisce la regione dei beacon, questa è quella del beacon 1.
+    region3 = [[CLBeaconRegion alloc] initWithProximityUUID:[[NSUUID alloc] initWithUUIDString:@"EBEFD083-70A2-47C8-9837-E7B5634DF524"] major: 1 minor: 2 identifier: Saccop2];
+    region3.notifyEntryStateOnDisplay = YES;
+    [_locationManager startMonitoringForRegion:region3];
+    
+    
+    //Beacon 1.3
+    CLBeaconRegion *region4;
+    //qui si definisce la regione dei beacon, questa è quella del beacon 1.
+    region4 = [[CLBeaconRegion alloc] initWithProximityUUID:[[NSUUID alloc] initWithUUIDString:@"EBEFD083-70A2-47C8-9837-E7B5634DF524"] major: 1 minor: 3 identifier: Guattari];
+    region4.notifyEntryStateOnDisplay = YES;
+    [_locationManager startMonitoringForRegion:region4];
+    
     
 //    UILocalNotification *localNotification = [launchOptions objectForKey:UIApplicationLaunchOptionsLocalNotificationKey];
 //    if(localNotification)
@@ -121,8 +146,6 @@
             
             UILocalNotification *localNotif = [[UILocalNotification alloc] init];
             if (localNotif) {
-//                localNotif.alertBody = [NSString stringWithFormat:
-//                                    NSLocalizedString(@"Hai sbloccato il cranio di %1$@! Corri a vederlo!",nil),region.identifier];
                 localNotif.alertBody = [[NSString alloc] initWithFormat:@"Hai sbloccato il cranio di %@!",region.identifier];
                 localNotif.alertAction = NSLocalizedString(@"Ok", nil);
                 localNotif.applicationIconBadgeNumber = [[UIApplication sharedApplication] applicationIconBadgeNumber]+1;
@@ -131,6 +154,58 @@
             [defaults setBool:NO forKey:@"locked1"];
             [defaults synchronize];
         }
+        //SBLOCCO SACCO1
+        if([region.identifier isEqualToString:Saccop1] && [[NSUserDefaults standardUserDefaults] boolForKey:@"locked2"])
+        {
+            //test alert in background
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Hai sbloccato il cranio di Saccopastore 1"  message:@"Guardalo subito nella sezione Augmented Tour!" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+            [alert show];
+            
+            UILocalNotification *localNotif = [[UILocalNotification alloc] init];
+            if (localNotif) {
+                localNotif.alertBody = [[NSString alloc] initWithFormat:@"Hai sbloccato il cranio di %@!",region.identifier];
+                localNotif.alertAction = NSLocalizedString(@"Ok", nil);
+                localNotif.applicationIconBadgeNumber = [[UIApplication sharedApplication] applicationIconBadgeNumber]+1;
+                [[UIApplication sharedApplication] presentLocalNotificationNow:localNotif];
+            }
+            [defaults setBool:NO forKey:@"locked2"];
+            [defaults synchronize];
+        }
+        //SBLOCCO SACCO2
+        if([region.identifier isEqualToString:Saccop2] && [[NSUserDefaults standardUserDefaults] boolForKey:@"locked3"])
+        {
+            //test alert in background
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Hai sbloccato il cranio di Saccopastore 2"  message:@"Guardalo subito nella sezione Augmented Tour!" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+            [alert show];
+        
+            UILocalNotification *localNotif = [[UILocalNotification alloc] init];
+            if (localNotif) {
+                localNotif.alertBody = [[NSString alloc] initWithFormat:@"Hai sbloccato il cranio di %@!",region.identifier];
+                localNotif.alertAction = NSLocalizedString(@"Ok", nil);
+                localNotif.applicationIconBadgeNumber = [[UIApplication sharedApplication] applicationIconBadgeNumber]+1;
+                [[UIApplication sharedApplication] presentLocalNotificationNow:localNotif];
+            }
+            [defaults setBool:NO forKey:@"locked3"];
+            [defaults synchronize];
+        }
+        //SBLOCCO GUATTARI
+        if([region.identifier isEqualToString:Guattari] && [[NSUserDefaults standardUserDefaults] boolForKey:@"locked4"])
+        {
+            //test alert in background
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Hai sbloccato il cranio di Saccopastore 1"  message:@"Guardalo subito nella sezione Augmented Tour!" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+            [alert show];
+            
+            UILocalNotification *localNotif = [[UILocalNotification alloc] init];
+            if (localNotif) {
+                localNotif.alertBody = [[NSString alloc] initWithFormat:@"Hai sbloccato il cranio di %@!",region.identifier];
+                localNotif.alertAction = NSLocalizedString(@"Ok", nil);
+                localNotif.applicationIconBadgeNumber = [[UIApplication sharedApplication] applicationIconBadgeNumber]+1;
+                [[UIApplication sharedApplication] presentLocalNotificationNow:localNotif];
+            }
+            [defaults setBool:NO forKey:@"locked4"];
+            [defaults synchronize];
+        }
+
         
         //inserire comando sblocco beacon
         
