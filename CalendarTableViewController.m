@@ -18,7 +18,11 @@
 
 
 @implementation CalendarTableViewController
+
+
 @synthesize pNumber = _pNumber;
+
+NSMutableArray *jsonArray;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -42,6 +46,22 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    NSURL *url=[NSURL URLWithString:@"http://www.sapienzaapps.it/saccopastore/retrieveReservation.php"];
+    NSData *data = [NSData dataWithContentsOfURL:url];
+    jsonArray = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+    
+    for (int i=0;i<jsonArray.count;i++)
+    {
+        NSString *rigaJson = [[jsonArray objectAtIndex:i] objectForKey:@"data"];
+        NSLog(@"data: %@", rigaJson);
+        
+        //popolamento calendar
+        
+        //fine popolamento calendar
+    }
+
+
 }
 
 - (void)didReceiveMemoryWarning

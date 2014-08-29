@@ -7,5 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-@interface MapTableViewController : UITableViewController
+#import <MapKit/MapKit.h>
+#import <MapKit/MKAnnotation.h>
+
+@interface MapViewController : UIViewController
+
+@property (weak, nonatomic) IBOutlet MKMapView *mapView;
+
 @end
