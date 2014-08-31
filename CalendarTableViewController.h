@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+extern NSMutableArray *jsonArray;
+
 @interface CalendarTableViewController : UITableViewController
     @property(strong, nonatomic) NSString * pNumber;
 @end

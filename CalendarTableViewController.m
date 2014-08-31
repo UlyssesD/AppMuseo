@@ -10,19 +10,23 @@
 #import "DSLCalendarView.h"
 #import "DataSetTableViewController.h"
 
+
+
 @interface CalendarTableViewController () <DSLCalendarViewDelegate>
 @property (strong, nonatomic) IBOutlet DSLCalendarView *calendar;
 @property (weak, nonatomic) NSString* turn;
 @property (strong, nonatomic) NSDate* date;
+
 @end
 
 
 @implementation CalendarTableViewController
 
+NSMutableArray *jsonArray;
 
 @synthesize pNumber = _pNumber;
 
-NSMutableArray *jsonArray;
+
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -51,7 +55,7 @@ NSMutableArray *jsonArray;
     NSData *data = [NSData dataWithContentsOfURL:url];
     jsonArray = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
     
-    for (int i=0;i<jsonArray.count;i++)
+    /*for (int i=0;i<jsonArray.count;i++)
     {
         NSString *rigaJson = [[jsonArray objectAtIndex:i] objectForKey:@"data"];
         NSLog(@"data: %@", rigaJson);
@@ -59,7 +63,7 @@ NSMutableArray *jsonArray;
         //popolamento calendar
         
         //fine popolamento calendar
-    }
+    }*/
 
 
 }
