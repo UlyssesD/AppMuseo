@@ -55,17 +55,7 @@ NSMutableArray *jsonArray;
     NSData *data = [NSData dataWithContentsOfURL:url];
     jsonArray = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
     
-    /*for (int i=0;i<jsonArray.count;i++)
-    {
-        NSString *rigaJson = [[jsonArray objectAtIndex:i] objectForKey:@"data"];
-        NSLog(@"data: %@", rigaJson);
-        
-        //popolamento calendar
-        
-        //fine popolamento calendar
-    }*/
-
-
+   
 }
 
 - (void)didReceiveMemoryWarning
@@ -80,13 +70,54 @@ NSMutableArray *jsonArray;
         NSDateFormatter *f = [[NSDateFormatter alloc] init];
         [f setDateFormat:@"dd MMMM"];
         _date = range.startDay.date;
-        NSString *prova = [NSString stringWithFormat:@"%@ \n seleziona uno slot", [f stringFromDate:range.startDay.date]];
+
+        NSDateFormatter *f2 = [[NSDateFormatter alloc] init];
+        [f2 setDateFormat:@"yyyy-MM-dd"];
+        NSString *fData2 = [f2 stringFromDate:_date];
+        
+        NSString *controlla = [self checkData :fData2];
+        NSString *testo = [NSString stringWithFormat:@"%@", [f stringFromDate:range.startDay.date]];
+
+        
         UIActionSheet *actionSheet = [[UIActionSheet alloc]
-                                      initWithTitle: prova
+                                      initWithTitle: testo
                                       delegate: self
-                                      cancelButtonTitle:@"Annulla"
+                                      cancelButtonTitle:nil
                                       destructiveButtonTitle:nil
-                                      otherButtonTitles:@"Mattina", @"Pomeriggio", nil];
+                                      otherButtonTitles: nil];
+        
+        if ([controlla isEqual:@"full"])
+        {
+            
+            [actionSheet addButtonWithTitle:@"Annulla"];
+            
+            actionSheet.cancelButtonIndex = actionSheet.numberOfButtons-1;
+        }
+        else if ([controlla isEqual:@"Mattina"])
+        {
+            [actionSheet addButtonWithTitle:@"Pomeriggio"];
+            [actionSheet addButtonWithTitle:@"Annulla"];
+            
+            actionSheet.cancelButtonIndex = actionSheet.numberOfButtons-1;
+        }
+        else if ([controlla isEqual:@"Pomeriggio"])
+        {
+            [actionSheet addButtonWithTitle:@"Mattina"];
+            [actionSheet addButtonWithTitle:@"Annulla"];
+            
+            actionSheet.cancelButtonIndex = actionSheet.numberOfButtons-1;
+        }
+        else
+        {
+            [actionSheet addButtonWithTitle:@"Mattina"];
+            [actionSheet addButtonWithTitle:@"Pomeriggio"];
+            [actionSheet addButtonWithTitle:@"Annulla"];
+            
+            actionSheet.cancelButtonIndex = actionSheet.numberOfButtons-1;
+        }
+        
+        
+        
 
         [actionSheet showInView:self.view];
     }
@@ -95,20 +126,84 @@ NSMutableArray *jsonArray;
     }
 }
 
+-(NSString *)checkData: (NSString *) dataSelected{
+
+    NSString *ritorno=@"libero";
+
+    for (int i=0;i<jsonArray.count;i++)
+    {
+        
+        NSString *dataJson = [[jsonArray objectAtIndex:i] objectForKey:@"data"];
+        NSString *slotJson = [[jsonArray objectAtIndex:i] objectForKey:@"mattinapomeriggio"];
+
+        if([dataSelected isEqual:dataJson])
+        {
+            
+            if ([slotJson  isEqual: @"full"])
+            {
+                ritorno=slotJson;
+                break;
+            }
+            else if([slotJson  isEqual: @"Mattina"] || [slotJson  isEqual: @"Pomeriggio"])
+            {
+                ritorno=slotJson;
+                break;
+            }
+            
+        }
+        
+        
+    }
+    return ritorno;
+
+}
+
+
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    
+    NSDateFormatter *f2 = [[NSDateFormatter alloc] init];
+    [f2 setDateFormat:@"yyyy-MM-dd"];
+    NSString *fData2 = [f2 stringFromDate:_date];
+    NSString *controlla = [self checkData :fData2];
+    
+    if ([controlla isEqual:@"full"]) {
+
+    }
+    else if ([controlla isEqual:@"Mattina"]){
             switch (buttonIndex) {
                 case 0:
                     NSLog(@"Clicked Mattina");
                     _turn = @"Mattina";
                     [self performSegueWithIdentifier:@"Passo3" sender:self];
                     break;
-                case 1:
-                    NSLog(@"Clicked Pomeriggio");
-                    _turn = @"Pomeriggio";
-                    [self performSegueWithIdentifier:@"Passo3" sender:self];
-                    break;
-            
+            }
+    }
+    else if ([controlla isEqual:@"Pomeriggio"]){
+        switch (buttonIndex) {
+            case 0:
+                NSLog(@"Clicked Pomeriggio");
+                _turn = @"Pomeriggio";
+                [self performSegueWithIdentifier:@"Passo3" sender:self];
+                break;
         }
+    }
+    else if ([controlla isEqual:@"libero"]){
+        switch (buttonIndex) {
+            case 0:
+                NSLog(@"Clicked Mattina");
+                _turn = @"Mattina";
+                [self performSegueWithIdentifier:@"Passo3" sender:self];
+                break;
+            case 1:
+                NSLog(@"Clicked Pomeriggio");
+                _turn = @"Pomeriggio";
+                [self performSegueWithIdentifier:@"Passo3" sender:self];
+                break;
+        }
+    }
+
+
+    
 }
 
 - (DSLCalendarRange*)calendarView:(DSLCalendarView *)calendarView didDragToDay:(NSDateComponents *)day selectingRange:(DSLCalendarRange *)range {

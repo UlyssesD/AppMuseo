@@ -12,4 +12,7 @@ extern NSMutableArray *jsonArray;
 
 @interface CalendarTableViewController : UITableViewController
     @property(strong, nonatomic) NSString * pNumber;
+
+-(NSString *)checkData: (NSString *) dataSelected;
+
 @end
