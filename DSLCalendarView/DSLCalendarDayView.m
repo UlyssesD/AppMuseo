@@ -126,18 +126,18 @@
                     
                     if ([slotJson  isEqual: @"full"])
                     {
-                        [[UIColor colorWithRed:(255/255.0) green:(0/255.0) blue:(0/255.0) alpha:1.0] setFill]; //ROSSO
+                        [[UIColor colorWithRed:(255/255.0) green:(51/255.0) blue:(51/255.0) alpha:1.0] setFill]; //ROSSO
                         break;
                     }
                     else if([slotJson  isEqual: @"Mattina"] || [slotJson  isEqual: @"Pomeriggio"])
                     {
-                        [[UIColor colorWithRed:(255/255.0) green:(255/255.0) blue:(0/255.0) alpha:1.0] setFill]; //GIALLO
+                        [[UIColor colorWithRed:(255/255.0) green:(255/255.0) blue:(102/255.0) alpha:1.0] setFill]; //GIALLO
                         break;
                     }
                     
                 }
                 else
-                    [[UIColor colorWithRed:(128/255.0) green:(255/255.0) blue:(0/255.0) alpha:1.0] setFill]; //VERDE
+                    [[UIColor colorWithRed:(178/255.0) green:(255/255.0) blue:(102/255.0) alpha:1.0] setFill]; //VERDE
                 
             }
         }
