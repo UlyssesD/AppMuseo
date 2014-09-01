@@ -120,7 +120,7 @@
                 
                 NSString *dataJson = [[jsonArray objectAtIndex:i] objectForKey:@"data"];
                 NSString *slotJson = [[jsonArray objectAtIndex:i] objectForKey:@"mattinapomeriggio"];
-                NSLog(@"data: %@", dataJson);
+               // NSLog(@"data: %@", dataJson);
                 if([dataSelected isEqual:dataJson])
                 {
                     

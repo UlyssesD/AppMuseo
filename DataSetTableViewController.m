@@ -146,6 +146,62 @@
             NSData *urlData=[NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
             
             
+            //////////////////
+            NSArray *sysPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory ,NSUserDomainMask, YES);
+            
+            NSString *documentsDirectory = [sysPaths objectAtIndex:0];
+            
+            NSString *filePath = [documentsDirectory stringByAppendingPathComponent:@"Prenotazioni.plist"];
+            
+            NSLog(@"Plist File Path: %@", filePath);
+            
+            NSMutableArray *plistDict;
+            
+            if ([[NSFileManager defaultManager] fileExistsAtPath:filePath])
+                
+            {
+                
+                plistDict = [[NSMutableArray alloc] initWithContentsOfFile:filePath];
+                
+            }
+            else
+                
+            {
+                
+                plistDict = [[NSMutableArray alloc] init];
+                
+            }
+            NSLog(@"plist data: %@", [plistDict description]);
+            
+            NSMutableDictionary *subArray=[[NSMutableDictionary alloc] init];
+            
+            [subArray setValue:_data forKey: @"data"];
+            [subArray setValue:_slot forKey: @"slot"];
+            
+            [plistDict addObject:subArray];
+            
+            
+            BOOL didWriteToFile = [plistDict writeToFile:filePath atomically:YES];
+            if (didWriteToFile)
+                
+            {
+                
+                NSLog(@"Write to .plist file is a SUCCESS!");
+                
+            }
+            
+            else
+                
+            {
+                
+                NSLog(@"Write to .plist file is a FAILURE!");
+                
+            }
+            
+            
+            
+            //////////////////
+            
             NSLog(@"Response code: %ld", (long)[response statusCode]);
             
             if ([response statusCode] >= 200 && [response statusCode] < 300)

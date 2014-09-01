@@ -44,7 +44,38 @@
     _sidebarButton.action = @selector(revealToggle:);
     
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
-    NSArray *dictionary = [[NSArray alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Prenotazioni" ofType:@"plist"]];
+    
+    
+    ////////////////////
+    
+    NSArray *sysPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory ,NSUserDomainMask, YES);
+    
+    NSString *documentsDirectory = [sysPaths objectAtIndex:0];
+    
+    NSString *filePath = [documentsDirectory stringByAppendingPathComponent:@"Prenotazioni.plist"];
+    
+    NSArray *dictionary;
+    
+    if ([[NSFileManager defaultManager] fileExistsAtPath:filePath])
+        
+    {
+        dictionary = [[NSArray alloc] initWithContentsOfFile:filePath];
+        
+    }
+    
+    else
+        
+    {
+        dictionary = [[NSArray alloc] init];
+        
+    }
+    
+    
+    
+    ////////
+    
+    /*NSArray *dictionary = [[NSArray alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Prenotazioni" ofType:@"plist"]];
+    */
     NSLog(@"count: %d", [dictionary count]);
     
     if([dictionary count] == 0){
