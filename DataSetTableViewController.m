@@ -94,12 +94,12 @@
         NSDateFormatter *f = [[NSDateFormatter alloc] init];
         [f setDateFormat:@"dd MMMM yyyy"];
         NSString* fData = [f stringFromDate:_data];
-        
+        NSString* note = ([_notes.text length] >= 150) ? ([NSString stringWithFormat: @"%@...", [_notes.text substringToIndex:147]]) : _notes.text;
         
         
         NSString* persone = ([_pNumber isEqualToString: @"scolaresca"]) ? (@"Scolaresca") : ([NSString stringWithFormat: @"Persone: %@", _pNumber]);
-        NSString *infos = [NSString stringWithFormat:@"Rivedi le informazioni: \nReferente: %@ %@\nCellulare: %@\nE-mail: %@\nData: %@\n%@",
-                           _nome.text, _cognome.text, _cellulare.text, _email.text, fData, persone];
+        NSString *infos = [NSString stringWithFormat:@"Rivedi le informazioni: \nReferente: %@ %@\nCellulare: %@\nE-mail: %@\nData: %@\n%@\n Note: %@",
+                           _nome.text, _cognome.text, _cellulare.text, _email.text, fData, persone, note];
         UIActionSheet *actionSheet = [[UIActionSheet alloc]
                                       initWithTitle: infos
                                       delegate: self
@@ -179,7 +179,7 @@
             [subArray setValue:_slot forKey: @"slot"];
             
             [plistDict addObject:subArray];
-            
+    
             
             BOOL didWriteToFile = [plistDict writeToFile:filePath atomically:YES];
             if (didWriteToFile)

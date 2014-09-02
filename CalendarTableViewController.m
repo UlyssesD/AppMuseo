@@ -55,13 +55,37 @@ NSMutableArray *jsonArray;
     NSData *data = [NSData dataWithContentsOfURL:url];
     jsonArray = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
     
-   
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    //Headerview
+    UIView *myView = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, 300.0, 20.0)];
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeInfoLight];
+    [button setFrame:CGRectMake(275.0, 10.0, 30.0, 30.0)];
+    button.tag = section;
+    button.hidden = NO;
+    [button setBackgroundColor:[UIColor clearColor]];
+    //[button addTarget:self action:@selector(insertParameter:) forControlEvents:UIControlEventTouchDown];
+    [myView addSubview:button];
+    UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(5.0, 10.0, 200.0, 30.0)];
+    title.text = @"SELEZIONA UNA DATA:";
+    //title.font = [UIFont]
+    
+    title.opaque = NO;
+    title.textColor = [UIColor grayColor];
+    title.font = [UIFont fontWithName: @"HelveticaNeue" size:(14)];
+    [myView addSubview:title];
+    return myView;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return 40.0;
 }
 
 - (void)calendarView:(DSLCalendarView *)calendarView didSelectRange:(DSLCalendarRange *)range {

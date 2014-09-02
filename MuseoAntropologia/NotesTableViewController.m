@@ -43,6 +43,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+
 /*-(void) viewWillDisappear:(BOOL)animated {
     if ([self.navigationController.viewControllers indexOfObject:self]==NSNotFound) {
         [delegate sendDataToA: _notes.text];
