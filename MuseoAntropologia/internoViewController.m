@@ -1,29 +1,35 @@
 //
-//  MapViewController.m
+//  internoViewController.m
 //  MuseoAntropologia
 //
-//  Created by Ulysses D. on 28/07/14.
+//  Created by Interazione su web on 02/09/14.
 //  Copyright (c) 2014 Appcoda. All rights reserved.
 //
 
-#import "MapViewController.h"
-#import "MapAnnotation.h"
+#import "internoViewController.h"
 #import "SWRevealViewController.h"
 
-@interface MapViewController ()
+@interface internoViewController ()
 
 @end
 
-@implementation MapViewController
+@implementation internoViewController
 
-
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    
     self.title = @"Come Raggiungerci";
+    
+
     CGRect frame = CGRectMake(0, 0, 100, 44);
     UILabel *label = [[UILabel alloc] initWithFrame:frame];
     label.backgroundColor = [UIColor clearColor];
@@ -37,24 +43,7 @@
     _sidebarButton.tintColor = [UIColor colorWithWhite:0.1f alpha:0.9f];
     _sidebarButton.target = self.revealViewController;
     _sidebarButton.action = @selector(revealToggle:);
-    
-    
-    MKCoordinateRegion region;
-    region.center.latitude = 41.90418398082423;
-    region.center.longitude = 12.516314122962171;
-    region.span.longitudeDelta = 0.01;
-    region.span.latitudeDelta =0.01;
-    [_mapView setRegion:region animated:YES];
-    
-    
-    MapAnnotation *museoAnnotation = [MapAnnotation alloc];
-    museoAnnotation.coordinate=region.center;
-    museoAnnotation.title=@"Museo di Antropologia";
 
-
-
-    [self.mapView addAnnotation:museoAnnotation];
-    
 }
 
 - (void)didReceiveMemoryWarning
@@ -63,9 +52,15 @@
     // Dispose of any resources that can be recreated.
 }
 
+/*
+#pragma mark - Navigation
 
-- (IBAction)trovaPercorso:(id)sender {
-    NSString *urlString = @"http://maps.apple.com/maps?daddr=41.90418398082423,12.516314122962171";
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:urlString]];
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
 }
+*/
+
 @end

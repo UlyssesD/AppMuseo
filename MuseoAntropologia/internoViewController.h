@@ -1,13 +1,15 @@
 //
-//  ComeRaggiungerciTableViewController.h
+//  internoViewController.h
 //  MuseoAntropologia
 //
-//  Created by Ulysses D. on 28/07/14.
+//  Created by Interazione su web on 02/09/14.
 //  Copyright (c) 2014 Appcoda. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface ComeRaggiungerciTableViewController : UITableViewController
+@interface internoViewController : UIViewController
+
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
+
 @end

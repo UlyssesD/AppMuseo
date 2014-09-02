@@ -1,5 +1,5 @@
 //
-//  MapTableViewController.h
+//  MapViewController.h
 //  MuseoAntropologia
 //
 //  Created by Ulysses D. on 28/07/14.
@@ -12,6 +12,10 @@
 
 @interface MapViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
+
+- (IBAction)trovaPercorso:(id)sender;
+
 
 @end
