@@ -117,7 +117,7 @@
     
     
     if (self.selectionState == DSLCalendarDayViewNotSelected) {
-        if (self.isInCurrentMonth) {
+        if (self.isInCurrentMonth && ([now compare:_dayAsDate] == NSOrderedAscending)) {
             for (int i=0;i<jsonArray.count;i++)
             {
                 
@@ -166,11 +166,16 @@
                 break;
                 
             case DSLCalendarDayViewWholeSelection:
-                
-                [[UIColor colorWithRed:(4/255.0) green:(157/255.0) blue:(248/255.0) alpha:1.0] setFill]; //sitema
-                UIRectFill(self.bounds);
-                /*[[[UIImage imageNamed:@"DSLCalendarDaySelection"] resizableImageWithCapInsets:UIEdgeInsetsMake(20, 20, 20, 20)] drawInRect:self.bounds];*/
-                break;
+                if([now compare:_dayAsDate] == NSOrderedAscending){
+                    [[UIColor colorWithRed:(4/255.0) green:(157/255.0) blue:(248/255.0) alpha:1.0] setFill]; //sitema
+                    UIRectFill(self.bounds);
+                    /*[[[UIImage imageNamed:@"DSLCalendarDaySelection"] resizableImageWithCapInsets:UIEdgeInsetsMake(20, 20, 20, 20)] drawInRect:self.bounds];*/
+                    break;
+                }
+                else{
+                    [[UIColor colorWithWhite:225.0/255.0 alpha:1.0] setFill];
+                    UIRectFill(self.bounds);
+                }
         }
     }
 }
@@ -203,11 +208,18 @@
 }
 
 - (void)drawDayNumber {
+    NSDate *now = [NSDate date];
     if (self.selectionState == DSLCalendarDayViewNotSelected) {
         [[UIColor colorWithWhite:66.0/255.0 alpha:1.0] set];
     }
     else {
-        [[UIColor whiteColor] set];
+        if([now compare:_dayAsDate] == NSOrderedAscending){
+
+            [[UIColor whiteColor] set];
+        }
+        else{
+            [[UIColor blackColor] set];
+        }
     }
     
     UIFont *textFont = [UIFont boldSystemFontOfSize:17.0];
