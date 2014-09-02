@@ -1,36 +1,30 @@
 //
-//  CalendarTableViewController.m
-//  ariProva
+//  CalendarViewController.m
+//  MuseoAntropologia
 //
-//  Created by Ulysses D. on 22/07/14.
-//  Copyright (c) 2014 Ulysses D. All rights reserved.
+//  Created by Ulysses D. on 02/09/14.
+//  Copyright (c) 2014 Appcoda. All rights reserved.
 //
 
-#import "CalendarTableViewController.h"
+#import "CalendarViewController.h"
 #import "DSLCalendarView.h"
 #import "DataSetTableViewController.h"
 
-
-
-@interface CalendarTableViewController () <DSLCalendarViewDelegate>
+@interface CalendarViewController ()
 @property (strong, nonatomic) IBOutlet DSLCalendarView *calendar;
 @property (weak, nonatomic) NSString* turn;
 @property (strong, nonatomic) NSDate* date;
-
 @end
 
-
-@implementation CalendarTableViewController
+@implementation CalendarViewController
 
 NSMutableArray *jsonArray;
 
 @synthesize pNumber = _pNumber;
 
-
-
-- (id)initWithStyle:(UITableViewStyle)style
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    self = [super initWithStyle:style];
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
     }
@@ -40,6 +34,7 @@ NSMutableArray *jsonArray;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     
     
     self.calendar.delegate = self;
@@ -54,7 +49,7 @@ NSMutableArray *jsonArray;
     NSURL *url=[NSURL URLWithString:@"http://www.sapienzaapps.it/saccopastore/retrieveReservation.php"];
     NSData *data = [NSData dataWithContentsOfURL:url];
     jsonArray = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
-    
+    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning
@@ -63,30 +58,6 @@ NSMutableArray *jsonArray;
     // Dispose of any resources that can be recreated.
 }
 
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-    //Headerview
-    UIView *myView = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, 300.0, 20.0)];
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeInfoLight];
-    [button setFrame:CGRectMake(275.0, 10.0, 30.0, 30.0)];
-    button.tag = section;
-    button.hidden = NO;
-    [button setBackgroundColor:[UIColor clearColor]];
-    //[button addTarget:self action:@selector(insertParameter:) forControlEvents:UIControlEventTouchDown];
-    [myView addSubview:button];
-    UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(5.0, 10.0, 200.0, 30.0)];
-    title.text = @"SELEZIONA UNA DATA:";
-    //title.font = [UIFont]
-    
-    title.opaque = NO;
-    title.textColor = [UIColor grayColor];
-    title.font = [UIFont fontWithName: @"HelveticaNeue" size:(14)];
-    [myView addSubview:title];
-    return myView;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    return 40.0;
-}
 
 - (void)calendarView:(DSLCalendarView *)calendarView didSelectRange:(DSLCalendarRange *)range {
     if (range != nil) {
@@ -94,14 +65,14 @@ NSMutableArray *jsonArray;
         NSDateFormatter *f = [[NSDateFormatter alloc] init];
         [f setDateFormat:@"dd MMMM"];
         _date = range.startDay.date;
-
+        
         NSDateFormatter *f2 = [[NSDateFormatter alloc] init];
         [f2 setDateFormat:@"yyyy-MM-dd"];
         NSString *fData2 = [f2 stringFromDate:_date];
         
         NSString *controlla = [self checkData :fData2];
         NSString *testo = [NSString stringWithFormat:@"%@", [f stringFromDate:range.startDay.date]];
-
+        
         
         UIActionSheet *actionSheet = [[UIActionSheet alloc]
                                       initWithTitle: testo
@@ -113,59 +84,59 @@ NSMutableArray *jsonArray;
         
         if ( [now compare:_date] == NSOrderedAscending 	) {
             
-        
-        if ([controlla isEqual:@"full"])
-        {
             
-            //[actionSheet addButtonWithTitle:@"Annulla"];
-            //actionSheet.cancelButtonIndex = actionSheet.numberOfButtons-1;
-            
-            return;
-        }
-        else if ([controlla isEqual:@"Mattina"])
-        {
-            [actionSheet addButtonWithTitle:@"Pomeriggio"];
-            [actionSheet addButtonWithTitle:@"Annulla"];
-            
-            actionSheet.cancelButtonIndex = actionSheet.numberOfButtons-1;
-        }
-        else if ([controlla isEqual:@"Pomeriggio"])
-        {
-            [actionSheet addButtonWithTitle:@"Mattina"];
-            [actionSheet addButtonWithTitle:@"Annulla"];
-            
-            actionSheet.cancelButtonIndex = actionSheet.numberOfButtons-1;
-        }
-        else
-        {
-            [actionSheet addButtonWithTitle:@"Mattina"];
-            [actionSheet addButtonWithTitle:@"Pomeriggio"];
-            [actionSheet addButtonWithTitle:@"Annulla"];
-            
-            actionSheet.cancelButtonIndex = actionSheet.numberOfButtons-1;
-        }
-        
-        
-        
-
-        [actionSheet showInView:self.view];
+            if ([controlla isEqual:@"full"])
+            {
+                
+                //[actionSheet addButtonWithTitle:@"Annulla"];
+                //actionSheet.cancelButtonIndex = actionSheet.numberOfButtons-1;
+                
+                return;
             }
+            else if ([controlla isEqual:@"Mattina"])
+            {
+                [actionSheet addButtonWithTitle:@"Pomeriggio"];
+                [actionSheet addButtonWithTitle:@"Annulla"];
+                
+                actionSheet.cancelButtonIndex = actionSheet.numberOfButtons-1;
+            }
+            else if ([controlla isEqual:@"Pomeriggio"])
+            {
+                [actionSheet addButtonWithTitle:@"Mattina"];
+                [actionSheet addButtonWithTitle:@"Annulla"];
+                
+                actionSheet.cancelButtonIndex = actionSheet.numberOfButtons-1;
+            }
+            else
+            {
+                [actionSheet addButtonWithTitle:@"Mattina"];
+                [actionSheet addButtonWithTitle:@"Pomeriggio"];
+                [actionSheet addButtonWithTitle:@"Annulla"];
+                
+                actionSheet.cancelButtonIndex = actionSheet.numberOfButtons-1;
+            }
+            
+            
+            
+            
+            [actionSheet showInView:self.view];
         }
+    }
     else {
         NSLog( @"No selection" );
     }
 }
 
 -(NSString *)checkData: (NSString *) dataSelected{
-
+    
     NSString *ritorno=@"libero";
-
+    
     for (int i=0;i<jsonArray.count;i++)
     {
         
         NSString *dataJson = [[jsonArray objectAtIndex:i] objectForKey:@"data"];
         NSString *slotJson = [[jsonArray objectAtIndex:i] objectForKey:@"mattinapomeriggio"];
-
+        
         if([dataSelected isEqual:dataJson])
         {
             
@@ -185,7 +156,7 @@ NSMutableArray *jsonArray;
         
     }
     return ritorno;
-
+    
 }
 
 
@@ -197,16 +168,16 @@ NSMutableArray *jsonArray;
     NSString *controlla = [self checkData :fData2];
     
     if ([controlla isEqual:@"full"]) {
-
+        
     }
     else if ([controlla isEqual:@"Mattina"]){
-            switch (buttonIndex) {
-                case 0:
-                    NSLog(@"Clicked Mattina");
-                    _turn = @"Mattina";
-                    [self performSegueWithIdentifier:@"Passo3" sender:self];
-                    break;
-            }
+        switch (buttonIndex) {
+            case 0:
+                NSLog(@"Clicked Mattina");
+                _turn = @"Mattina";
+                [self performSegueWithIdentifier:@"Passo3" sender:self];
+                break;
+        }
     }
     else if ([controlla isEqual:@"Pomeriggio"]){
         switch (buttonIndex) {
@@ -231,8 +202,8 @@ NSMutableArray *jsonArray;
                 break;
         }
     }
-
-
+    
+    
     
 }
 
@@ -278,82 +249,17 @@ NSMutableArray *jsonArray;
 
 
 
-#pragma mark - Table view data source
-/*
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    // Return the number of sections.
-    return 0;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    // Return the number of rows in the section.
-    return 0;
-}
-
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"reuseIdentifier" forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
-    return cell;
-}
-*/
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    DataSetTableViewController *stepThree = segue.destinationViewController;
-    stepThree.pNumber = _pNumber;
-    stepThree.data = _date;
-    stepThree.slot = _turn;
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+ {
+ DataSetTableViewController *stepThree = segue.destinationViewController;
+ stepThree.pNumber = _pNumber;
+ stepThree.data = _date;
+ stepThree.slot = _turn;
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
 
 
 @end

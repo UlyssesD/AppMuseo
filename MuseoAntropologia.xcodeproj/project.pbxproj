@@ -56,7 +56,6 @@
 		1BD1AB67197F0A2B0069C6F7 /* Saccopastore 2.obj in Resources */ = {isa = PBXBuildFile; fileRef = 1BD1AB5D197F0A2B0069C6F7 /* Saccopastore 2.obj */; };
 		1BF54B9619802762001CAF82 /* LogoMB.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1BF54B9519802762001CAF82 /* LogoMB.jpg */; };
 		4A81455B19826B57006FB54E /* AnotherTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A81455819826B57006FB54E /* AnotherTableViewController.m */; };
-		4A81455C19826B57006FB54E /* CalendarTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A81455A19826B57006FB54E /* CalendarTableViewController.m */; };
 		4A81457D19826B94006FB54E /* DSLCalendarDayCalloutView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A81455F19826B94006FB54E /* DSLCalendarDayCalloutView.m */; };
 		4A81457E19826B94006FB54E /* DSLCalendarDayCalloutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A81456019826B94006FB54E /* DSLCalendarDayCalloutView.xib */; };
 		4A81457F19826B94006FB54E /* DSLCalendarDayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A81456219826B94006FB54E /* DSLCalendarDayView.m */; };
@@ -85,6 +84,7 @@
 		4A8145A119826E6F006FB54E /* timeline_blu_end.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A81459D19826E6F006FB54E /* timeline_blu_end.png */; };
 		4A8145A219826E6F006FB54E /* timeline_red_end.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A81459E19826E6F006FB54E /* timeline_red_end.png */; };
 		4A8145A319826E6F006FB54E /* timeline_top.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A81459F19826E6F006FB54E /* timeline_top.png */; };
+		4A947BAC19B607E9001BC0D8 /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A947BAB19B607E9001BC0D8 /* CalendarViewController.m */; };
 		4AA577B7198290DE009C0F9B /* PrenotazioneTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA577B6198290DE009C0F9B /* PrenotazioneTableViewController.m */; };
 		4AA93E2D19866102002B883A /* NotesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA93E2C19866102002B883A /* NotesTableViewController.m */; };
 		4ACEDA53198295E600B2B7F4 /* CompleteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACEDA52198295E600B2B7F4 /* CompleteViewController.m */; };
@@ -172,8 +172,6 @@
 		1BF54B9519802762001CAF82 /* LogoMB.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = LogoMB.jpg; sourceTree = "<group>"; };
 		4A81455719826B57006FB54E /* AnotherTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AnotherTableViewController.h; path = ../AnotherTableViewController.h; sourceTree = "<group>"; };
 		4A81455819826B57006FB54E /* AnotherTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AnotherTableViewController.m; path = ../AnotherTableViewController.m; sourceTree = "<group>"; };
-		4A81455919826B57006FB54E /* CalendarTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CalendarTableViewController.h; path = ../CalendarTableViewController.h; sourceTree = "<group>"; };
-		4A81455A19826B57006FB54E /* CalendarTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CalendarTableViewController.m; path = ../CalendarTableViewController.m; sourceTree = "<group>"; };
 		4A81455E19826B94006FB54E /* DSLCalendarDayCalloutView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSLCalendarDayCalloutView.h; sourceTree = "<group>"; };
 		4A81455F19826B94006FB54E /* DSLCalendarDayCalloutView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSLCalendarDayCalloutView.m; sourceTree = "<group>"; };
 		4A81456019826B94006FB54E /* DSLCalendarDayCalloutView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DSLCalendarDayCalloutView.xib; sourceTree = "<group>"; };
@@ -210,6 +208,8 @@
 		4A81459D19826E6F006FB54E /* timeline_blu_end.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = timeline_blu_end.png; sourceTree = "<group>"; };
 		4A81459E19826E6F006FB54E /* timeline_red_end.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = timeline_red_end.png; sourceTree = "<group>"; };
 		4A81459F19826E6F006FB54E /* timeline_top.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = timeline_top.png; sourceTree = "<group>"; };
+		4A947BAA19B607E9001BC0D8 /* CalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
+		4A947BAB19B607E9001BC0D8 /* CalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarViewController.m; sourceTree = "<group>"; };
 		4AA577B5198290DE009C0F9B /* PrenotazioneTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrenotazioneTableViewController.h; sourceTree = "<group>"; };
 		4AA577B6198290DE009C0F9B /* PrenotazioneTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrenotazioneTableViewController.m; sourceTree = "<group>"; };
 		4AA93E2B19866102002B883A /* NotesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotesTableViewController.h; sourceTree = "<group>"; };
@@ -337,6 +337,8 @@
 		F4EECF05177C99F400778578 = {
 			isa = PBXGroup;
 			children = (
+				4A947BAA19B607E9001BC0D8 /* CalendarViewController.h */,
+				4A947BAB19B607E9001BC0D8 /* CalendarViewController.m */,
 				F4EECF17177C99F400778578 /* MuseoAntropologia */,
 				F4EECF10177C99F400778578 /* Frameworks */,
 				F4EECF0F177C99F400778578 /* Products */,
@@ -375,8 +377,6 @@
 				4ADB659519869A3200714E7C /* ComeRaggiungerciTableViewController.m */,
 				4A81455719826B57006FB54E /* AnotherTableViewController.h */,
 				4A81455819826B57006FB54E /* AnotherTableViewController.m */,
-				4A81455919826B57006FB54E /* CalendarTableViewController.h */,
-				4A81455A19826B57006FB54E /* CalendarTableViewController.m */,
 				1BB790F8197FC07400DC42E9 /* BDAppDelegate.h */,
 				1BB790F9197FC07400DC42E9 /* BDAppDelegate.m */,
 				F4EECF20177C99F400778578 /* AppDelegate.h */,
@@ -627,7 +627,6 @@
 				4A81457F19826B94006FB54E /* DSLCalendarDayView.m in Sources */,
 				4A81458219826B94006FB54E /* DSLCalendarMonthView.m in Sources */,
 				4A81457D19826B94006FB54E /* DSLCalendarDayCalloutView.m in Sources */,
-				4A81455C19826B57006FB54E /* CalendarTableViewController.m in Sources */,
 				11A2F95519AE3F2C00AEF093 /* MapAnnotation.m in Sources */,
 				F4EECF22177C99F400778578 /* AppDelegate.m in Sources */,
 				1BAE81E1196ECF640060EA98 /* ContattiViewController.m in Sources */,
@@ -645,6 +644,7 @@
 				1B3635EA195AE1C000B221DD /* CreditsViewController.m in Sources */,
 				4A81455B19826B57006FB54E /* AnotherTableViewController.m in Sources */,
 				4ACEDA53198295E600B2B7F4 /* CompleteViewController.m in Sources */,
+				4A947BAC19B607E9001BC0D8 /* CalendarViewController.m in Sources */,
 				1B6985B2197C15F3004023FF /* TourVirtualeTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

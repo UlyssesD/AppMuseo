@@ -7,7 +7,7 @@
 //
 
 #import "AnotherTableViewController.h"
-#import "CalendarTableViewController.h"
+#import "CalendarViewController.h"
 
 @interface AnotherTableViewController (){
     NSArray *_pickerData;
@@ -167,7 +167,7 @@
 {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
-    CalendarTableViewController *stepTwo = segue.destinationViewController;
+    CalendarViewController *stepTwo = segue.destinationViewController;
         if (_scFlag.isOn) {
             stepTwo.pNumber = @"scolaresca";
         }
