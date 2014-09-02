@@ -26,6 +26,9 @@
 @synthesize cellulare = _cellulare;
 @synthesize notes = _notes;
 
+
+
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -92,6 +95,8 @@
         [f setDateFormat:@"dd MMMM yyyy"];
         NSString* fData = [f stringFromDate:_data];
         
+        
+        
         NSString* persone = ([_pNumber isEqualToString: @"scolaresca"]) ? (@"Scolaresca") : ([NSString stringWithFormat: @"Persone: %@", _pNumber]);
         NSString *infos = [NSString stringWithFormat:@"Rivedi le informazioni: \nReferente: %@ %@\nCellulare: %@\nE-mail: %@\nData: %@\n%@",
                            _nome.text, _cognome.text, _cellulare.text, _email.text, fData, persone];
@@ -109,12 +114,143 @@
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
     switch (buttonIndex) {
         case 0:
+            
             [self performSegueWithIdentifier:@"Complete" sender:self];
+            
+            //codice aggiunto david
+            NSInteger success = 0;
+            
+            
+            NSDateFormatter *f2 = [[NSDateFormatter alloc] init];
+            [f2 setDateFormat:@"yyyy-MM-dd"];
+            NSString *fData2 = [f2 stringFromDate:_data];
+
+            
+            NSString *post =[[NSString alloc] initWithFormat:@"nome=%@&cognome=%@&email=%@&cellulare=%@&note=%@&data=%@&npersone=%@&mattinapomeriggio=%@",[self.nome text],[self.cognome text],[self.email text],[self.cellulare text],[self.notes text], fData2, _pNumber, _slot];
+            NSLog(@"PostData: %@",post);
+            
+            NSURL *url=[NSURL URLWithString:@"http://www.sapienzaapps.it/saccopastore/insertReservation.php"];
+            NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
+            NSString *postLength = [NSString stringWithFormat:@"%lu", (unsigned long)[postData length]];
+            
+            NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+            [request setURL:url];
+            [request setHTTPMethod:@"POST"];
+            [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
+            [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+            [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+            [request setHTTPBody:postData];
+            
+            NSError *error = [[NSError alloc] init];
+            NSHTTPURLResponse *response = nil;
+            NSData *urlData=[NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+            
+            
+            //////////////////
+            NSArray *sysPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory ,NSUserDomainMask, YES);
+            
+            NSString *documentsDirectory = [sysPaths objectAtIndex:0];
+            
+            NSString *filePath = [documentsDirectory stringByAppendingPathComponent:@"Prenotazioni.plist"];
+            
+            NSLog(@"Plist File Path: %@", filePath);
+            
+            NSMutableArray *plistDict;
+            
+            if ([[NSFileManager defaultManager] fileExistsAtPath:filePath])
+                
+            {
+                
+                plistDict = [[NSMutableArray alloc] initWithContentsOfFile:filePath];
+                
+            }
+            else
+                
+            {
+                
+                plistDict = [[NSMutableArray alloc] init];
+                
+            }
+            NSLog(@"plist data: %@", [plistDict description]);
+            
+            NSMutableDictionary *subArray=[[NSMutableDictionary alloc] init];
+            
+            [subArray setValue:_data forKey: @"data"];
+            [subArray setValue:_slot forKey: @"slot"];
+            
+            [plistDict addObject:subArray];
+            
+            
+            BOOL didWriteToFile = [plistDict writeToFile:filePath atomically:YES];
+            if (didWriteToFile)
+                
+            {
+                
+                NSLog(@"Write to .plist file is a SUCCESS!");
+                
+            }
+            
+            else
+                
+            {
+                
+                NSLog(@"Write to .plist file is a FAILURE!");
+                
+            }
+            
+            
+            
+            //////////////////
+            
+            NSLog(@"Response code: %ld", (long)[response statusCode]);
+            
+            if ([response statusCode] >= 200 && [response statusCode] < 300)
+            {
+                NSString *responseData = [[NSString alloc]initWithData:urlData encoding:NSUTF8StringEncoding];
+                NSLog(@"Response ==> %@", responseData);
+                
+                NSError *error = nil;
+                NSDictionary *jsonData = [NSJSONSerialization
+                                          JSONObjectWithData:urlData
+                                          options:NSJSONReadingMutableContainers
+                                          error:&error];
+                
+                success = [jsonData[@"success"] integerValue];
+                NSLog(@"Success: %ld",(long)success);
+                
+                if(success == 1)
+                {
+                    NSLog(@"Inserimento effettuato ");
+                } else {
+                    
+                    NSString *error_msg = (NSString *) jsonData[@"error_message"];
+                    [self alertStatus:error_msg :@"Insermineto prenotazione fallita!" :0];
+                }
+                
+            } else {
+                //if (error) NSLog(@"Error: %@", error);
+                [self alertStatus:@"Prenotazione fallita" :@"Si è verificato un errore nella vostra prenotazione!" :0];
+            }
+            
+            
+            
+            //fine codice david
             break;
             
     }
 }
 
+//metodo aggiunto david
+- (void) alertStatus:(NSString *)msg :(NSString *)title :(int) tag
+{
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title
+                                                        message:msg
+                                                       delegate:self
+                                              cancelButtonTitle:@"Ok"
+                                              otherButtonTitles:nil, nil];
+    alertView.tag = tag;
+    [alertView show];
+}
 
 #pragma mark - Table view data source
 /*
@@ -167,14 +303,29 @@
     
     if ( [_cellulare.text isEqual:@""] || [_cognome.text isEqual:@""] || [_email.text isEqual:@""] || [_nome.text isEqual:@""] || ![self isValidEmail:_email.text]) {
         //not ok
+        
         _submit.enabled = NO;
         _submit.userInteractionEnabled = NO;
+        
+        
     } else {
         //ok
         _submit.enabled = YES;
         _submit.userInteractionEnabled = YES;
         
     }
+    
+    
+    }
+
+- (IBAction)checkMailInput:(id)sender {
+    
+    if (![self isValidEmail:_email.text] && ![_email.text isEqual:@""]) {
+        //TODO : allest malformed mail
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Formato email non corretto" message:@"Inserisci una mail valida per continuare" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+        [alert show];
+    }
+
 }
 
 -(BOOL)isValidEmail:(NSString *)email

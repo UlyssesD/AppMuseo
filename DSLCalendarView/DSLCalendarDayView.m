@@ -32,6 +32,7 @@
 
 #import "DSLCalendarDayView.h"
 #import "NSDate+DSLCalendarView.h"
+#import "CalendarTableViewController.h"
 
 
 @interface DSLCalendarDayView ()
@@ -107,14 +108,42 @@
 #pragma mark Drawing
 
 - (void)drawBackground {
+    
+    NSDateFormatter *d = [[NSDateFormatter alloc]init];
+    [d setDateFormat:@"yyyy-MM-dd"];
+    NSString *dataSelected = [d stringFromDate:_dayAsDate];
+    
     if (self.selectionState == DSLCalendarDayViewNotSelected) {
         if (self.isInCurrentMonth) {
-            [[UIColor colorWithWhite:245.0/255.0 alpha:1.0] setFill];
+            for (int i=0;i<jsonArray.count;i++)
+            {
+                
+                NSString *dataJson = [[jsonArray objectAtIndex:i] objectForKey:@"data"];
+                NSString *slotJson = [[jsonArray objectAtIndex:i] objectForKey:@"mattinapomeriggio"];
+               // NSLog(@"data: %@", dataJson);
+                if([dataSelected isEqual:dataJson])
+                {
+                    
+                    if ([slotJson  isEqual: @"full"])
+                    {
+                        [[UIColor colorWithRed:(255/255.0) green:(51/255.0) blue:(51/255.0) alpha:1.0] setFill]; //ROSSO
+                        break;
+                    }
+                    else if([slotJson  isEqual: @"Mattina"] || [slotJson  isEqual: @"Pomeriggio"])
+                    {
+                        [[UIColor colorWithRed:(255/255.0) green:(255/255.0) blue:(102/255.0) alpha:1.0] setFill]; //GIALLO
+                        break;
+                    }
+                    
+                }
+                else
+                    [[UIColor colorWithRed:(178/255.0) green:(255/255.0) blue:(102/255.0) alpha:1.0] setFill]; //VERDE
+                
+            }
         }
         else {
             [[UIColor colorWithWhite:225.0/255.0 alpha:1.0] setFill];
-        }
-        UIRectFill(self.bounds);
+        }        UIRectFill(self.bounds);
     }
     else {
         switch (self.selectionState) {

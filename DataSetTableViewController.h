@@ -20,4 +20,5 @@
     @property (strong, nonatomic) NSDate* data;
     @property (strong, nonatomic) IBOutlet UILabel *notes;
     @property (strong, nonatomic) NSString* slot;
+
 @end

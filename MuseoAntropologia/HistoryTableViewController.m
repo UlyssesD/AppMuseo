@@ -18,9 +18,40 @@
 
 -(NSArray *)content
 {
+    ////////////////////
+    NSArray *sysPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory ,NSUserDomainMask, YES);
+    
+    NSString *documentsDirectory = [sysPaths objectAtIndex:0];
+    
+    NSString *filePath = [documentsDirectory stringByAppendingPathComponent:@"Prenotazioni.plist"];
+    NSLog(@"Plist File Path: %@", filePath);
+    
+    NSArray *plistDict;
+    
+    if ([[NSFileManager defaultManager] fileExistsAtPath:filePath])
+        
+    {
+        plistDict = [[NSArray alloc] initWithContentsOfFile:filePath];
+        
+    }
+    
+    else
+        
+    {
+        plistDict = [[NSArray alloc] init];
+        
+    }
+
+    NSLog(@"plist data: %@", [plistDict description]);
+    /////////////////////
+    
+    /*
     if (!_content) {
         _content = [[NSArray alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Prenotazioni" ofType:@"plist"]];
-    }
+    }*/
+    
+    _content=plistDict;
+    
     return _content;
 }
 - (id)initWithStyle:(UITableViewStyle)style

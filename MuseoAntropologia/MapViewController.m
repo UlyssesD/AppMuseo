@@ -6,32 +6,35 @@
 //  Copyright (c) 2014 Appcoda. All rights reserved.
 //
 
-#import "MapTableViewController.h"
+#import "MapViewController.h"
+#import "MapAnnotation.h"
 
-@interface MapTableViewController ()
+@interface MapViewController ()
 
 @end
 
-@implementation MapTableViewController
+@implementation MapViewController
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
+
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    MKCoordinateRegion region;
+    region.center.latitude = 41.90418398082423;
+    region.center.longitude = 12.516314122962171;
+    region.span.longitudeDelta = 0.01;
+    region.span.latitudeDelta =0.01;
+    [_mapView setRegion:region animated:YES];
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    MapAnnotation *museoAnnotation = [MapAnnotation alloc];
+    museoAnnotation.coordinate=region.center;
+    museoAnnotation.title=@"Museo di Antropologia";
+
+    [self.mapView addAnnotation:museoAnnotation];
+    
 }
 
 - (void)didReceiveMemoryWarning
