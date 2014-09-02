@@ -208,8 +208,8 @@
 		4A81459D19826E6F006FB54E /* timeline_blu_end.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = timeline_blu_end.png; sourceTree = "<group>"; };
 		4A81459E19826E6F006FB54E /* timeline_red_end.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = timeline_red_end.png; sourceTree = "<group>"; };
 		4A81459F19826E6F006FB54E /* timeline_top.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = timeline_top.png; sourceTree = "<group>"; };
-		4A947BAA19B607E9001BC0D8 /* CalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
-		4A947BAB19B607E9001BC0D8 /* CalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarViewController.m; sourceTree = "<group>"; };
+		4A947BAA19B607E9001BC0D8 /* CalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CalendarViewController.h; path = ../CalendarViewController.h; sourceTree = "<group>"; };
+		4A947BAB19B607E9001BC0D8 /* CalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CalendarViewController.m; path = ../CalendarViewController.m; sourceTree = "<group>"; };
 		4AA577B5198290DE009C0F9B /* PrenotazioneTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrenotazioneTableViewController.h; sourceTree = "<group>"; };
 		4AA577B6198290DE009C0F9B /* PrenotazioneTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrenotazioneTableViewController.m; sourceTree = "<group>"; };
 		4AA93E2B19866102002B883A /* NotesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotesTableViewController.h; sourceTree = "<group>"; };
@@ -337,8 +337,6 @@
 		F4EECF05177C99F400778578 = {
 			isa = PBXGroup;
 			children = (
-				4A947BAA19B607E9001BC0D8 /* CalendarViewController.h */,
-				4A947BAB19B607E9001BC0D8 /* CalendarViewController.m */,
 				F4EECF17177C99F400778578 /* MuseoAntropologia */,
 				F4EECF10177C99F400778578 /* Frameworks */,
 				F4EECF0F177C99F400778578 /* Products */,
@@ -373,6 +371,8 @@
 			isa = PBXGroup;
 			children = (
 				F4EECF29177C99F400778578 /* MainStoryboard.storyboard */,
+				4A947BAA19B607E9001BC0D8 /* CalendarViewController.h */,
+				4A947BAB19B607E9001BC0D8 /* CalendarViewController.m */,
 				4ADB659419869A3200714E7C /* ComeRaggiungerciTableViewController.h */,
 				4ADB659519869A3200714E7C /* ComeRaggiungerciTableViewController.m */,
 				4A81455719826B57006FB54E /* AnotherTableViewController.h */,
