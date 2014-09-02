@@ -113,6 +113,9 @@
     [d setDateFormat:@"yyyy-MM-dd"];
     NSString *dataSelected = [d stringFromDate:_dayAsDate];
     
+    NSDate *now = [NSDate date];
+    
+    
     if (self.selectionState == DSLCalendarDayViewNotSelected) {
         if (self.isInCurrentMonth) {
             for (int i=0;i<jsonArray.count;i++)
@@ -163,7 +166,10 @@
                 break;
                 
             case DSLCalendarDayViewWholeSelection:
-                [[[UIImage imageNamed:@"DSLCalendarDaySelection"] resizableImageWithCapInsets:UIEdgeInsetsMake(20, 20, 20, 20)] drawInRect:self.bounds];
+                
+                [[UIColor colorWithRed:(4/255.0) green:(157/255.0) blue:(248/255.0) alpha:1.0] setFill]; //sitema
+                UIRectFill(self.bounds);
+                /*[[[UIImage imageNamed:@"DSLCalendarDaySelection"] resizableImageWithCapInsets:UIEdgeInsetsMake(20, 20, 20, 20)] drawInRect:self.bounds];*/
                 break;
         }
     }
