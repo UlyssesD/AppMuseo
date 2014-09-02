@@ -32,7 +32,7 @@
 
 #import "DSLCalendarDayView.h"
 #import "NSDate+DSLCalendarView.h"
-#import "CalendarTableViewController.h"
+#import "CalendarViewController.h"
 
 
 @interface DSLCalendarDayView ()
