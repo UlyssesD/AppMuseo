@@ -85,13 +85,18 @@ NSMutableArray *jsonArray;
                                       cancelButtonTitle:nil
                                       destructiveButtonTitle:nil
                                       otherButtonTitles: nil];
+        NSDate *now = [NSDate date];
+        
+        if ( [now compare:_date] == NSOrderedAscending 	) {
+            
         
         if ([controlla isEqual:@"full"])
         {
             
-            [actionSheet addButtonWithTitle:@"Annulla"];
+            //[actionSheet addButtonWithTitle:@"Annulla"];
+            //actionSheet.cancelButtonIndex = actionSheet.numberOfButtons-1;
             
-            actionSheet.cancelButtonIndex = actionSheet.numberOfButtons-1;
+            return;
         }
         else if ([controlla isEqual:@"Mattina"])
         {
@@ -120,7 +125,8 @@ NSMutableArray *jsonArray;
         
 
         [actionSheet showInView:self.view];
-    }
+            }
+        }
     else {
         NSLog( @"No selection" );
     }
