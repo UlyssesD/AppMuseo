@@ -67,7 +67,7 @@
 {
     [super viewDidLoad];
     
-    self.title = @"Riepilogo Prenotazioni";
+    self.title = @"Promemoria Prenotazioni";
     CGRect frame = CGRectMake(0, 0, 100, 44);
     UILabel *label = [[UILabel alloc] initWithFrame:frame];
     label.backgroundColor = [UIColor clearColor];
@@ -81,7 +81,7 @@
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    //self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
 }
 
