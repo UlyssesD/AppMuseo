@@ -9,6 +9,7 @@
 #import "CalendarViewController.h"
 #import "DSLCalendarView.h"
 #import "DataSetTableViewController.h"
+#import "FPPopoverController.h"
 
 @interface CalendarViewController ()
 @property (strong, nonatomic) IBOutlet DSLCalendarView *calendar;
@@ -50,6 +51,23 @@ NSMutableArray *jsonArray;
     NSData *data = [NSData dataWithContentsOfURL:url];
     jsonArray = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
     // Do any additional setup after loading the view.
+}
+
+-(IBAction)buttonClicked:(UIButton*)okButton
+{
+    //the view controller you want to present as popover
+    UIViewController *controller = [[UIViewController alloc] init];
+    //our popover
+    FPPopoverController *popover = [[FPPopoverController alloc] initWithViewController:controller];
+    popover.border = NO;
+    popover.tint = FPPopoverWhiteTint;
+    popover.alpha = 0.7;
+    
+    //the popover will be presented from the okButton view
+    [popover presentPopoverFromView:okButton];
+    
+    //no release (ARC enable)
+    //[controller release];
 }
 
 - (void)didReceiveMemoryWarning
