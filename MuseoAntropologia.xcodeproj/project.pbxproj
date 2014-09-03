@@ -56,6 +56,9 @@
 		1BD1AB67197F0A2B0069C6F7 /* Saccopastore 2.obj in Resources */ = {isa = PBXBuildFile; fileRef = 1BD1AB5D197F0A2B0069C6F7 /* Saccopastore 2.obj */; };
 		1BF54B9619802762001CAF82 /* LogoMB.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1BF54B9519802762001CAF82 /* LogoMB.jpg */; };
 		22FD89C519B5ED7000F17435 /* internoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22FD89C419B5ED7000F17435 /* internoViewController.m */; };
+		4A5AE7C719B723AC00FCA06A /* FPPopoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5AE7C219B723AC00FCA06A /* FPPopoverController.m */; };
+		4A5AE7C819B723AC00FCA06A /* FPPopoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5AE7C419B723AC00FCA06A /* FPPopoverView.m */; };
+		4A5AE7C919B723AC00FCA06A /* FPTouchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5AE7C619B723AC00FCA06A /* FPTouchView.m */; };
 		4A81455B19826B57006FB54E /* AnotherTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A81455819826B57006FB54E /* AnotherTableViewController.m */; };
 		4A81457D19826B94006FB54E /* DSLCalendarDayCalloutView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A81455F19826B94006FB54E /* DSLCalendarDayCalloutView.m */; };
 		4A81457E19826B94006FB54E /* DSLCalendarDayCalloutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A81456019826B94006FB54E /* DSLCalendarDayCalloutView.xib */; };
@@ -172,6 +175,13 @@
 		1BF54B9519802762001CAF82 /* LogoMB.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = LogoMB.jpg; sourceTree = "<group>"; };
 		22FD89C319B5ED7000F17435 /* internoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = internoViewController.h; sourceTree = "<group>"; };
 		22FD89C419B5ED7000F17435 /* internoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = internoViewController.m; sourceTree = "<group>"; };
+		4A5AE7C019B723AC00FCA06A /* ARCMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARCMacros.h; sourceTree = "<group>"; };
+		4A5AE7C119B723AC00FCA06A /* FPPopoverController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPPopoverController.h; sourceTree = "<group>"; };
+		4A5AE7C219B723AC00FCA06A /* FPPopoverController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPPopoverController.m; sourceTree = "<group>"; };
+		4A5AE7C319B723AC00FCA06A /* FPPopoverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPPopoverView.h; sourceTree = "<group>"; };
+		4A5AE7C419B723AC00FCA06A /* FPPopoverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPPopoverView.m; sourceTree = "<group>"; };
+		4A5AE7C519B723AC00FCA06A /* FPTouchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPTouchView.h; sourceTree = "<group>"; };
+		4A5AE7C619B723AC00FCA06A /* FPTouchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPTouchView.m; sourceTree = "<group>"; };
 		4A81455719826B57006FB54E /* AnotherTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AnotherTableViewController.h; path = ../AnotherTableViewController.h; sourceTree = "<group>"; };
 		4A81455819826B57006FB54E /* AnotherTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AnotherTableViewController.m; path = ../AnotherTableViewController.m; sourceTree = "<group>"; };
 		4A81455E19826B94006FB54E /* DSLCalendarDayCalloutView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSLCalendarDayCalloutView.h; sourceTree = "<group>"; };
@@ -288,6 +298,21 @@
 			name = Crani;
 			sourceTree = "<group>";
 		};
+		4A5AE7BF19B723AC00FCA06A /* FPPopover */ = {
+			isa = PBXGroup;
+			children = (
+				4A5AE7C019B723AC00FCA06A /* ARCMacros.h */,
+				4A5AE7C119B723AC00FCA06A /* FPPopoverController.h */,
+				4A5AE7C219B723AC00FCA06A /* FPPopoverController.m */,
+				4A5AE7C319B723AC00FCA06A /* FPPopoverView.h */,
+				4A5AE7C419B723AC00FCA06A /* FPPopoverView.m */,
+				4A5AE7C519B723AC00FCA06A /* FPTouchView.h */,
+				4A5AE7C619B723AC00FCA06A /* FPTouchView.m */,
+			);
+			name = FPPopover;
+			path = ../Pippo;
+			sourceTree = "<group>";
+		};
 		4A81455D19826B94006FB54E /* DSLCalendarView */ = {
 			isa = PBXGroup;
 			children = (
@@ -373,8 +398,6 @@
 				F4EECF29177C99F400778578 /* MainStoryboard.storyboard */,
 				4A947BAA19B607E9001BC0D8 /* CalendarViewController.h */,
 				4A947BAB19B607E9001BC0D8 /* CalendarViewController.m */,
-				4ADB659419869A3200714E7C /* ComeRaggiungerciTableViewController.h */,
-				4ADB659519869A3200714E7C /* ComeRaggiungerciTableViewController.m */,
 				4A81455719826B57006FB54E /* AnotherTableViewController.h */,
 				4A81455819826B57006FB54E /* AnotherTableViewController.m */,
 				1BB790F8197FC07400DC42E9 /* BDAppDelegate.h */,
@@ -439,6 +462,7 @@
 		F4EECF34177C9A1E00778578 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				4A5AE7BF19B723AC00FCA06A /* FPPopover */,
 				4A81455D19826B94006FB54E /* DSLCalendarView */,
 				F4D9AD1D1871725500E2D912 /* SWRevealViewController.h */,
 				F4D9AD1E1871725500E2D912 /* SWRevealViewController.m */,
@@ -632,6 +656,7 @@
 				4A81457D19826B94006FB54E /* DSLCalendarDayCalloutView.m in Sources */,
 				11A2F95519AE3F2C00AEF093 /* MapAnnotation.m in Sources */,
 				F4EECF22177C99F400778578 /* AppDelegate.m in Sources */,
+				4A5AE7C819B723AC00FCA06A /* FPPopoverView.m in Sources */,
 				1BAE81E1196ECF640060EA98 /* ContattiViewController.m in Sources */,
 				F4EECF2E177C99F400778578 /* MainViewController.m in Sources */,
 				4A81459319826B94006FB54E /* NSDate+DSLCalendarView.m in Sources */,
@@ -646,6 +671,8 @@
 				1B3635EA195AE1C000B221DD /* CreditsViewController.m in Sources */,
 				4A81455B19826B57006FB54E /* AnotherTableViewController.m in Sources */,
 				4ACEDA53198295E600B2B7F4 /* CompleteViewController.m in Sources */,
+				4A5AE7C919B723AC00FCA06A /* FPTouchView.m in Sources */,
+				4A5AE7C719B723AC00FCA06A /* FPPopoverController.m in Sources */,
 				4A947BAC19B607E9001BC0D8 /* CalendarViewController.m in Sources */,
 				1B6985B2197C15F3004023FF /* TourVirtualeTableViewController.m in Sources */,
 			);
