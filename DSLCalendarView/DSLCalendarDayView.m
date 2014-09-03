@@ -129,18 +129,18 @@
                     
                     if ([slotJson  isEqual: @"full"])
                     {
-                        [[UIColor colorWithRed:(255/255.0) green:(51/255.0) blue:(51/255.0) alpha:1.0] setFill]; //ROSSO
+                        [[UIColor colorWithRed:(255/255.0) green:(83/255.0) blue:(60/255.0) alpha:1.0] setFill]; //ROSSO
                         break;
                     }
                     else if([slotJson  isEqual: @"Mattina"] || [slotJson  isEqual: @"Pomeriggio"])
                     {
-                        [[UIColor colorWithRed:(255/255.0) green:(255/255.0) blue:(102/255.0) alpha:1.0] setFill]; //GIALLO
+                        [[UIColor colorWithRed:(249/255.0) green:(205/255.0) blue:(54/255.0) alpha:1.0] setFill]; //GIALLO
                         break;
                     }
                     
                 }
                 else
-                    [[UIColor colorWithRed:(178/255.0) green:(255/255.0) blue:(102/255.0) alpha:1.0] setFill]; //VERDE
+                    [[UIColor colorWithRed:(156/255.0) green:(229/255.0) blue:(92/255.0) alpha:1.0] setFill]; //VERDE
                 
             }
         }
@@ -167,7 +167,7 @@
                 
             case DSLCalendarDayViewWholeSelection:
                 if([now compare:_dayAsDate] == NSOrderedAscending){
-                    [[UIColor colorWithRed:(4/255.0) green:(157/255.0) blue:(248/255.0) alpha:1.0] setFill]; //sitema
+                    [[UIColor colorWithRed:(4/255.0) green:(157/255.0) blue:(248/255.0) alpha:1.0] setFill]; //sistema
                     UIRectFill(self.bounds);
                     /*[[[UIImage imageNamed:@"DSLCalendarDaySelection"] resizableImageWithCapInsets:UIEdgeInsetsMake(20, 20, 20, 20)] drawInRect:self.bounds];*/
                     break;

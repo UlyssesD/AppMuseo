@@ -93,6 +93,7 @@
 		4ACEDA53198295E600B2B7F4 /* CompleteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACEDA52198295E600B2B7F4 /* CompleteViewController.m */; };
 		4ACEDA551982B11000B2B7F4 /* Prenotazioni.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4ACEDA541982B11000B2B7F4 /* Prenotazioni.plist */; };
 		4ACEDA581982B65500B2B7F4 /* HistoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACEDA571982B65500B2B7F4 /* HistoryTableViewController.m */; };
+		4ADAC2A719B757EA002476CD /* LegendaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADAC2A619B757EA002476CD /* LegendaViewController.m */; };
 		4ADB659819869DCC00714E7C /* piano_terra_img2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4ADB659719869DCC00714E7C /* piano_terra_img2.jpg */; };
 		4ADB659B19869FF500714E7C /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADB659A19869FF500714E7C /* MapViewController.m */; };
 		F4D9AD1F1871725500E2D912 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D9AD1E1871725500E2D912 /* SWRevealViewController.m */; };
@@ -231,6 +232,8 @@
 		4ACEDA541982B11000B2B7F4 /* Prenotazioni.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Prenotazioni.plist; sourceTree = "<group>"; };
 		4ACEDA561982B65500B2B7F4 /* HistoryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryTableViewController.h; sourceTree = "<group>"; };
 		4ACEDA571982B65500B2B7F4 /* HistoryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryTableViewController.m; sourceTree = "<group>"; };
+		4ADAC2A519B757EA002476CD /* LegendaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LegendaViewController.h; path = ../LegendaViewController.h; sourceTree = "<group>"; };
+		4ADAC2A619B757EA002476CD /* LegendaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LegendaViewController.m; path = ../LegendaViewController.m; sourceTree = "<group>"; };
 		4ADB659719869DCC00714E7C /* piano_terra_img2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = piano_terra_img2.jpg; sourceTree = "<group>"; };
 		4ADB659919869FF500714E7C /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		4ADB659A19869FF500714E7C /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
@@ -394,6 +397,8 @@
 		F4EECF17177C99F400778578 /* MuseoAntropologia */ = {
 			isa = PBXGroup;
 			children = (
+				4ADAC2A519B757EA002476CD /* LegendaViewController.h */,
+				4ADAC2A619B757EA002476CD /* LegendaViewController.m */,
 				F4EECF29177C99F400778578 /* MainStoryboard.storyboard */,
 				4A947BAA19B607E9001BC0D8 /* CalendarViewController.h */,
 				4A947BAB19B607E9001BC0D8 /* CalendarViewController.m */,
@@ -670,6 +675,7 @@
 				1B3635EA195AE1C000B221DD /* CreditsViewController.m in Sources */,
 				4A81455B19826B57006FB54E /* AnotherTableViewController.m in Sources */,
 				4ACEDA53198295E600B2B7F4 /* CompleteViewController.m in Sources */,
+				4ADAC2A719B757EA002476CD /* LegendaViewController.m in Sources */,
 				4A5AE7C919B723AC00FCA06A /* FPTouchView.m in Sources */,
 				4A5AE7C719B723AC00FCA06A /* FPPopoverController.m in Sources */,
 				4A947BAC19B607E9001BC0D8 /* CalendarViewController.m in Sources */,
