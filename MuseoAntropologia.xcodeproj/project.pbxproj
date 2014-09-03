@@ -13,7 +13,6 @@
 		1B0FFF73197814E300D6496C /* CraniViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B0FFF72197814E300D6496C /* CraniViewController.m */; };
 		1B0FFF751978161000D6496C /* NinevehGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B0FFF741978161000D6496C /* NinevehGL.framework */; };
 		1B3635DC195ABB9700B221DD /* credits.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B3635DA195ABB9700B221DD /* credits.png */; };
-		1B3635DD195ABB9700B221DD /* museum.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B3635DB195ABB9700B221DD /* museum.png */; };
 		1B3635E2195ABBB700B221DD /* email.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B3635DE195ABBB700B221DD /* email.png */; };
 		1B3635E3195ABBB700B221DD /* focus.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B3635DF195ABBB700B221DD /* focus.png */; };
 		1B3635E4195ABBB700B221DD /* location.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B3635E0195ABBB700B221DD /* location.png */; };
@@ -373,8 +372,6 @@
 				F4EECF29177C99F400778578 /* MainStoryboard.storyboard */,
 				4A947BAA19B607E9001BC0D8 /* CalendarViewController.h */,
 				4A947BAB19B607E9001BC0D8 /* CalendarViewController.m */,
-				4ADB659419869A3200714E7C /* ComeRaggiungerciTableViewController.h */,
-				4ADB659519869A3200714E7C /* ComeRaggiungerciTableViewController.m */,
 				4A81455719826B57006FB54E /* AnotherTableViewController.h */,
 				4A81455819826B57006FB54E /* AnotherTableViewController.m */,
 				1BB790F8197FC07400DC42E9 /* BDAppDelegate.h */,
@@ -513,7 +510,7 @@
 		F4EECF06177C99F400778578 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0460;
+				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = Appcoda;
 				TargetAttributes = {
 					F4EECF0D177C99F400778578 = {
@@ -576,7 +573,6 @@
 				4A81458719826B94006FB54E /* DSLCalendar-previousMonth.png in Resources */,
 				1BD1AB66197F0A2B0069C6F7 /* Saccopastore 2.mtl in Resources */,
 				1BB790FD197FEFE900DC42E9 /* Saccopastore 1.mtl in Resources */,
-				1B3635DD195ABB9700B221DD /* museum.png in Resources */,
 				F4EECF28177C99F400778578 /* Default-568h@2x.png in Resources */,
 				1B3635DC195ABB9700B221DD /* credits.png in Resources */,
 				4A81458B19826B94006FB54E /* DSLCalendarDaySelection-left.png in Resources */,
@@ -732,7 +728,6 @@
 		F4EECF32177C99F400778578 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -755,7 +750,6 @@
 		F4EECF33177C99F400778578 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
