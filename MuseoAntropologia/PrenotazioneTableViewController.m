@@ -8,6 +8,8 @@
 
 #import "PrenotazioneTableViewController.h"
 #import "SWRevealViewController.h"
+#include<unistd.h>
+#include<netdb.h>
 @interface PrenotazioneTableViewController ()
 
 @end
@@ -95,6 +97,53 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+//- (BOOL) isConnected{
+//    char *hostname;
+//    struct hostent *hostinfo;
+//    hostname = "google.com";
+//    hostinfo = gethostbyname (hostname);
+//    if (hostinfo == NULL){
+//        NSLog(@"-> no connection!\n");
+//        // alert
+//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Connessione assente" message:@"Controlla la tua connessione prima di continuare la prenotazione" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+//        [alert show];
+//        return NO;
+//        
+//    }
+//    else{
+//        NSLog(@"-> connection established!\n");
+//        return YES;
+//    }
+//
+//}
+
+
+//controllo connessione prima di prenotazione
+- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
+    if ([identifier isEqualToString:@"prenotaora"]){
+        char *hostname;
+        struct hostent *hostinfo;
+        hostname = "google.com";
+        hostinfo = gethostbyname (hostname);
+        if (hostinfo == NULL){
+            NSLog(@"-> no connection!\n");
+            // alert
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Connessione assente" message:@"Controlla la tua connessione prima di continuare la prenotazione" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+            [alert show];
+            //blocco tasto
+            
+            
+            return NO;
+            
+        }
+        else{
+            NSLog(@"-> connection established!\n");
+            return YES;
+        }
+    }
+    return YES;
+}
 /*
 #pragma mark - Table view data source
 
