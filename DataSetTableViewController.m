@@ -55,18 +55,18 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     //self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    _notes.text = @"Ciao";
-    UIToolbar* numberToolbar = [[UIToolbar alloc]initWithFrame:CGRectMake(0, 0, 320, 50)];
+    _notes.text = @"";
+    /*UIToolbar* numberToolbar = [[UIToolbar alloc]initWithFrame:CGRectMake(0, 0, 320, 50)];
     numberToolbar.barStyle = UIBarStyleDefault;
     numberToolbar.items = [NSArray arrayWithObjects:
-                           [[UIBarButtonItem alloc]initWithTitle:@"Cancel" style:UIBarButtonItemStyleBordered target:self action:@selector(cancelNumberPad)],
+                           [[UIBarButtonItem alloc]initWithTitle:@"Annulla" style:UIBarButtonItemStyleBordered target:self action:@selector(cancelNumberPad)],
                            [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil],
-                           [[UIBarButtonItem alloc]initWithTitle:@"Done" style:UIBarButtonItemStyleDone target:self action:@selector(doneWithNumberPad)],
+                           [[UIBarButtonItem alloc]initWithTitle:@"Finito" style:UIBarButtonItemStyleDone target:self action:@selector(doneWithNumberPad)],
                            nil];
     [numberToolbar sizeToFit];
-    _cellulare.inputAccessoryView = numberToolbar;
+    _cellulare.inputAccessoryView = numberToolbar;*/
 }
-
+/*
 -(void)cancelNumberPad{
     [_cellulare resignFirstResponder];
     _cellulare.text = @"";
@@ -75,7 +75,7 @@
 -(void)doneWithNumberPad{
     [_cellulare resignFirstResponder];
 }
-
+*/
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -94,18 +94,21 @@
         NSDateFormatter *f = [[NSDateFormatter alloc] init];
         [f setDateFormat:@"dd MMMM yyyy"];
         NSString* fData = [f stringFromDate:_data];
-        NSString* note = ([_notes.text length] >= 150) ? ([NSString stringWithFormat: @"%@...", [_notes.text substringToIndex:147]]) : _notes.text;
+        
+        NSString* note;
+        if ([_notes.text length] == 0) note = @"Nessuna nota inserita";
+        else note = ([_notes.text length] >= 150) ? ([NSString stringWithFormat: @"Note: %@...", [_notes.text substringToIndex:147]]) : [NSString stringWithFormat: @"Note: %@", _notes.text];
         
         
         NSString* persone = ([_pNumber isEqualToString: @"scolaresca"]) ? (@"Scolaresca") : ([NSString stringWithFormat: @"Persone: %@", _pNumber]);
-        NSString *infos = [NSString stringWithFormat:@"Rivedi le informazioni: \nReferente: %@ %@\nCellulare: %@\nE-mail: %@\nData: %@ - %@\n%@\n Note: %@",
+        NSString *infos = [NSString stringWithFormat:@"Rivedi le informazioni: \nReferente: %@ %@\nCellulare: %@\nE-mail: %@\nData: %@ - %@\n%@\n\n%@",
                            _nome.text, _cognome.text, _cellulare.text, _email.text, fData, _slot, persone, note];
         UIActionSheet *actionSheet = [[UIActionSheet alloc]
                                       initWithTitle: infos
                                       delegate: self
                                       cancelButtonTitle:@"Annulla"
                                       destructiveButtonTitle:nil
-                                      otherButtonTitles:@"Salva", nil];
+                                      otherButtonTitles:@"Conferma", nil];
         
         [actionSheet showInView:self.view];
     }

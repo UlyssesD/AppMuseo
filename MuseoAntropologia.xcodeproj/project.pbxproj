@@ -181,8 +181,6 @@
 		4A5AE7C419B723AC00FCA06A /* FPPopoverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPPopoverView.m; sourceTree = "<group>"; };
 		4A5AE7C519B723AC00FCA06A /* FPTouchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPTouchView.h; sourceTree = "<group>"; };
 		4A5AE7C619B723AC00FCA06A /* FPTouchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPTouchView.m; sourceTree = "<group>"; };
-		4A5AE7CA19B741A700FCA06A /* it */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = it; path = it.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		4A5AE7CB19B741A700FCA06A /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4A5AE7CC19B7422100FCA06A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		4A81455719826B57006FB54E /* AnotherTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AnotherTableViewController.h; path = ../AnotherTableViewController.h; sourceTree = "<group>"; };
 		4A81455819826B57006FB54E /* AnotherTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AnotherTableViewController.m; path = ../AnotherTableViewController.m; sourceTree = "<group>"; };
@@ -686,7 +684,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				F4EECF1B177C99F400778578 /* en */,
-				4A5AE7CB19B741A700FCA06A /* it */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -694,7 +691,6 @@
 		F4EECF29177C99F400778578 /* MainStoryboard.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				4A5AE7CA19B741A700FCA06A /* it */,
 				4A5AE7CC19B7422100FCA06A /* en */,
 			);
 			name = MainStoryboard.storyboard;
