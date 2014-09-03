@@ -191,8 +191,8 @@ NSMutableArray *jsonArray;
     else if ([controlla isEqual:@"Mattina"]){
         switch (buttonIndex) {
             case 0:
-                NSLog(@"Clicked Mattina");
-                _turn = @"Mattina";
+                NSLog(@"Clicked Pomeriggio");
+                _turn = @"Pomeriggio";
                 [self performSegueWithIdentifier:@"Passo3" sender:self];
                 break;
         }
@@ -200,8 +200,8 @@ NSMutableArray *jsonArray;
     else if ([controlla isEqual:@"Pomeriggio"]){
         switch (buttonIndex) {
             case 0:
-                NSLog(@"Clicked Pomeriggio");
-                _turn = @"Pomeriggio";
+                NSLog(@"Clicked Mattina");
+                _turn = @"Mattina";
                 [self performSegueWithIdentifier:@"Passo3" sender:self];
                 break;
         }

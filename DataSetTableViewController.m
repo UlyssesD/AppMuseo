@@ -98,8 +98,8 @@
         
         
         NSString* persone = ([_pNumber isEqualToString: @"scolaresca"]) ? (@"Scolaresca") : ([NSString stringWithFormat: @"Persone: %@", _pNumber]);
-        NSString *infos = [NSString stringWithFormat:@"Rivedi le informazioni: \nReferente: %@ %@\nCellulare: %@\nE-mail: %@\nData: %@\n%@\n Note: %@",
-                           _nome.text, _cognome.text, _cellulare.text, _email.text, fData, persone, note];
+        NSString *infos = [NSString stringWithFormat:@"Rivedi le informazioni: \nReferente: %@ %@\nCellulare: %@\nE-mail: %@\nData: %@ - %@\n%@\n Note: %@",
+                           _nome.text, _cognome.text, _cellulare.text, _email.text, fData, _slot, persone, note];
         UIActionSheet *actionSheet = [[UIActionSheet alloc]
                                       initWithTitle: infos
                                       delegate: self
@@ -267,7 +267,7 @@
     [f setDateFormat:@"dd MMMM yyyy"];
     switch (section){
         case 0:
-            return [NSString stringWithFormat:@"  %@", [f stringFromDate:_data]];
+            return [NSString stringWithFormat:@"  %@ - %@", [f stringFromDate:_data], _slot];
             break;
         default:
             break;
