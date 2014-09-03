@@ -181,6 +181,7 @@
 		4A5AE7C419B723AC00FCA06A /* FPPopoverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPPopoverView.m; sourceTree = "<group>"; };
 		4A5AE7C519B723AC00FCA06A /* FPTouchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPTouchView.h; sourceTree = "<group>"; };
 		4A5AE7C619B723AC00FCA06A /* FPTouchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPTouchView.m; sourceTree = "<group>"; };
+		4A5AE7CC19B7422100FCA06A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		4A81455719826B57006FB54E /* AnotherTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AnotherTableViewController.h; path = ../AnotherTableViewController.h; sourceTree = "<group>"; };
 		4A81455819826B57006FB54E /* AnotherTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AnotherTableViewController.m; path = ../AnotherTableViewController.m; sourceTree = "<group>"; };
 		4A81455E19826B94006FB54E /* DSLCalendarDayCalloutView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSLCalendarDayCalloutView.h; sourceTree = "<group>"; };
@@ -248,7 +249,6 @@
 		F4EECF23177C99F400778578 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		F4EECF25177C99F400778578 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		F4EECF27177C99F400778578 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		F4EECF2A177C99F400778578 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		F4EECF2C177C99F400778578 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		F4EECF2D177C99F400778578 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		F4EECF48177DF87700778578 /* SidebarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SidebarViewController.h; sourceTree = "<group>"; };
@@ -550,6 +550,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				it,
 			);
 			mainGroup = F4EECF05177C99F400778578;
 			productRefGroup = F4EECF0F177C99F400778578 /* Products */;
@@ -690,7 +691,7 @@
 		F4EECF29177C99F400778578 /* MainStoryboard.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				F4EECF2A177C99F400778578 /* en */,
+				4A5AE7CC19B7422100FCA06A /* en */,
 			);
 			name = MainStoryboard.storyboard;
 			sourceTree = "<group>";
