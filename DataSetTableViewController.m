@@ -321,7 +321,7 @@
 - (IBAction)checkMailInput:(id)sender {
     
     if (![self isValidEmail:_email.text] && ![_email.text isEqual:@""]) {
-        //TODO : allest malformed mail
+        //allest malformed mail
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Formato email non corretto" message:@"Inserisci una mail valida per continuare" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
         [alert show];
     }
