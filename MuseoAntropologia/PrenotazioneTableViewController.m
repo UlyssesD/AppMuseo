@@ -8,8 +8,7 @@
 
 #import "PrenotazioneTableViewController.h"
 #import "SWRevealViewController.h"
-#include<unistd.h>
-#include<netdb.h>
+#import "Reachability.h"
 @interface PrenotazioneTableViewController ()
 
 @end
@@ -121,28 +120,44 @@
 //}
 
 
+
+
 //controllo connessione prima di prenotazione
 - (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
     if ([identifier isEqualToString:@"prenotaora"]){
-        char *hostname;
-        struct hostent *hostinfo;
-        hostname = "google.com";
-        hostinfo = gethostbyname (hostname);
-        if (hostinfo == NULL){
-            NSLog(@"-> no connection!\n");
+        //// Just use it ,Where you need it  (checking internet connection)
+        Reachability *reachability = [Reachability reachabilityForInternetConnection];
+        NetworkStatus internetStatus = [reachability currentReachabilityStatus];
+        
+        if (internetStatus == NotReachable){
+            NSLog(@"-> connection NOT established!\t\n");
             // alert
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Connessione assente" message:@"Controlla la tua connessione prima di continuare la prenotazione" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
             [alert show];
-            //blocco tasto
-            
-            
             return NO;
             
         }
         else{
-            NSLog(@"-> connection established!\n");
-            return YES;
+            // There is a internet connection
+            /// Do,Whatever you want
+            NSLog(@"-> connection established!\t\n");
+            NSURL *url=[NSURL URLWithString:@"http://www.sapienzaapps.it/saccopastore/checkConnessione.php"];
+            NSData *data = [NSData dataWithContentsOfURL:url];
+            NSString *pp = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+            
+            
+            if(pp != nil){
+                NSLog(@"-> connection established! YES\t\n");
+                return YES;
+            }
+            else{
+                NSLog(@"-> connection established! NO\t\n");// alert
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Connessione assente" message:@"Controlla la tua connessione prima di continuare la prenotazione" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+                [alert show];
+                return NO;
+            }
         }
+        
     }
     return YES;
 }

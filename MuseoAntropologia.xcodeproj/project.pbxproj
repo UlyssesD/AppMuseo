@@ -54,6 +54,8 @@
 		1BD1AB66197F0A2B0069C6F7 /* Saccopastore 2.mtl in Resources */ = {isa = PBXBuildFile; fileRef = 1BD1AB5C197F0A2B0069C6F7 /* Saccopastore 2.mtl */; };
 		1BD1AB67197F0A2B0069C6F7 /* Saccopastore 2.obj in Resources */ = {isa = PBXBuildFile; fileRef = 1BD1AB5D197F0A2B0069C6F7 /* Saccopastore 2.obj */; };
 		1BF54B9619802762001CAF82 /* LogoMB.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1BF54B9519802762001CAF82 /* LogoMB.jpg */; };
+		224B833619B775FA00D23CC0 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 224B833519B775FA00D23CC0 /* Reachability.m */; };
+		224B833819B7763700D23CC0 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 224B833719B7763700D23CC0 /* SystemConfiguration.framework */; };
 		22FD89C519B5ED7000F17435 /* internoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22FD89C419B5ED7000F17435 /* internoViewController.m */; };
 		4A5AE7C719B723AC00FCA06A /* FPPopoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5AE7C219B723AC00FCA06A /* FPPopoverController.m */; };
 		4A5AE7C819B723AC00FCA06A /* FPPopoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5AE7C419B723AC00FCA06A /* FPPopoverView.m */; };
@@ -172,6 +174,9 @@
 		1BD1AB5C197F0A2B0069C6F7 /* Saccopastore 2.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Saccopastore 2.mtl"; sourceTree = "<group>"; };
 		1BD1AB5D197F0A2B0069C6F7 /* Saccopastore 2.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Saccopastore 2.obj"; sourceTree = "<group>"; };
 		1BF54B9519802762001CAF82 /* LogoMB.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = LogoMB.jpg; sourceTree = "<group>"; };
+		224B833419B775E800D23CC0 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = SOURCE_ROOT; };
+		224B833519B775FA00D23CC0 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = SOURCE_ROOT; };
+		224B833719B7763700D23CC0 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		22FD89C319B5ED7000F17435 /* internoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = internoViewController.h; sourceTree = "<group>"; };
 		22FD89C419B5ED7000F17435 /* internoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = internoViewController.m; sourceTree = "<group>"; };
 		4A5AE7C019B723AC00FCA06A /* ARCMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARCMacros.h; sourceTree = "<group>"; };
@@ -265,6 +270,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				224B833819B7763700D23CC0 /* SystemConfiguration.framework in Frameworks */,
 				1B0FFF701978147600D6496C /* OpenGLES.framework in Frameworks */,
 				1B0FFF6E1978146D00D6496C /* QuartzCore.framework in Frameworks */,
 				1BAE81DE196EC3F50060EA98 /* MessageUI.framework in Frameworks */,
@@ -378,6 +384,7 @@
 		F4EECF10177C99F400778578 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				224B833719B7763700D23CC0 /* SystemConfiguration.framework */,
 				1B0FFF741978161000D6496C /* NinevehGL.framework */,
 				1B0FFF6F1978147600D6496C /* OpenGLES.framework */,
 				1B0FFF6D1978146D00D6496C /* QuartzCore.framework */,
@@ -461,6 +468,8 @@
 		F4EECF34177C9A1E00778578 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				224B833519B775FA00D23CC0 /* Reachability.m */,
+				224B833419B775E800D23CC0 /* Reachability.h */,
 				4A5AE7BF19B723AC00FCA06A /* FPPopover */,
 				4A81455D19826B94006FB54E /* DSLCalendarView */,
 				F4D9AD1D1871725500E2D912 /* SWRevealViewController.h */,
@@ -667,6 +676,7 @@
 				4ADB659B19869FF500714E7C /* MapViewController.m in Sources */,
 				4AA577B7198290DE009C0F9B /* PrenotazioneTableViewController.m in Sources */,
 				4A81458419826B94006FB54E /* DSLCalendarView.m in Sources */,
+				224B833619B775FA00D23CC0 /* Reachability.m in Sources */,
 				1B3635EA195AE1C000B221DD /* CreditsViewController.m in Sources */,
 				4A81455B19826B57006FB54E /* AnotherTableViewController.m in Sources */,
 				4ACEDA53198295E600B2B7F4 /* CompleteViewController.m in Sources */,
