@@ -8,7 +8,16 @@
 
 #import <Foundation/Foundation.h>
 #import <MapKit/MapKit.h>
-@interface MapAnnotation : NSObject <MKAnnotation>
+#import <MapKit/MKAnnotation.h>
+
+@interface MapAnnotation : NSObject <MKAnnotation>{
+    CLLocationCoordinate2D coordinate;
+    NSString *title;
+    
+    
+}
+
+
 @property (nonatomic,assign) CLLocationCoordinate2D coordinate;
 @property (nonatomic,copy) NSString *title;
 @end

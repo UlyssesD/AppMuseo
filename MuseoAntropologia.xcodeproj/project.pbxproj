@@ -56,7 +56,6 @@
 		1BF54B9619802762001CAF82 /* LogoMB.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1BF54B9519802762001CAF82 /* LogoMB.jpg */; };
 		224B833619B775FA00D23CC0 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 224B833519B775FA00D23CC0 /* Reachability.m */; };
 		224B833819B7763700D23CC0 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 224B833719B7763700D23CC0 /* SystemConfiguration.framework */; };
-		22FD89C519B5ED7000F17435 /* internoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22FD89C419B5ED7000F17435 /* internoViewController.m */; };
 		4A5AE7C719B723AC00FCA06A /* FPPopoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5AE7C219B723AC00FCA06A /* FPPopoverController.m */; };
 		4A5AE7C819B723AC00FCA06A /* FPPopoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5AE7C419B723AC00FCA06A /* FPPopoverView.m */; };
 		4A5AE7C919B723AC00FCA06A /* FPTouchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5AE7C619B723AC00FCA06A /* FPTouchView.m */; };
@@ -177,8 +176,6 @@
 		224B833419B775E800D23CC0 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = SOURCE_ROOT; };
 		224B833519B775FA00D23CC0 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = SOURCE_ROOT; };
 		224B833719B7763700D23CC0 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		22FD89C319B5ED7000F17435 /* internoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = internoViewController.h; sourceTree = "<group>"; };
-		22FD89C419B5ED7000F17435 /* internoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = internoViewController.m; sourceTree = "<group>"; };
 		4A5AE7C019B723AC00FCA06A /* ARCMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARCMacros.h; sourceTree = "<group>"; };
 		4A5AE7C119B723AC00FCA06A /* FPPopoverController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPPopoverController.h; sourceTree = "<group>"; };
 		4A5AE7C219B723AC00FCA06A /* FPPopoverController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPPopoverController.m; sourceTree = "<group>"; };
@@ -414,8 +411,6 @@
 				1B6985AE197C138C004023FF /* CranioTableViewCell.m */,
 				4ADB659919869FF500714E7C /* MapViewController.h */,
 				4ADB659A19869FF500714E7C /* MapViewController.m */,
-				22FD89C319B5ED7000F17435 /* internoViewController.h */,
-				22FD89C419B5ED7000F17435 /* internoViewController.m */,
 				11A2F95319AE3F2C00AEF093 /* MapAnnotation.h */,
 				11A2F95419AE3F2C00AEF093 /* MapAnnotation.m */,
 				4AA93E2B19866102002B883A /* NotesTableViewController.h */,
@@ -656,7 +651,6 @@
 				1B0FFF73197814E300D6496C /* CraniViewController.m in Sources */,
 				F4D9AD1F1871725500E2D912 /* SWRevealViewController.m in Sources */,
 				1B6985AF197C138C004023FF /* CranioTableViewCell.m in Sources */,
-				22FD89C519B5ED7000F17435 /* internoViewController.m in Sources */,
 				4A81458019826B94006FB54E /* DSLCalendarMonthSelectorView.m in Sources */,
 				F4EECF1E177C99F400778578 /* main.m in Sources */,
 				4A81457F19826B94006FB54E /* DSLCalendarDayView.m in Sources */,
