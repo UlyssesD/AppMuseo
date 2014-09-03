@@ -10,12 +10,22 @@
 #import <MapKit/MapKit.h>
 #import <MapKit/MKAnnotation.h>
 
-@interface MapViewController : UIViewController
+@interface MapViewController : UIViewController <MKMapViewDelegate>{
+    
+    IBOutlet MKMapView *mapView;
+    
+}
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
-@property (weak, nonatomic) IBOutlet MKMapView *mapView;
+@property (nonatomic, retain) IBOutlet MKMapView *mapView;
 
-- (IBAction)trovaPercorso:(id)sender;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *esterno_btn;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *interno_btn;
 
+
+
+- (IBAction)interno;
+
+- (IBAction)esterno;
 
 @end
