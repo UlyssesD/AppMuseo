@@ -80,10 +80,12 @@
     */
     NSLog(@"count: %d", [dictionary count]);
     
+    /*
     if([dictionary count] == 0){
         _history.userInteractionEnabled = NO;
         _history.textLabel.enabled = NO;
     }
+     */
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -144,6 +146,14 @@
     }
     return YES;
 }
+
+
+
+/*- (void) aggiornaVista
+{
+    NSLog(@"Dentro aggiornaVista");
+    [self.tableView reloadData];
+}*/
 /*
 #pragma mark - Table view data source
 

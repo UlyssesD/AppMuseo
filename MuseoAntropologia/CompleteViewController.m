@@ -38,6 +38,7 @@
     label.textAlignment = NSTextAlignmentCenter;
     self.navigationItem.titleView = label;
     // Do any additional setup after loading the view.
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -47,8 +48,14 @@
 }
 
 - (IBAction)closeModal:(id)sender {
+    
+    
     [_controller popToRootViewControllerAnimated:NO];
+    
+    //[_controller.presentedViewController.view reloadInputViews];
+    
     [self dismissViewControllerAnimated:YES completion:nil];
+    
     
 }
 

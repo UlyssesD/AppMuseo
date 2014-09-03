@@ -107,7 +107,16 @@
     NSDateFormatter *f = [[NSDateFormatter alloc] init];
     [f setDateFormat:@"dd MMMM yyyy"];
     cell.textLabel.text = [f stringFromDate: [[self.content objectAtIndex:indexPath.row] valueForKey:@"data"]];
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"Visita nel turno: %@", [[self.content objectAtIndex:indexPath.row] valueForKey:@"slot"]];
+    
+    NSString *person=[[self.content objectAtIndex:indexPath.row] valueForKey:@"npersone"];
+    
+    if ([person isEqualToString:@"scolaresca"]) {
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"Visita nel turno: %@ - Scolaresca", [[self.content objectAtIndex:indexPath.row] valueForKey:@"slot"]];
+        
+    }
+    else{
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"Visita nel turno: %@ - %@ persone", [[self.content objectAtIndex:indexPath.row] valueForKey:@"slot"], [[self.content objectAtIndex:indexPath.row] valueForKey:@"npersone"]];
+    }
     return cell;
 }
 

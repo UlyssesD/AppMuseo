@@ -10,6 +10,7 @@
 #import "DataSetTableViewController.h"
 #import "NotesTableViewController.h"
 
+
 @interface DataSetTableViewController ()
 @end
 
@@ -25,6 +26,7 @@
 @synthesize email = _email;
 @synthesize cellulare = _cellulare;
 @synthesize notes = _notes;
+
 
 
 
@@ -177,6 +179,7 @@
             
             [subArray setValue:_data forKey: @"data"];
             [subArray setValue:_slot forKey: @"slot"];
+            [subArray setValue:_pNumber forKey: @"npersone"];
             
             [plistDict addObject:subArray];
     
@@ -232,7 +235,7 @@
                 [self alertStatus:@"Prenotazione fallita" :@"Si è verificato un errore nella vostra prenotazione!" :0];
             }
             
-            
+           
             
             //fine codice david
             break;
