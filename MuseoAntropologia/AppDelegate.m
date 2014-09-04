@@ -51,7 +51,9 @@
 //    locked2 = true;
 //    locked3 = true;
 //    locked4 = true;
-//    locked5 = true;
+//    locked5 = true;eee
+    //test
+    
     
     
     NSLog(@"applicationDidFinishLaunching");
