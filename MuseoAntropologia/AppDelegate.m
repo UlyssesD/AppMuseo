@@ -69,14 +69,14 @@
     //Beacon 1.1
     CLBeaconRegion *region2;
     //qui si definisce la regione dei beacon, questa è quella del beacon 2.
-    region2 = [[CLBeaconRegion alloc] initWithProximityUUID:[[NSUUID alloc] initWithUUIDString:@"EBEFD083-70A2-47C8-9837-E7B5634DF524"] major: 1 minor: 1 identifier: Saccop1];
+    region2 = [[CLBeaconRegion alloc] initWithProximityUUID:[[NSUUID alloc] initWithUUIDString:@"EBEFD083-70A2-47C8-9837-E7B5634DF524"] major: 1 minor: 5 identifier: Saccop1];
     region2.notifyEntryStateOnDisplay = YES;
     [_locationManager startMonitoringForRegion:region2];
     
     //Beacon 1.2
     CLBeaconRegion *region3;
     //qui si definisce la regione dei beacon, questa è quella del beacon 3.
-    region3 = [[CLBeaconRegion alloc] initWithProximityUUID:[[NSUUID alloc] initWithUUIDString:@"EBEFD083-70A2-47C8-9837-E7B5634DF524"] major: 1 minor: 2 identifier: Saccop2];
+    region3 = [[CLBeaconRegion alloc] initWithProximityUUID:[[NSUUID alloc] initWithUUIDString:@"EBEFD083-70A2-47C8-9837-E7B5634DF524"] major: 1 minor: 0 identifier: Saccop2];
     region3.notifyEntryStateOnDisplay = YES;
     [_locationManager startMonitoringForRegion:region3];
     
@@ -84,7 +84,7 @@
     //Beacon 1.3
     CLBeaconRegion *region4;
     //qui si definisce la regione dei beacon, questa è quella del beacon 4.
-    region4 = [[CLBeaconRegion alloc] initWithProximityUUID:[[NSUUID alloc] initWithUUIDString:@"EBEFD083-70A2-47C8-9837-E7B5634DF524"] major: 1 minor: 3 identifier: Guattari];
+    region4 = [[CLBeaconRegion alloc] initWithProximityUUID:[[NSUUID alloc] initWithUUIDString:@"EBEFD083-70A2-47C8-9837-E7B5634DF524"] major: 1 minor: 3 	identifier: Guattari];
     region4.notifyEntryStateOnDisplay = YES;
     [_locationManager startMonitoringForRegion:region4];
     
