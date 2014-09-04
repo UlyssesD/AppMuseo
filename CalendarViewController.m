@@ -10,6 +10,7 @@
 #import "DSLCalendarView.h"
 #import "DataSetTableViewController.h"
 #import "FPPopoverController.h"
+#import "LegendaViewController.h"
 
 @interface CalendarViewController ()
 @property (strong, nonatomic) IBOutlet DSLCalendarView *calendar;
@@ -56,13 +57,14 @@ NSMutableArray *jsonArray;
 -(IBAction)buttonClicked:(UIButton*)okButton
 {
     //the view controller you want to present as popover
-    UIViewController *controller = [[UIViewController alloc] init];
+    LegendaViewController *controller = [[LegendaViewController alloc] init];
+    controller.title = nil;
     //our popover
     FPPopoverController *popover = [[FPPopoverController alloc] initWithViewController:controller];
-    popover.border = NO;
     popover.tint = FPPopoverWhiteTint;
-    popover.alpha = 0.7;
-    
+    popover.border = NO;
+    popover.alpha = 0.9;
+    popover.contentSize = CGSizeMake(255,125);
     //the popover will be presented from the okButton view
     [popover presentPopoverFromView:okButton];
     

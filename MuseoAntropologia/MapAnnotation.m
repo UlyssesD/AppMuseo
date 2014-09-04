@@ -10,5 +10,9 @@
 
 @implementation MapAnnotation
 
+//@synthesize coordinate, title;
+
+
+
 
 @end
