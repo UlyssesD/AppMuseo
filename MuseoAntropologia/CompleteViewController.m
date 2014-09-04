@@ -49,13 +49,34 @@
 
 - (IBAction)closeModal:(id)sender {
     
+    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+    MapViewController *dest = (MapViewController *) [storyBoard instantiateViewControllerWithIdentifier:@"MainViewController"];
     
     [_controller popToRootViewControllerAnimated:NO];
     
-    //[_controller.presentedViewController.view reloadInputViews];
+    [_controller setViewControllers: @[dest]  animated: NO ];
+    
+    
     
     [self dismissViewControllerAnimated:YES completion:nil];
     
+    
+}
+
+
+-(IBAction) pop{
+    
+    
+    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+    MapViewController *dest = (MapViewController *) [storyBoard instantiateViewControllerWithIdentifier:@"MapViewController"];
+    
+    [_controller popToRootViewControllerAnimated:NO];
+    
+    [_controller setViewControllers: @[dest]  animated: NO ];
+    
+    
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
     
 }
 
