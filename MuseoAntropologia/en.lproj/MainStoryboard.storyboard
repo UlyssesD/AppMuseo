@@ -8,7 +8,7 @@
         <!--Main View Controller - Main View Controller-->
         <scene sceneID="5">
             <objects>
-                <viewController title="Main View Controller" id="2" customClass="MainViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainViewController" title="Main View Controller" id="2" customClass="MainViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="PYS-4I-YtD"/>
                         <viewControllerLayoutGuide type="bottom" id="7dA-FR-FqZ"/>
@@ -982,106 +982,6 @@
             </objects>
             <point key="canvasLocation" x="1672" y="-2497"/>
         </scene>
-        <!--Come Raggiungerci Table View Controller - Come Raggiungerci-->
-        <scene sceneID="THu-d5-tVO">
-            <objects>
-                <tableViewController id="rma-k5-FAS" customClass="ComeRaggiungerciTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="LAe-1Z-R6U">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <sections>
-                            <tableViewSection id="Y9y-B9-jcT">
-                                <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="Zei-f4-s0v" rowHeight="44" style="IBUITableViewCellStyleDefault" id="ybT-iT-tHe">
-                                        <rect key="frame" x="0.0" y="79" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ybT-iT-tHe" id="Ke4-b1-4oO">
-                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Come raggiungere il museo" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Zei-f4-s0v">
-                                                    <rect key="frame" x="15" y="0.0" width="270" height="43"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="DI2-xN-13h" kind="push" id="fke-AH-SGX"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                            <tableViewSection headerTitle="All'interno del museo" id="Ttr-5C-DdD">
-                                <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="300" id="XZr-AD-7PG">
-                                        <rect key="frame" x="0.0" y="171" width="320" height="300"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XZr-AD-7PG" id="s7p-Vu-znT">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="299"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="piano_terra_img2.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="aDs-mr-Utz">
-                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="299"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                </imageView>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                        </sections>
-                        <connections>
-                            <outlet property="dataSource" destination="rma-k5-FAS" id="qoP-hD-DFd"/>
-                            <outlet property="delegate" destination="rma-k5-FAS" id="9lx-Qk-992"/>
-                        </connections>
-                    </tableView>
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Come Raggiungerci" id="cZM-Ch-c8C">
-                        <barButtonItem key="leftBarButtonItem" image="menu.png" id="FvT-PW-l21"/>
-                    </navigationItem>
-                    <nil key="simulatedStatusBarMetrics"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="sidebarButton" destination="FvT-PW-l21" id="1uB-QG-7fa"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="BY3-wh-hJq" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1201" y="-3198"/>
-        </scene>
-        <!--Map View Controller - Come raggiungere il museo-->
-        <scene sceneID="GfV-LB-ut5">
-            <objects>
-                <viewController id="DI2-xN-13h" customClass="MapViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="jFD-OT-J2H"/>
-                        <viewControllerLayoutGuide type="bottom" id="wea-Lg-tjN"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="HKx-eU-yyy">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="BkS-lD-Ocp">
-                                <rect key="frame" x="0.0" y="44" width="320" height="480"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            </mapView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Come raggiungere il museo" id="8Ct-hi-PvU"/>
-                    <connections>
-                        <outlet property="mapView" destination="BkS-lD-Ocp" id="q2v-gm-Dp1"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Dic-nA-d4J" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1658" y="-3198"/>
-        </scene>
         <!--Another Table View Controller - Passo 1 di 3-->
         <scene sceneID="PDY-RU-ix2">
             <objects>
@@ -1506,13 +1406,16 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="layer.borderwidth" value="1"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="pop" destination="9b1-ve-Qsv" eventType="touchUpInside" id="LEl-FK-bwW"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kHK-B0-1r9">
                                 <rect key="frame" x="20" y="315" width="280" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="Torna all'inizio">
+                                <state key="normal" title="Torna alla home">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -1541,7 +1444,7 @@
         <!--Map View Controller - map View Controller-->
         <scene sceneID="M9U-Zj-JEg">
             <objects>
-                <viewController title="map View Controller" id="6tc-si-Hkz" customClass="MapViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MapViewController" title="map View Controller" id="6tc-si-Hkz" customClass="MapViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MVR-cy-O0y"/>
                         <viewControllerLayoutGuide type="bottom" id="Bdc-OR-Mhu"/>
