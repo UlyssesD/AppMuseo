@@ -54,6 +54,7 @@
 		1BD1AB66197F0A2B0069C6F7 /* Saccopastore 2.mtl in Resources */ = {isa = PBXBuildFile; fileRef = 1BD1AB5C197F0A2B0069C6F7 /* Saccopastore 2.mtl */; };
 		1BD1AB67197F0A2B0069C6F7 /* Saccopastore 2.obj in Resources */ = {isa = PBXBuildFile; fileRef = 1BD1AB5D197F0A2B0069C6F7 /* Saccopastore 2.obj */; };
 		1BF54B9619802762001CAF82 /* LogoMB.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1BF54B9519802762001CAF82 /* LogoMB.jpg */; };
+		2215B2CF19B84C7500C79D50 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2215B2CE19B84C7500C79D50 /* icon.png */; };
 		224B833619B775FA00D23CC0 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 224B833519B775FA00D23CC0 /* Reachability.m */; };
 		224B833819B7763700D23CC0 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 224B833719B7763700D23CC0 /* SystemConfiguration.framework */; };
 		4A5AE7C719B723AC00FCA06A /* FPPopoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5AE7C219B723AC00FCA06A /* FPPopoverController.m */; };
@@ -174,6 +175,7 @@
 		1BD1AB5C197F0A2B0069C6F7 /* Saccopastore 2.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Saccopastore 2.mtl"; sourceTree = "<group>"; };
 		1BD1AB5D197F0A2B0069C6F7 /* Saccopastore 2.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Saccopastore 2.obj"; sourceTree = "<group>"; };
 		1BF54B9519802762001CAF82 /* LogoMB.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = LogoMB.jpg; sourceTree = "<group>"; };
+		2215B2CE19B84C7500C79D50 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		224B833419B775E800D23CC0 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = SOURCE_ROOT; };
 		224B833519B775FA00D23CC0 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = SOURCE_ROOT; };
 		224B833719B7763700D23CC0 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -481,6 +483,7 @@
 		F4EECF53177F37CB00778578 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				2215B2CE19B84C7500C79D50 /* icon.png */,
 				4ADB659719869DCC00714E7C /* piano_terra_img2.jpg */,
 				1BF54B9519802762001CAF82 /* LogoMB.jpg */,
 				1BB79107197FF91E00DC42E9 /* guattari_logo.png */,
@@ -626,6 +629,7 @@
 				4A81458A19826B94006FB54E /* DSLCalendarDayCallout@2x.png in Resources */,
 				F4EECF6A177F4C0200778578 /* menu.png in Resources */,
 				4A81458819826B94006FB54E /* DSLCalendar-previousMonth@2x.png in Resources */,
+				2215B2CF19B84C7500C79D50 /* icon.png in Resources */,
 				1B3635E4195ABBB700B221DD /* location.png in Resources */,
 				F4EECF6B177F4C0200778578 /* menu@2x.png in Resources */,
 				4A81458119826B94006FB54E /* DSLCalendarMonthSelectorView.xib in Resources */,
