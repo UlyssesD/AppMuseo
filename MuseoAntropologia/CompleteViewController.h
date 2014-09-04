@@ -10,5 +10,4 @@
 
 @interface CompleteViewController : UIViewController
 @property (strong, nonatomic) UINavigationController* controller;
-
 @end

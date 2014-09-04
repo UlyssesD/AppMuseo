@@ -20,6 +20,7 @@
 @synthesize data = _data;
 @synthesize slot = _slot;
 
+@synthesize info = _info;
 @synthesize submit = _submit;
 @synthesize nome = _nome;
 @synthesize cognome = _cognome;
@@ -52,23 +53,29 @@
     _submit.enabled = NO;
     _submit.userInteractionEnabled = NO;
     
+    /*UIRefreshControl *refresh = [[UIRefreshControl alloc] init];
+    refresh.attributedTitle = [[NSAttributedString alloc] initWithString:@"Pull to Refresh"];
+    [refresh addTarget:self action:@selector(refreshView:) forControlEvents:UIControlEventValueChanged];
+    self.refreshControl = refresh;
+    */
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     //self.navigationItem.rightBarButtonItem = self.editButtonItem;
     _notes.text = @"";
+    
     /*UIToolbar* numberToolbar = [[UIToolbar alloc]initWithFrame:CGRectMake(0, 0, 320, 50)];
     numberToolbar.barStyle = UIBarStyleDefault;
     numberToolbar.items = [NSArray arrayWithObjects:
-                           [[UIBarButtonItem alloc]initWithTitle:@"Annulla" style:UIBarButtonItemStyleBordered target:self action:@selector(cancelNumberPad)],
+                           [[UIBarButtonItem alloc]initWithTitle:@"Cancella" style:UIBarButtonItemStyleBordered target:self action:@selector(cancelNumberPad)],
                            [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil],
                            [[UIBarButtonItem alloc]initWithTitle:@"Finito" style:UIBarButtonItemStyleDone target:self action:@selector(doneWithNumberPad)],
                            nil];
     [numberToolbar sizeToFit];
     _cellulare.inputAccessoryView = numberToolbar;*/
 }
-/*
+
 -(void)cancelNumberPad{
     [_cellulare resignFirstResponder];
     _cellulare.text = @"";
@@ -77,7 +84,7 @@
 -(void)doneWithNumberPad{
     [_cellulare resignFirstResponder];
 }
-*/
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -108,7 +115,7 @@
         UIActionSheet *actionSheet = [[UIActionSheet alloc]
                                       initWithTitle: infos
                                       delegate: self
-                                      cancelButtonTitle:@"Annulla"
+                                      cancelButtonTitle:@"Indietro"
                                       destructiveButtonTitle:nil
                                       otherButtonTitles:@"Conferma", nil];
         
@@ -340,6 +347,7 @@
     NSPredicate *emailPredicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
     return [emailPredicate evaluateWithObject:email];
 }
+
 
 /*
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section

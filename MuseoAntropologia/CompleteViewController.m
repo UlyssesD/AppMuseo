@@ -7,6 +7,7 @@
 //
 
 #import "CompleteViewController.h"
+#import "SWRevealViewController.h"
 
 @interface CompleteViewController ()
 
@@ -38,7 +39,6 @@
     label.textAlignment = NSTextAlignmentCenter;
     self.navigationItem.titleView = label;
     // Do any additional setup after loading the view.
-    
 }
 
 - (void)didReceiveMemoryWarning

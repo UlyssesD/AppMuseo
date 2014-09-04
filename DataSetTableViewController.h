@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface DataSetTableViewController : UITableViewController <UITextFieldDelegate>
+@property (strong, nonatomic) IBOutlet UILabel *info;
     @property (weak, nonatomic) IBOutlet UIButton *submit;
     @property (strong, nonatomic) IBOutlet UITextField *nome;
     @property (strong, nonatomic) IBOutlet UITextField *cognome;
