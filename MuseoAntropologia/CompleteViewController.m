@@ -8,6 +8,7 @@
 
 #import "CompleteViewController.h"
 #import "SWRevealViewController.h"
+#import "MapViewController.h"
 
 @interface CompleteViewController ()
 
