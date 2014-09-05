@@ -249,24 +249,34 @@
         //NOTIFICA BEACON ALL'ENTRATA - 1 AL MESE
         
         NSDate *fromDateTime = (NSDate *)[defaults objectForKey:@"dataUltimaNotificaEntrata"];
-        NSDate *toDateTime = [NSDate date];
         
-        //diff
-        NSDate *fromDate;
-        NSDate *toDate;
+        NSInteger day = 0;
         
-        NSCalendar *calendar = [NSCalendar currentCalendar];
+        if(fromDateTime != nil){
+            
+            NSLog(@"fromdate: %@", fromDateTime);
+            
+            NSDate *toDateTime = [NSDate date];
+            
+            //diff
+            NSDate *fromDate;
+            NSDate *toDate;
+            
+            NSCalendar *calendar = [NSCalendar currentCalendar];
+            
+            [calendar rangeOfUnit:NSDayCalendarUnit startDate:&fromDate
+                         interval:NULL forDate:fromDateTime];
+            [calendar rangeOfUnit:NSDayCalendarUnit startDate:&toDate
+                         interval:NULL forDate:toDateTime];
+            
+            NSDateComponents *difference = [calendar components:NSDayCalendarUnit
+                                                       fromDate:fromDate toDate:toDate options:0];
+            
+            
+            day = [difference day];
+        }
         
-        [calendar rangeOfUnit:NSDayCalendarUnit startDate:&fromDate
-                     interval:NULL forDate:fromDateTime];
-        [calendar rangeOfUnit:NSDayCalendarUnit startDate:&toDate
-                     interval:NULL forDate:toDateTime];
-        
-        NSDateComponents *difference = [calendar components:NSDayCalendarUnit
-                                                   fromDate:fromDate toDate:toDate options:0];
-        
-        
-        NSInteger day = [difference day];
+        //NSLog(@"giorni diff :%d", day);
         
         if([region.identifier isEqualToString:Entrata] && (day  > 30) /*TODO:CHECK DATA*/)
         {
