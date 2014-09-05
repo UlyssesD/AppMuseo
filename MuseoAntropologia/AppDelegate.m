@@ -289,6 +289,7 @@
                 localNotif.alertBody = [[NSString alloc] initWithFormat:@"Sei arrivato davanti al museo di antropologia della Sapienza!"];
                 localNotif.alertAction = NSLocalizedString(@"Ok", nil);
                 localNotif.applicationIconBadgeNumber = [[UIApplication sharedApplication] applicationIconBadgeNumber]+1;
+                
                 [[UIApplication sharedApplication] presentLocalNotificationNow:localNotif];
             }
             
@@ -315,23 +316,23 @@
     }
 }
 
-- (NSInteger)daysBetweenDate:(NSDate*)fromDateTime andDate:(NSDate*)toDateTime
-{
-    NSDate *fromDate;
-    NSDate *toDate;
-    
-    NSCalendar *calendar = [NSCalendar currentCalendar];
-    
-    [calendar rangeOfUnit:NSDayCalendarUnit startDate:&fromDate
-                 interval:NULL forDate:fromDateTime];
-    [calendar rangeOfUnit:NSDayCalendarUnit startDate:&toDate
-                 interval:NULL forDate:toDateTime];
-    
-    NSDateComponents *difference = [calendar components:NSDayCalendarUnit
-                                               fromDate:fromDate toDate:toDate options:0];
-    
-    return [difference day];
-}
+//- (NSInteger)daysBetweenDate:(NSDate*)fromDateTime andDate:(NSDate*)toDateTime
+//{
+//    NSDate *fromDate;
+//    NSDate *toDate;
+//    
+//    NSCalendar *calendar = [NSCalendar currentCalendar];
+//    
+//    [calendar rangeOfUnit:NSDayCalendarUnit startDate:&fromDate
+//                 interval:NULL forDate:fromDateTime];
+//    [calendar rangeOfUnit:NSDayCalendarUnit startDate:&toDate
+//                 interval:NULL forDate:toDateTime];
+//    
+//    NSDateComponents *difference = [calendar components:NSDayCalendarUnit
+//                                               fromDate:fromDate toDate:toDate options:0];
+//    
+//    return [difference day];
+//}
 
 
 - (void)locationManager:(CLLocationManager *)manager didRangeBeacons:(NSArray *)beacons inRegion:(CLBeaconRegion *)region
@@ -343,6 +344,7 @@
 -(void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
 {
     application.applicationIconBadgeNumber = 0;//badge notifiche beacon trovati
+    
     
 //    
 //    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"MainStoryboard"
