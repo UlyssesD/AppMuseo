@@ -102,6 +102,13 @@
     region5.notifyEntryStateOnDisplay = YES;
     [_locationManager startMonitoringForRegion:region5];
     
+    //Beacon 1.6 - BEACON ENTRATA MUSEO
+    CLBeaconRegion *region6;
+    //qui si definisce la regione dei beacon, questa è quella del beacon 5.
+    region6 = [[CLBeaconRegion alloc] initWithProximityUUID:[[NSUUID alloc] initWithUUIDString:@"14A184BD-26B6-4D40-B14E-DEF5EB92B3DA"] major: 1 minor: 6 	identifier:Entrata ];
+    region6.notifyEntryStateOnDisplay = YES;
+    [_locationManager startMonitoringForRegion:region6];
+    
     
     //    UILocalNotification *localNotification = [launchOptions objectForKey:UIApplicationLaunchOptionsLocalNotificationKey];
     //    if(localNotification)
@@ -221,7 +228,7 @@
         }
         
         
-        //SBLOCCO GUATTARI
+        //SBLOCCO MAIELLA
         if([region.identifier isEqualToString:Maiella] && [[NSUserDefaults standardUserDefaults] boolForKey:@"locked5"])
         {
             //test alert in background
@@ -235,7 +242,49 @@
                 localNotif.applicationIconBadgeNumber = [[UIApplication sharedApplication] applicationIconBadgeNumber]+1;
                 [[UIApplication sharedApplication] presentLocalNotificationNow:localNotif];
             }
-            [defaults setBool:NO forKey:@"locked5                                                                                        "];
+            [defaults setBool:NO forKey:@"locked5"];
+            [defaults synchronize];
+        }
+        
+        //NOTIFICA BEACON ALL'ENTRATA - 1 AL MESE
+        
+        NSDate *fromDateTime = (NSDate *)[defaults objectForKey:@"dataUltimaNotificaEntrata"];
+        NSDate *toDateTime = [NSDate date];
+        
+        //diff
+        NSDate *fromDate;
+        NSDate *toDate;
+        
+        NSCalendar *calendar = [NSCalendar currentCalendar];
+        
+        [calendar rangeOfUnit:NSDayCalendarUnit startDate:&fromDate
+                     interval:NULL forDate:fromDateTime];
+        [calendar rangeOfUnit:NSDayCalendarUnit startDate:&toDate
+                     interval:NULL forDate:toDateTime];
+        
+        NSDateComponents *difference = [calendar components:NSDayCalendarUnit
+                                                   fromDate:fromDate toDate:toDate options:0];
+        
+        
+        NSInteger day = [difference day];
+        
+        if([region.identifier isEqualToString:Entrata] && (day  > 30) /*TODO:CHECK DATA*/)
+        {
+            //test alert in background
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sei arrivato davanti al museo di antropologia della Sapienza"  message:@"Entra a visitare il  museo!" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+            [alert show];
+            
+            UILocalNotification *localNotif = [[UILocalNotification alloc] init];
+            if (localNotif) {
+                localNotif.alertBody = [[NSString alloc] initWithFormat:@"Sei arrivato davanti al museo di antropologia della Sapienza!"];
+                localNotif.alertAction = NSLocalizedString(@"Ok", nil);
+                localNotif.applicationIconBadgeNumber = [[UIApplication sharedApplication] applicationIconBadgeNumber]+1;
+                [[UIApplication sharedApplication] presentLocalNotificationNow:localNotif];
+            }
+            
+            //aggiorno data ultima notifica
+            NSDate *now = [NSDate date];
+            [defaults setObject:now forKey:@"dataUltimaNotificaEntrata"];
             [defaults synchronize];
         }
         
@@ -256,6 +305,25 @@
     }
 }
 
+- (NSInteger)daysBetweenDate:(NSDate*)fromDateTime andDate:(NSDate*)toDateTime
+{
+    NSDate *fromDate;
+    NSDate *toDate;
+    
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    
+    [calendar rangeOfUnit:NSDayCalendarUnit startDate:&fromDate
+                 interval:NULL forDate:fromDateTime];
+    [calendar rangeOfUnit:NSDayCalendarUnit startDate:&toDate
+                 interval:NULL forDate:toDateTime];
+    
+    NSDateComponents *difference = [calendar components:NSDayCalendarUnit
+                                               fromDate:fromDate toDate:toDate options:0];
+    
+    return [difference day];
+}
+
+
 - (void)locationManager:(CLLocationManager *)manager didRangeBeacons:(NSArray *)beacons inRegion:(CLBeaconRegion *)region
 {
     // I commented out the line below because otherwise you see this every second in the logs
@@ -266,18 +334,18 @@
 {
     application.applicationIconBadgeNumber = 0;//badge notifiche beacon trovati
     
-    
-    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"MainStoryboard"
-                                                             bundle: nil];
-    
-    TourVirtualeTableViewController *controller = (TourVirtualeTableViewController *) [mainStoryboard
-                                                                                       instantiateViewControllerWithIdentifier: @"craniView"];
-    
-    
-    UINavigationController *pp = self.window.rootViewController.navigationController;
-    
-    [pp setViewControllers:@[controller] animated:NO];
-    [pp        dismissViewControllerAnimated:YES completion:nil];
+//    
+//    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"MainStoryboard"
+//                                                             bundle: nil];
+//    
+//    TourVirtualeTableViewController *controller = (TourVirtualeTableViewController *) [mainStoryboard
+//                                                                                       instantiateViewControllerWithIdentifier: @"craniView"];
+//    
+//    
+//    UINavigationController *pp = self.window.rootViewController.navigationController;
+//    
+//    [pp setViewControllers:@[controller] animated:NO];
+//    [pp        dismissViewControllerAnimated:YES completion:nil];
     
     
     //save the root view controller

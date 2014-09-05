@@ -11,6 +11,7 @@ extern NSString * const Saccop1;
 extern NSString * const Saccop2;
 extern NSString * const Guattari;
 extern NSString * const Maiella;
+extern NSString * const Entrata;
 
 extern NSString * const phoneNumber;
 

@@ -12,6 +12,7 @@ NSString * const Saccop1 = @"Saccopastore 1";
 NSString * const Saccop2 = @"Saccopastore 2";
 NSString * const Guattari = @"Guattari";
 NSString * const Maiella = @"Maiella";
+NSString * const Entrata = @"Entrata";
 
 NSString * const phoneNumber = @"0649912495";
 
