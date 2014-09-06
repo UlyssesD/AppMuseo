@@ -142,7 +142,7 @@
             NSLog(@"PostData: %@",post);
             
             NSURL *url=[NSURL URLWithString:@"http://www.sapienzaapps.it/saccopastore/insertReservation.php"];
-            NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
+            NSData *postData = [post dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:YES];
             NSString *postLength = [NSString stringWithFormat:@"%lu", (unsigned long)[postData length]];
             
             NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
