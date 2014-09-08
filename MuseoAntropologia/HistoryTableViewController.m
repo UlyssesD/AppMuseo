@@ -105,8 +105,8 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     NSDateFormatter *f = [[NSDateFormatter alloc] init];
-    [f setDateFormat:@"dd MMMM yyyy"];
-    cell.textLabel.text = [f stringFromDate: [[self.content objectAtIndex:indexPath.row] valueForKey:@"data"]];
+    [f setDateFormat:@"EEEE dd MMMM yyyy"];
+    cell.textLabel.text = [[f stringFromDate: [[self.content objectAtIndex:indexPath.row] valueForKey:@"data"]] capitalizedString];
     
     NSString *person=[[self.content objectAtIndex:indexPath.row] valueForKey:@"npersone"];
     

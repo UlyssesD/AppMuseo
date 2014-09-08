@@ -10,12 +10,11 @@
 #import "DataSetTableViewController.h"
 #import "NotesTableViewController.h"
 
-
 @interface DataSetTableViewController ()
+    @property BOOL firstLaunch;
 @end
 
 @implementation DataSetTableViewController
-
 @synthesize pNumber = _pNumber;
 @synthesize data = _data;
 @synthesize slot = _slot;
@@ -36,7 +35,8 @@
 {
     self = [super initWithStyle:style];
     if (self) {
-        // Custom initialization
+
+        
     }
     return self;
 }
@@ -53,16 +53,6 @@
     _submit.enabled = NO;
     _submit.userInteractionEnabled = NO;
     
-    /*UIRefreshControl *refresh = [[UIRefreshControl alloc] init];
-    refresh.attributedTitle = [[NSAttributedString alloc] initWithString:@"Pull to Refresh"];
-    [refresh addTarget:self action:@selector(refreshView:) forControlEvents:UIControlEventValueChanged];
-    self.refreshControl = refresh;
-    */
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    //self.navigationItem.rightBarButtonItem = self.editButtonItem;
     _notes.text = @"";
     
     /*UIToolbar* numberToolbar = [[UIToolbar alloc]initWithFrame:CGRectMake(0, 0, 320, 50)];
@@ -74,8 +64,11 @@
                            nil];
     [numberToolbar sizeToFit];
     _cellulare.inputAccessoryView = numberToolbar;*/
+    
+   [self addInfoMessage];
 }
 
+/*
 -(void)cancelNumberPad{
     [_cellulare resignFirstResponder];
     _cellulare.text = @"";
@@ -83,6 +76,25 @@
 
 -(void)doneWithNumberPad{
     [_cellulare resignFirstResponder];
+}
+*/
+
+- (void) addInfoMessage{
+    UIBarButtonItem *message = [[UIBarButtonItem alloc]initWithTitle:@"Trascina verso il basso per chiudere" style:UIBarButtonItemStylePlain target:self action:nil];
+    message.enabled = NO;
+    UIToolbar* infoToolbar = [[UIToolbar alloc]initWithFrame:CGRectMake(0, 0, 320, 40)];
+    infoToolbar.barStyle = UIBarStyleDefault;
+    infoToolbar.items = [NSArray arrayWithObjects:
+                         [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil],
+                         message,
+                         [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil],
+                         nil];
+    [infoToolbar sizeToFit];
+    //infoToolbar.alpha = 0.7;
+    _nome.inputAccessoryView = infoToolbar;
+    _cognome.inputAccessoryView = infoToolbar;
+    _email.inputAccessoryView = infoToolbar;
+    _cellulare.inputAccessoryView = infoToolbar;
 }
 
 - (void)didReceiveMemoryWarning
@@ -109,8 +121,8 @@
         else note = ([_notes.text length] >= 150) ? ([NSString stringWithFormat: @"Note: %@...", [_notes.text substringToIndex:147]]) : [NSString stringWithFormat: @"Note: %@", _notes.text];
         
         
-        NSString* persone = ([_pNumber isEqualToString: @"scolaresca"]) ? (@"Scolaresca") : ([NSString stringWithFormat: @"Persone: %@", _pNumber]);
-        NSString *infos = [NSString stringWithFormat:@"Rivedi le informazioni: \nReferente: %@ %@\nCellulare: %@\nE-mail: %@\nData: %@ - %@\n%@\n\n%@",
+        NSString* persone = ([_pNumber isEqualToString: @"Scolaresca"]) ? (@"Scolaresca") : ([NSString stringWithFormat: @"Persone: %@", _pNumber]);
+        NSString *infos = [NSString stringWithFormat:@"Rivedi le informazioni:\n\nReferente: %@ %@\nCellulare: %@\nE-mail: %@\nData: %@ - %@\n%@\n\n%@",
                            _nome.text, _cognome.text, _cellulare.text, _email.text, fData, _slot, persone, note];
         UIActionSheet *actionSheet = [[UIActionSheet alloc]
                                       initWithTitle: infos
@@ -348,7 +360,6 @@
     return [emailPredicate evaluateWithObject:email];
 }
 
-
 /*
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -415,6 +426,13 @@
     if ([segue.identifier isEqualToString: @"Complete"]) {
         CompleteViewController *complete = segue.destinationViewController;
         complete.controller = self.navigationController;
+        complete.general = [NSString stringWithFormat:@"Informazioni personali:\n%@ %@\n%@\n%@", _nome.text, _cognome.text, _email.text, _cellulare.text];
+        
+        NSDateFormatter *f = [[NSDateFormatter alloc] init];
+        [f setDateFormat:@"EEEE dd MMMM yyyy"];
+        NSString *data = [[NSString stringWithFormat:@"%@ - %@", [f stringFromDate:_data], _slot] capitalizedString];
+        
+        complete.reservation = ([_pNumber isEqualToString:@"Scolaresca"]) ? [NSString stringWithFormat:@"Visita prenotata per il giorno %@ per una scolaresca", data] : [NSString stringWithFormat:@"Visita prenotata per il giorno %@ per gruppo di %@ persone", data, _pNumber];
     
     }
     else{

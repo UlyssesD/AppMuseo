@@ -7,13 +7,20 @@
 //
 
 #import "CompleteViewController.h"
-#import "SWRevealViewController.h"
+#import "MapViewController.h"
+#import "MainViewController.h"
 
 @interface CompleteViewController ()
 
 @end
 
 @implementation CompleteViewController
+@synthesize  general = _general;
+@synthesize reservation = _reservation;
+
+@synthesize datiPersonali = _datiPersonali;
+@synthesize datiVisita = _datiVisita;
+
 @synthesize controller = _controller;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -39,6 +46,8 @@
     label.textAlignment = NSTextAlignmentCenter;
     self.navigationItem.titleView = label;
     // Do any additional setup after loading the view.
+    _datiPersonali.text = _general;
+    _datiVisita.text = _reservation;
 }
 
 - (void)didReceiveMemoryWarning
@@ -50,7 +59,7 @@
 - (IBAction)closeModal:(id)sender {
     
     UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
-    MapViewController *dest = (MapViewController *) [storyBoard instantiateViewControllerWithIdentifier:@"MainViewController"];
+    MainViewController *dest = (MainViewController *) [storyBoard instantiateViewControllerWithIdentifier:@"MainViewController"];
     
     [_controller popToRootViewControllerAnimated:NO];
     

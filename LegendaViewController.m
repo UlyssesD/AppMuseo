@@ -29,31 +29,31 @@
     [super viewDidLoad];
     NSLog(@"Load Legenda");
     
-    UIView *green = [[UIView alloc] initWithFrame:CGRectMake(8, 18.5, 16, 16)];
+    UIView *green = [[UIView alloc] initWithFrame:CGRectMake(7, 18.5, 16, 16)];
     green.backgroundColor = [UIColor colorWithRed:(156/255.0) green:(229/255.0) blue:(92/255.0) alpha:1.0];
     [self.view addSubview:green];
     
-    UILabel *free = [[UILabel alloc]initWithFrame:CGRectMake(28, 5, 200, 40)];
+    UILabel *free = [[UILabel alloc]initWithFrame:CGRectMake(28, 5, 300, 40)];
     [free setBackgroundColor:[UIColor clearColor]];
-    [free setText:@"- entrambi gli slot disponibili;"];
+    [free setText:@"- visite disponibili mattina e pomeriggio;"];
     free.font = [UIFont systemFontOfSize:14.0];
     [[self view] addSubview:free];
     
-    UIView *yellow = [[UIView alloc] initWithFrame:CGRectMake(8, 38.5, 16, 16)];
+    UIView *yellow = [[UIView alloc] initWithFrame:CGRectMake(7, 38.5, 16, 16)];
     yellow.backgroundColor = [UIColor colorWithRed:(249/255.0) green:(205/255.0) blue:(54/255.0) alpha:1.0];
     [self.view addSubview:yellow];
     
-    UILabel *semi = [[UILabel alloc]initWithFrame:CGRectMake(28, 25, 200, 40)];
+    UILabel *semi = [[UILabel alloc]initWithFrame:CGRectMake(28, 25, 300, 40)];
     [semi setBackgroundColor:[UIColor clearColor]];
-    [semi setText:@"- un solo slot disponibile;"];
+    [semi setText:@"- un solo turno di visita disponibile;"];
     semi.font = [UIFont systemFontOfSize:14.0];
     [[self view] addSubview:semi];
     
-    UIView *red = [[UIView alloc] initWithFrame:CGRectMake(8, 58.5, 16, 16)];
+    UIView *red = [[UIView alloc] initWithFrame:CGRectMake(7, 58.5, 16, 16)];
     red.backgroundColor = [UIColor colorWithRed:(255/255.0) green:(83/255.0) blue:(60/255.0) alpha:1.0];
     [self.view addSubview:red];
     
-    UILabel *full = [[UILabel alloc]initWithFrame:CGRectMake(28, 45, 200, 40)];
+    UILabel *full = [[UILabel alloc]initWithFrame:CGRectMake(28, 45, 300, 40)];
     [full setBackgroundColor:[UIColor clearColor]];
     [full setText:@"- prenotazione non disponibile;"];
     full.font = [UIFont systemFontOfSize:14.0];

@@ -169,7 +169,7 @@
     // Pass the selected object to the new view controller.
     CalendarViewController *stepTwo = segue.destinationViewController;
         if (_scFlag.isOn) {
-            stepTwo.pNumber = @"scolaresca";
+            stepTwo.pNumber = @"Scolaresca";
         }
         else{
             stepTwo.pNumber = [self->_pickerData objectAtIndex:[self.picker selectedRowInComponent:(0)]];

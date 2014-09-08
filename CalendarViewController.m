@@ -64,7 +64,7 @@ NSMutableArray *jsonArray;
     popover.tint = FPPopoverWhiteTint;
     popover.border = NO;
     popover.alpha = 0.9;
-    popover.contentSize = CGSizeMake(255,125);
+    popover.contentSize = CGSizeMake(310,125);
     //the popover will be presented from the okButton view
     [popover presentPopoverFromView:okButton];
     
@@ -108,8 +108,8 @@ NSMutableArray *jsonArray;
             if ([controlla isEqual:@"full"])
             {
                 
-                //[actionSheet addButtonWithTitle:@"Annulla"];
-                //actionSheet.cancelButtonIndex = actionSheet.numberOfButtons-1;
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Avviso" message:@"Prenotazione non disponibile in questa data" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+                [alert show];
                 
                 return;
             }
