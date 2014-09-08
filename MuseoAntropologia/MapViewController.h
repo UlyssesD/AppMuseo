@@ -11,7 +11,7 @@
 #import <MapKit/MKAnnotation.h>
 
 @interface MapViewController : UIViewController <MKMapViewDelegate>{
-    
+
     IBOutlet MKMapView *mapView;
     
 }

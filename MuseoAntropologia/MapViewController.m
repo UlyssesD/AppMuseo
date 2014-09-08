@@ -16,7 +16,6 @@
 @implementation MapViewController
 @synthesize mapView;
 
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -56,10 +55,6 @@
     
     
     [mapView addAnnotation:museoAnnotation];
-    
-    
-    
-    
 }
 
 
@@ -105,8 +100,8 @@
 
 - (IBAction)interno
 {
-    
-    mapView.alpha=0;
+    [mapView setHidden: YES];
+    //mapView.alpha=0;
     [_esterno_btn setTintColor:[UIColor lightGrayColor]];
     [_interno_btn setTintColor:[UIColor colorWithRed:0/255.0 green:122/255.0 blue:255/255.0 alpha:1]];
     
@@ -114,7 +109,7 @@
 
 - (IBAction)esterno
 {
-    mapView.alpha=1;
+    [mapView setHidden: NO];
     [_interno_btn setTintColor:[UIColor lightGrayColor]];
     [_esterno_btn setTintColor:[UIColor colorWithRed:0/255.0 green:122/255.0 blue:255/255.0 alpha:1]];
     
