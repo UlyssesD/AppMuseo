@@ -126,7 +126,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="NUk-oy-7hJ" kind="custom" customClass="SWRevealViewControllerSegue" id="11d-GD-gfm"/>
+                                    <segue destination="NUk-oy-7hJ" kind="custom" identifier="tourWC" customClass="SWRevealViewControllerSegue" id="11d-GD-gfm"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Come raggiungerci" id="ENQ-1b-eHP">

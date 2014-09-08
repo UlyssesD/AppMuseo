@@ -10,10 +10,12 @@
 #import "Constants.h"
 #import "CraniViewController.h"
 #import "TourVirtualeTableViewController.h"
+#import "SWRevealViewController.h"
 
 @implementation AppDelegate
 {
     CLLocationManager *_locationManager;
+    SWRevealViewController *revealViewController;
     //    NSUserDefaults *defaults;
     
 }
@@ -24,6 +26,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    revealViewController = (SWRevealViewController *)self.window.rootViewController;
     
     // Change the background color of navigation bar
     [[UINavigationBar appearance] setBarTintColor:[UIColor whiteColor]];
@@ -278,7 +281,6 @@
                 day = [difference day];
             }else{
                 //fromdate mai impostato -> forzo la prima notifica con valore day > 30
-                
                 NSLog(@"forzo fromdate");
                 day = 31;
             }
@@ -345,6 +347,7 @@
 
 - (void)locationManager:(CLLocationManager *)manager didRangeBeacons:(NSArray *)beacons inRegion:(CLBeaconRegion *)region
 {
+    
     // I commented out the line below because otherwise you see this every second in the logs
     //    NSLog(@"locationManager didRangeBeacons");
     //
@@ -392,6 +395,22 @@
     application.applicationIconBadgeNumber = 0;//badge notifiche beacon trovati
     
     
+    
+//    [revealViewController.rearViewController performSegueWithIdentifier:@"tourWC" sender: self];
+    [revealViewController.navigationController performSegueWithIdentifier:@"tourWC" sender:self];
+    NSLog(@"%@",revealViewController.storyboard.description);
+    
+//    NSString *segueId = @"tourWC"; //ID view controller tour virtuale
+//    
+//    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+//    
+//    UIViewController *vc = [storyboard instantiateViewControllerWithIdentifier:segueId];
+//  //  [[[[UIApplication sharedApplication]delegate]window]addSubview:vc.view];
+//  
+//   
+//    self.window.rootViewController = vc;
+
+
     //
     //    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"MainStoryboard"
     //                                                             bundle: nil];
