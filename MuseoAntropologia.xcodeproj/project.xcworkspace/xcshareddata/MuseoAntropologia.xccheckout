@@ -5,36 +5,36 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>66C9E84C-3E44-428E-B996-A4B642A1F7AF</string>
+	<string>FC8C7488-7BFF-4AF4-9E11-A8423BBCF53D</string>
 	<key>IDESourceControlProjectName</key>
 	<string>MuseoAntropologia</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>C3AF1113-A4B2-46A5-AA5B-C5CD8E323BB8</key>
-		<string>https://github.com/UlyssesD/AppMuseo.git</string>
+		<key>4C277B2B-2DD0-44CD-BC16-6D95192A899C</key>
+		<string>https://github.com/UlyssesD/AppMuseo</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>MuseoAntropologia.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>C3AF1113-A4B2-46A5-AA5B-C5CD8E323BB8</key>
+		<key>4C277B2B-2DD0-44CD-BC16-6D95192A899C</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/UlyssesD/AppMuseo.git</string>
+	<string>https://github.com/UlyssesD/AppMuseo</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>C3AF1113-A4B2-46A5-AA5B-C5CD8E323BB8</string>
+	<string>4C277B2B-2DD0-44CD-BC16-6D95192A899C</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>C3AF1113-A4B2-46A5-AA5B-C5CD8E323BB8</string>
+			<string>4C277B2B-2DD0-44CD-BC16-6D95192A899C</string>
 			<key>IDESourceControlWCCName</key>
-			<string>AppMuseo2</string>
+			<string>AppMuseo</string>
 		</dict>
 	</array>
 </dict>
