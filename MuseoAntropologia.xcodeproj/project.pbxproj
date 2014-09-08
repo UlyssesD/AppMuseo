@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		119FA51719BDBE01002DE3BA /* piano_terra.png in Resources */ = {isa = PBXBuildFile; fileRef = 119FA51519BDBE01002DE3BA /* piano_terra.png */; };
+		119FA51819BDBE01002DE3BA /* primo_piano.png in Resources */ = {isa = PBXBuildFile; fileRef = 119FA51619BDBE01002DE3BA /* primo_piano.png */; };
 		11A2F95519AE3F2C00AEF093 /* MapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A2F95419AE3F2C00AEF093 /* MapAnnotation.m */; };
 		1B0FFF6E1978146D00D6496C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B0FFF6D1978146D00D6496C /* QuartzCore.framework */; };
 		1B0FFF701978147600D6496C /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B0FFF6F1978147600D6496C /* OpenGLES.framework */; };
@@ -96,7 +98,6 @@
 		4ACEDA551982B11000B2B7F4 /* Prenotazioni.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4ACEDA541982B11000B2B7F4 /* Prenotazioni.plist */; };
 		4ACEDA581982B65500B2B7F4 /* HistoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACEDA571982B65500B2B7F4 /* HistoryTableViewController.m */; };
 		4ADAC2A719B757EA002476CD /* LegendaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADAC2A619B757EA002476CD /* LegendaViewController.m */; };
-		4ADB659819869DCC00714E7C /* piano_terra_img2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4ADB659719869DCC00714E7C /* piano_terra_img2.jpg */; };
 		4ADB659B19869FF500714E7C /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADB659A19869FF500714E7C /* MapViewController.m */; };
 		F4D9AD1F1871725500E2D912 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D9AD1E1871725500E2D912 /* SWRevealViewController.m */; };
 		F4EECF12177C99F400778578 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4EECF11177C99F400778578 /* UIKit.framework */; };
@@ -119,6 +120,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		119FA51519BDBE01002DE3BA /* piano_terra.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = piano_terra.png; sourceTree = "<group>"; };
+		119FA51619BDBE01002DE3BA /* primo_piano.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = primo_piano.png; sourceTree = "<group>"; };
 		11A2F95319AE3F2C00AEF093 /* MapAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapAnnotation.h; sourceTree = "<group>"; };
 		11A2F95419AE3F2C00AEF093 /* MapAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapAnnotation.m; sourceTree = "<group>"; };
 		1B0FFF6D1978146D00D6496C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -238,7 +241,6 @@
 		4ACEDA571982B65500B2B7F4 /* HistoryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryTableViewController.m; sourceTree = "<group>"; };
 		4ADAC2A519B757EA002476CD /* LegendaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LegendaViewController.h; path = ../LegendaViewController.h; sourceTree = "<group>"; };
 		4ADAC2A619B757EA002476CD /* LegendaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LegendaViewController.m; path = ../LegendaViewController.m; sourceTree = "<group>"; };
-		4ADB659719869DCC00714E7C /* piano_terra_img2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = piano_terra_img2.jpg; sourceTree = "<group>"; };
 		4ADB659919869FF500714E7C /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		4ADB659A19869FF500714E7C /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		F4D9AD1D1871725500E2D912 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
@@ -484,8 +486,9 @@
 			isa = PBXGroup;
 			children = (
 				2215B2CE19B84C7500C79D50 /* icon.png */,
-				4ADB659719869DCC00714E7C /* piano_terra_img2.jpg */,
 				1BF54B9519802762001CAF82 /* LogoMB.jpg */,
+				119FA51519BDBE01002DE3BA /* piano_terra.png */,
+				119FA51619BDBE01002DE3BA /* primo_piano.png */,
 				1BB79107197FF91E00DC42E9 /* guattari_logo.png */,
 				1BB790FF197FF74F00DC42E9 /* maiella_logo.png */,
 				4A81459C19826E6F006FB54E /* back.png */,
@@ -552,7 +555,7 @@
 				ORGANIZATIONNAME = Appcoda;
 				TargetAttributes = {
 					F4EECF0D177C99F400778578 = {
-						DevelopmentTeam = 4UVHD887LG;
+						DevelopmentTeam = QRRXTVJA7W;
 					};
 				};
 			};
@@ -590,6 +593,7 @@
 				1BB790FE197FEFE900DC42E9 /* Saccopastore 1.obj in Resources */,
 				4A8145A219826E6F006FB54E /* timeline_red_end.png in Resources */,
 				1BF54B9619802762001CAF82 /* LogoMB.jpg in Resources */,
+				119FA51819BDBE01002DE3BA /* primo_piano.png in Resources */,
 				1BB79108197FF91E00DC42E9 /* guattari_logo.png in Resources */,
 				1B3635E3195ABBB700B221DD /* focus.png in Resources */,
 				1B3635E2195ABBB700B221DD /* email.png in Resources */,
@@ -613,6 +617,7 @@
 				1BD1AB66197F0A2B0069C6F7 /* Saccopastore 2.mtl in Resources */,
 				1BB790FD197FEFE900DC42E9 /* Saccopastore 1.mtl in Resources */,
 				F4EECF28177C99F400778578 /* Default-568h@2x.png in Resources */,
+				119FA51719BDBE01002DE3BA /* piano_terra.png in Resources */,
 				1B3635DC195ABB9700B221DD /* credits.png in Resources */,
 				4A81458B19826B94006FB54E /* DSLCalendarDaySelection-left.png in Resources */,
 				F4EECF2B177C99F400778578 /* MainStoryboard.storyboard in Resources */,
@@ -625,7 +630,6 @@
 				4A81458619826B94006FB54E /* DSLCalendar-nextMonth@2x.png in Resources */,
 				4ACEDA551982B11000B2B7F4 /* Prenotazioni.plist in Resources */,
 				1BBA2E381977D6E300D142C0 /* sfondo.jpg in Resources */,
-				4ADB659819869DCC00714E7C /* piano_terra_img2.jpg in Resources */,
 				4A81458A19826B94006FB54E /* DSLCalendarDayCallout@2x.png in Resources */,
 				F4EECF6A177F4C0200778578 /* menu.png in Resources */,
 				4A81458819826B94006FB54E /* DSLCalendar-previousMonth@2x.png in Resources */,
