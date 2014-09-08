@@ -3,17 +3,18 @@
 //  MuseoAntropologia
 //
 //  Created by Andrea Novelli on 25/06/14.
-//  
+//
 //
 
 #import "AppDelegate.h"
 #import "Constants.h"
 #import "CraniViewController.h"
+#import "TourVirtualeTableViewController.h"
 
 @implementation AppDelegate
 {
     CLLocationManager *_locationManager;
-//    NSUserDefaults *defaults;
+    //    NSUserDefaults *defaults;
     
 }
 
@@ -23,7 +24,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-
+    
     // Change the background color of navigation bar
     [[UINavigationBar appearance] setBarTintColor:[UIColor whiteColor]];
     
@@ -47,11 +48,11 @@
                                                            shadow, NSShadowAttributeName,
                                                            [UIFont fontWithName:@"STHeitiTC-Light" size:21.0], NSFontAttributeName, nil]];
     
-//    locked1 = true;
-//    locked2 = true;
-//    locked3 = true;
-//    locked4 = true;
-//    locked5 = true;eee
+    //    locked1 = true;
+    //    locked2 = true;
+    //    locked3 = true;
+    //    locked4 = true;
+    //    locked5 = true;eee
     //test
     
     
@@ -61,43 +62,61 @@
     _locationManager = [[CLLocationManager alloc] init];
     _locationManager.delegate = self;
     
-    //Beacon 1.9
+    /*
+     uuid sapienzaaps 14A184BD-26B6-4D40-B14E-DEF5EB92B3DA
+     */
+    
+    //Beacon 1.1 - CEPRANO
     CLBeaconRegion *region1;
     //qui si definisce la regione dei beacon, questa è quella del beacon 1.
-    region1 = [[CLBeaconRegion alloc] initWithProximityUUID:[[NSUUID alloc] initWithUUIDString:@"EBEFD083-70A2-47C8-9837-E7B5634DF524"] major: 1 minor: 9 identifier: Ceprano];
+    region1 = [[CLBeaconRegion alloc] initWithProximityUUID:[[NSUUID alloc] initWithUUIDString:@"14A184BD-26B6-4D40-B14E-DEF5EB92B3DA"] major: 1 minor: 1 identifier: Ceprano];
     region1.notifyEntryStateOnDisplay = YES;
     [_locationManager startMonitoringForRegion:region1];
     
-    //Beacon 1.1
+    //Beacon 1.2 - SACCOPASTORE 1
     CLBeaconRegion *region2;
     //qui si definisce la regione dei beacon, questa è quella del beacon 2.
-    region2 = [[CLBeaconRegion alloc] initWithProximityUUID:[[NSUUID alloc] initWithUUIDString:@"EBEFD083-70A2-47C8-9837-E7B5634DF524"] major: 1 minor: 5 identifier: Saccop1];
+    region2 = [[CLBeaconRegion alloc] initWithProximityUUID:[[NSUUID alloc] initWithUUIDString:@"14A184BD-26B6-4D40-B14E-DEF5EB92B3DA"] major: 1 minor: 2 identifier: Saccop1];
     region2.notifyEntryStateOnDisplay = YES;
     [_locationManager startMonitoringForRegion:region2];
     
-    //Beacon 1.2
+    //Beacon 1.3 - SACCOPASTORE 2
     CLBeaconRegion *region3;
     //qui si definisce la regione dei beacon, questa è quella del beacon 3.
-    region3 = [[CLBeaconRegion alloc] initWithProximityUUID:[[NSUUID alloc] initWithUUIDString:@"EBEFD083-70A2-47C8-9837-E7B5634DF524"] major: 1 minor: 0 identifier: Saccop2];
+    region3 = [[CLBeaconRegion alloc] initWithProximityUUID:[[NSUUID alloc] initWithUUIDString:@"14A184BD-26B6-4D40-B14E-DEF5EB92B3DA"] major: 1 minor: 3 identifier: Saccop2];
     region3.notifyEntryStateOnDisplay = YES;
     [_locationManager startMonitoringForRegion:region3];
     
     
-    //Beacon 1.3
+    //Beacon 1.4 - GUATTARI
     CLBeaconRegion *region4;
     //qui si definisce la regione dei beacon, questa è quella del beacon 4.
-    region4 = [[CLBeaconRegion alloc] initWithProximityUUID:[[NSUUID alloc] initWithUUIDString:@"EBEFD083-70A2-47C8-9837-E7B5634DF524"] major: 1 minor: 3 	identifier: Guattari];
+    region4 = [[CLBeaconRegion alloc] initWithProximityUUID:[[NSUUID alloc] initWithUUIDString:@"14A184BD-26B6-4D40-B14E-DEF5EB92B3DA"] major: 1 minor: 4 	identifier: Guattari];
     region4.notifyEntryStateOnDisplay = YES;
     [_locationManager startMonitoringForRegion:region4];
     
+    //Beacon 1.5 - MAIELLA
+    CLBeaconRegion *region5;
+    //qui si definisce la regione dei beacon, questa è quella del beacon 5.
+    region5 = [[CLBeaconRegion alloc] initWithProximityUUID:[[NSUUID alloc] initWithUUIDString:@"14A184BD-26B6-4D40-B14E-DEF5EB92B3DA"] major: 1 minor: 5 	identifier: Maiella];
+    region5.notifyEntryStateOnDisplay = YES;
+    [_locationManager startMonitoringForRegion:region5];
     
-//    UILocalNotification *localNotification = [launchOptions objectForKey:UIApplicationLaunchOptionsLocalNotificationKey];
-//    if(localNotification)
-        application.applicationIconBadgeNumber = 0;
-
+    //Beacon 1.6 - BEACON ENTRATA MUSEO
+    CLBeaconRegion *region6;
+    //qui si definisce la regione dei beacon, questa è quella del beacon 5.
+    region6 = [[CLBeaconRegion alloc] initWithProximityUUID:[[NSUUID alloc] initWithUUIDString:@"14A184BD-26B6-4D40-B14E-DEF5EB92B3DA"] major: 1 minor: 6 	identifier:Entrata ];
+    region6.notifyEntryStateOnDisplay = YES;
+    [_locationManager startMonitoringForRegion:region6];
+    
+    
+    //    UILocalNotification *localNotification = [launchOptions objectForKey:UIApplicationLaunchOptionsLocalNotificationKey];
+    //    if(localNotification)
+    application.applicationIconBadgeNumber = 0;
+    
     return YES;
 }
-							
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -106,7 +125,7 @@
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
+    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
 }
 
@@ -179,7 +198,7 @@
             //test alert in background
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Hai sbloccato il cranio di Saccopastore 2"  message:@"Guardalo subito nella sezione Augmented Tour!" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
             [alert show];
-        
+            
             UILocalNotification *localNotif = [[UILocalNotification alloc] init];
             if (localNotif) {
                 localNotif.alertBody = [[NSString alloc] initWithFormat:@"Hai sbloccato il cranio di %@!",region.identifier];
@@ -207,7 +226,80 @@
             [defaults setBool:NO forKey:@"locked4"];
             [defaults synchronize];
         }
-
+        
+        
+        //SBLOCCO MAIELLA
+        if([region.identifier isEqualToString:Maiella] && [[NSUserDefaults standardUserDefaults] boolForKey:@"locked5"])
+        {
+            //test alert in background
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Hai sbloccato il cranio di Maiella"  message:@"Guardalo subito nella sezione Augmented Tour!" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+            [alert show];
+            
+            UILocalNotification *localNotif = [[UILocalNotification alloc] init];
+            if (localNotif) {
+                localNotif.alertBody = [[NSString alloc] initWithFormat:@"Hai sbloccato il cranio di %@!",region.identifier];
+                localNotif.alertAction = NSLocalizedString(@"Ok", nil);
+                localNotif.applicationIconBadgeNumber = [[UIApplication sharedApplication] applicationIconBadgeNumber]+1;
+                [[UIApplication sharedApplication] presentLocalNotificationNow:localNotif];
+            }
+            [defaults setBool:NO forKey:@"locked5"];
+            [defaults synchronize];
+        }
+        
+        //NOTIFICA BEACON ALL'ENTRATA - 1 AL MESE
+        
+        NSDate *fromDateTime = (NSDate *)[defaults objectForKey:@"dataUltimaNotificaEntrata"];
+        
+        NSInteger day = 0;
+        
+        if(fromDateTime != nil){
+            
+            NSLog(@"fromdate: %@", fromDateTime);
+            
+            NSDate *toDateTime = [NSDate date];
+            
+            //diff
+            NSDate *fromDate;
+            NSDate *toDate;
+            
+            NSCalendar *calendar = [NSCalendar currentCalendar];
+            
+            [calendar rangeOfUnit:NSDayCalendarUnit startDate:&fromDate
+                         interval:NULL forDate:fromDateTime];
+            [calendar rangeOfUnit:NSDayCalendarUnit startDate:&toDate
+                         interval:NULL forDate:toDateTime];
+            
+            NSDateComponents *difference = [calendar components:NSDayCalendarUnit
+                                                       fromDate:fromDate toDate:toDate options:0];
+            
+            
+            day = [difference day];
+        }
+        
+        //NSLog(@"giorni diff :%d", day);
+        
+        if([region.identifier isEqualToString:Entrata] && (day  > 30) /*TODO:CHECK DATA*/)
+        {
+            //test alert in background
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sei arrivato davanti al museo di antropologia della Sapienza"  message:@"Entra a visitare il  museo!" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+            [alert show];
+            
+            UILocalNotification *localNotif = [[UILocalNotification alloc] init];
+            if (localNotif) {
+                localNotif.alertBody = [[NSString alloc] initWithFormat:@"Sei arrivato davanti al museo di antropologia della Sapienza!"];
+                localNotif.alertAction = NSLocalizedString(@"Ok", nil);
+                localNotif.applicationIconBadgeNumber = [[UIApplication sharedApplication] applicationIconBadgeNumber]+1;
+                
+                [[UIApplication sharedApplication] presentLocalNotificationNow:localNotif];
+            }
+            
+            //aggiorno data ultima notifica
+            NSDate *now = [NSDate date];
+            [defaults setObject:now forKey:@"dataUltimaNotificaEntrata"];
+            [defaults synchronize];
+        }
+        
+        
         
         //inserire comando sblocco beacon
         
@@ -224,6 +316,25 @@
     }
 }
 
+//- (NSInteger)daysBetweenDate:(NSDate*)fromDateTime andDate:(NSDate*)toDateTime
+//{
+//    NSDate *fromDate;
+//    NSDate *toDate;
+//    
+//    NSCalendar *calendar = [NSCalendar currentCalendar];
+//    
+//    [calendar rangeOfUnit:NSDayCalendarUnit startDate:&fromDate
+//                 interval:NULL forDate:fromDateTime];
+//    [calendar rangeOfUnit:NSDayCalendarUnit startDate:&toDate
+//                 interval:NULL forDate:toDateTime];
+//    
+//    NSDateComponents *difference = [calendar components:NSDayCalendarUnit
+//                                               fromDate:fromDate toDate:toDate options:0];
+//    
+//    return [difference day];
+//}
+
+
 - (void)locationManager:(CLLocationManager *)manager didRangeBeacons:(NSArray *)beacons inRegion:(CLBeaconRegion *)region
 {
     // I commented out the line below because otherwise you see this every second in the logs
@@ -232,7 +343,39 @@
 
 -(void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
 {
-    application.applicationIconBadgeNumber = 0;
+    application.applicationIconBadgeNumber = 0;//badge notifiche beacon trovati
+    
+    
+//    
+//    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"MainStoryboard"
+//                                                             bundle: nil];
+//    
+//    TourVirtualeTableViewController *controller = (TourVirtualeTableViewController *) [mainStoryboard
+//                                                                                       instantiateViewControllerWithIdentifier: @"craniView"];
+//    
+//    
+//    UINavigationController *pp = self.window.rootViewController.navigationController;
+//    
+//    [pp setViewControllers:@[controller] animated:NO];
+//    [pp        dismissViewControllerAnimated:YES completion:nil];
+    
+    
+    //save the root view controller
+    //
+    //    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+    //    CraniViewController *view = (CraniViewController *)[storyboard instantiateViewControllerWithIdentifier:@"craniView"];
+    //
+    //    [self.window.rootViewController.navigationController setViewControllers:@[view] animated:NO];
+    
+    //[[CraniViewController alloc] initWithNibName:nil bundle:nil];
+	//[self presentViewController:second animated:YES completion:nil];
+    //
+    //    NSLog(@"TEST LOCAL NOTIFICATION");
+    //    UINavigationController *nav = (UINavigationController *)self.window.rootViewController;
+    //    //UINavigationController *nav = [UINavigationController ];
+    //
+    //    //[ nav setViewControllers:@[view] animated:NO];
+    
     
 }
 
