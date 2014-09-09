@@ -27,7 +27,7 @@
     [super viewDidLoad];
     
     _pageTitles = @[@"Piano terra", @"Primo piano"];
-    _pageImages = @[@"piano_terra.png", @"piano-museo-test2.png",];
+    _pageImages = @[@"piano_terra.png", @"piano-museo-5.png",];
     
     self.pageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PageViewController"];
     self.pageViewController.dataSource = self;
@@ -38,7 +38,6 @@
     
     // Change the size of page view controller
     self.pageViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
-    
     [self addChildViewController:_pageViewController];
     [self.view addSubview:_pageViewController.view];
     [self.pageViewController didMoveToParentViewController:self];
@@ -94,7 +93,6 @@
     pageContentViewController.imageFile = self.pageImages[index];
     pageContentViewController.titleText = self.pageTitles[index];
     pageContentViewController.pageIndex = index;
-    
     return pageContentViewController;
 }
 
