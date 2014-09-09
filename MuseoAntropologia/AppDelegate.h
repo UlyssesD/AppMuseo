@@ -22,4 +22,6 @@
 
 @property (strong, nonatomic) NSUserDefaults *defaults;
 
+@property (strong, nonatomic) UINavigationController *nav;
+
 @end
