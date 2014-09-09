@@ -27,9 +27,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
     // Override point for customization after application launch.
     revealViewController = (SWRevealViewController *)self.window.rootViewController;
-    
     // Change the background color of navigation bar
     [[UINavigationBar appearance] setBarTintColor:[UIColor whiteColor]];
     
@@ -158,10 +158,13 @@
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     application.applicationIconBadgeNumber = 0;
     isActive = YES;
+    
+   
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
+    isActive = NO;
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
@@ -191,40 +194,6 @@
         //inserire if sullo stato del cranio da sbloccare (se è già sbloccato non entra)
         
         if(!isActive){ //APP non attiva
-            //calcolo tempo ultima notifica foreground
-            NSDate *fromLastNotifica = (NSDate *)[defaults objectForKey:@"ultimaNotificaApp"];
-            NSInteger secondiUtlimaNotifica;
-            
-            
-            if(fromLastNotifica != nil){
-                
-                NSLog(@"fromLastNot: %@", fromLastNotifica);
-                
-                NSDate *toDateTime = [NSDate date];
-                
-                NSLog(@"todata: %@", toDateTime);
-                //diff
-                NSDate *fromDate;
-                NSDate *toDate;
-                
-                NSCalendar *calendar = [NSCalendar currentCalendar];
-                
-                [calendar rangeOfUnit:NSSecondCalendarUnit startDate:&fromDate
-                             interval:NULL forDate:fromLastNotifica];
-                [calendar rangeOfUnit:NSSecondCalendarUnit startDate:&toDate
-                             interval:NULL forDate:toDateTime];
-                
-                NSDateComponents *difference = [calendar components:NSSecondCalendarUnit
-                                                           fromDate:fromDate toDate:toDate options:0];
-                
-                secondiUtlimaNotifica = [difference second];
-                
-                NSLog(@"secondi ultima notifica : %d",secondiUtlimaNotifica);
-            }else{
-                //fromdate mai impostato -> forzo la prima notifica con valore secondiUtlimaNotifica > 30
-                NSLog(@"forzo fromLastNot");
-                secondiUtlimaNotifica = 31;
-            }
             
             
             
@@ -244,7 +213,7 @@
                 [defaults setBool:NO forKey:@"locked1"];
                 [defaults synchronize];
                 
-                [manager stopMonitoringForRegion:region];
+                //[manager stopMonitoringForRegion:region];
                 
                 
             }
@@ -263,7 +232,7 @@
                 [defaults setBool:NO forKey:@"locked2"];
                 [defaults synchronize];
                 
-                [manager stopMonitoringForRegion:region];
+                //[manager stopMonitoringForRegion:region];
                 
             }
             //SBLOCCO SACCO2
@@ -281,7 +250,7 @@
                 [defaults setBool:NO forKey:@"locked3"];
                 [defaults synchronize];
                 
-                [manager stopMonitoringForRegion:region];
+                //[manager stopMonitoringForRegion:region];
                 
             }
             //SBLOCCO GUATTARI
@@ -298,7 +267,7 @@
                 [defaults setBool:NO forKey:@"locked4"];
                 [defaults synchronize];
                 
-                [manager stopMonitoringForRegion:region];
+                //[manager stopMonitoringForRegion:region];
                 
             }
             
@@ -318,7 +287,7 @@
                 [defaults setBool:NO forKey:@"locked5"];
                 [defaults synchronize];
                 
-                [manager stopMonitoringForRegion:region];
+                //[manager stopMonitoringForRegion:region];
                 
             }
         }
@@ -485,26 +454,12 @@
     
     
     //stop monitor se tutti crani sbloccati
-    if([[NSUserDefaults standardUserDefaults] boolForKey:@"locked1"]&&
-       [[NSUserDefaults standardUserDefaults] boolForKey:@"locked2"]&&
-       [[NSUserDefaults standardUserDefaults] boolForKey:@"locked3"]&&
-       [[NSUserDefaults standardUserDefaults] boolForKey:@"locked4"]&&
-       [[NSUserDefaults standardUserDefaults] boolForKey:@"locked5"])
-    {
         
-        [manager stopRangingBeaconsInRegion:region];
-        
-    }
-    
     
     
     for (id beacon in beacons) {
         
         NSLog(@"beacon n:%d",[[beacon minor] intValue]);
-        
-        //verifica uuid
-//        if(![[beacon UUIDString] isEqualToString:@"14A184BD-26B6-4D40-B14E-DEF5EB92B3DA"])
-//            return;
         
         NSInteger minorBeacon = [[beacon minor] intValue];
         //calcolo tempo ultima notifica foreground
@@ -558,7 +513,7 @@
                     [defaults setBool:NO forKey:@"locked1"];
                     [defaults synchronize];
                     
-                    [manager stopRangingBeaconsInRegion:region];
+                    //[manager stopRangingBeaconsInRegion:region];
                 }
             }
         }
@@ -580,7 +535,7 @@
                     [defaults setBool:NO forKey:@"locked2"];
                     [defaults synchronize];
                     
-                    [manager stopRangingBeaconsInRegion:region];
+                    //[manager stopRangingBeaconsInRegion:region];
                 }
                 
             }
@@ -600,7 +555,7 @@
                     [defaults setBool:NO forKey:@"locked3"];
                     [defaults synchronize];
                     
-                    [manager stopRangingBeaconsInRegion:region];
+                    //[manager stopRangingBeaconsInRegion:region];
                 }
             }
         }
@@ -620,7 +575,7 @@
                     [defaults setBool:NO forKey:@"locked4"];
                     [defaults synchronize];
                     
-                    [manager stopRangingBeaconsInRegion:region];
+                    //[manager stopRangingBeaconsInRegion:region];
                 }
             }
         }
@@ -643,7 +598,7 @@
                     [defaults synchronize];
                     
                     
-                    [manager stopRangingBeaconsInRegion:region];
+                    //[manager stopRangingBeaconsInRegion:region];
                 }
             }
         }
@@ -700,17 +655,24 @@
     
     //    [revealViewController.rearViewController performSegueWithIdentifier:@"tourWC" sender: self];
     //[revealViewController.navigationController performSegueWithIdentifier:@"tourWC" sender:self];
-    NSLog(@"open view : %@",revealViewController.storyboard.description);
-    
-    
-    
-    
     UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
     MapViewController *dest = (MapViewController *) [storyBoard instantiateViewControllerWithIdentifier:@"TourViewController"];
     
-    [revealViewController.navigationController popToRootViewControllerAnimated:NO];
+    [self.nav popToRootViewControllerAnimated:NO];
     
-    [revealViewController.navigationController setViewControllers: @[dest]  animated: NO ];
+    [self.nav setViewControllers: @[dest]  animated: NO ];
+    
+    NSLog(@"%@",self.nav);
+    
+    
+    
+    
+//    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+//    MapViewController *dest = (MapViewController *) [storyBoard instantiateViewControllerWithIdentifier:@"TourViewController"];
+//    
+//    [revealViewController.navigationController popToRootViewControllerAnimated:NO];
+//    
+//    [revealViewController.navigationController setViewControllers: @[dest]  animated: NO ];
     
     
     

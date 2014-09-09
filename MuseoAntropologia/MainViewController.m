@@ -8,6 +8,7 @@
 
 #import "MainViewController.h"
 #import "SWRevealViewController.h"
+#import "AppDelegate.h"
 
 @interface MainViewController ()
 
@@ -37,6 +38,11 @@
     
     // Set the gesture
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+    AppDelegate *myAppDelegate =(AppDelegate *) [[UIApplication sharedApplication] delegate];
+    myAppDelegate.nav = self.navigationController;
+    
+    
+    NSLog(@"%@",self.navigationController);
 }
 
 - (void)didReceiveMemoryWarning
