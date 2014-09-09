@@ -55,7 +55,8 @@
     
     
     [mapView addAnnotation:museoAnnotation];
-}
+    
+    }
 
 
 -(MKAnnotationView *) mapView: (MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>) annotation{

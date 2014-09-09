@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 #import <MapKit/MKAnnotation.h>
+#import "PageContentViewController.h"
 
 @interface MapViewController : UIViewController <MKMapViewDelegate>{
 
@@ -21,7 +22,6 @@
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *esterno_btn;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *interno_btn;
-
 
 
 - (IBAction)interno;
