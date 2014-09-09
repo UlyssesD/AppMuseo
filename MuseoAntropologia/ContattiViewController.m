@@ -39,7 +39,7 @@
     sectionTitles = [[NSArray alloc]initWithObjects:@"Direttore Prof. G. Manzi", @"Contatta il museo", nil];
     
     array = @{@"Direttore Prof. G. Manzi" : @[contatti],
-              @"Contatta il museo" : @[@"06-49912495", @"museo-antropologia@uniroma1.it"],
+              @"Contatta il museo" : @[@"06-49912690", @"museo-antropologia@uniroma1.it"],
               };
     
     

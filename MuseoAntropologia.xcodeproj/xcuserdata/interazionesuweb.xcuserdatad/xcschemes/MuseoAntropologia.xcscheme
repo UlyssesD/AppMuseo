@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "F4EECF0D177C99F400778578"
-               BuildableName = "MuseoAntropologia.app"
+               BuildableName = "MAn Roma.app"
                BlueprintName = "MuseoAntropologia"
                ReferencedContainer = "container:MuseoAntropologia.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F4EECF0D177C99F400778578"
-            BuildableName = "MuseoAntropologia.app"
+            BuildableName = "MAn Roma.app"
             BlueprintName = "MuseoAntropologia"
             ReferencedContainer = "container:MuseoAntropologia.xcodeproj">
          </BuildableReference>
@@ -52,7 +52,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F4EECF0D177C99F400778578"
-            BuildableName = "MuseoAntropologia.app"
+            BuildableName = "MAn Roma.app"
             BlueprintName = "MuseoAntropologia"
             ReferencedContainer = "container:MuseoAntropologia.xcodeproj">
          </BuildableReference>
@@ -70,7 +70,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F4EECF0D177C99F400778578"
-            BuildableName = "MuseoAntropologia.app"
+            BuildableName = "MAn Roma.app"
             BlueprintName = "MuseoAntropologia"
             ReferencedContainer = "container:MuseoAntropologia.xcodeproj">
          </BuildableReference>

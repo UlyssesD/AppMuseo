@@ -15,7 +15,7 @@ NSString * const Maiella = @"Maiella";
 NSString * const Entrata = @"Entrata";
 NSString * const Piano = @"Piano";
 
-NSString * const phoneNumber = @"0649912495";
+NSString * const phoneNumber = @"0649912690";
 
 NSString * const contatti = @"Nel 1984, il Museo di Antropologia della SAPIENZA è stato intitolato a Giuseppe Sergi che lo aveva fondato esattamente un secolo prima. \nIl museo conserva reperti e collezioni che sono di interesse per l'antropologia, per la paleoantropologia e per la storia naturale dei primati. \nIl settore espositivo ospita una sala audio-visivi e due percorsi didattici regolarmente aperti al pubblico.";
 
