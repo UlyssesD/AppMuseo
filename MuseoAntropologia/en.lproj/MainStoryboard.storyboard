@@ -1483,30 +1483,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="piano_terra.png" translatesAutoresizingMaskIntoConstraints="NO" id="lFf-Mz-8Zf">
-                                <rect key="frame" x="0.0" y="81" width="320" height="200"/>
+                            <containerView contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4iU-j5-UfJ">
+                                <rect key="frame" x="0.0" y="-1" width="320" height="480"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="primo_piano.png" translatesAutoresizingMaskIntoConstraints="NO" id="IS2-yy-oS3">
-                                <rect key="frame" x="0.0" y="324" width="320" height="200"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Piano terra" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zfx-Ki-Fmu">
-                                <rect key="frame" x="0.0" y="47" width="320" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Primo piano" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1EI-zb-3us">
-                                <rect key="frame" x="0.0" y="285" width="320" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <connections>
+                                    <segue destination="69d-SR-wXQ" kind="embed" id="SRB-Gd-9bw"/>
+                                </connections>
+                            </containerView>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="dVy-Tr-Tbu">
-                                <rect key="frame" x="0.0" y="45" width="320" height="479"/>
+                                <rect key="frame" x="0.0" y="44" width="320" height="479"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </mapView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y7L-VT-IwZ">
@@ -1532,6 +1518,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="y7L-VT-IwZ" firstAttribute="top" secondItem="4iU-j5-UfJ" secondAttribute="bottom" id="Sfb-JL-msp"/>
                             <constraint firstAttribute="bottom" secondItem="y7L-VT-IwZ" secondAttribute="bottom" id="aeN-96-iPs"/>
                             <constraint firstItem="y7L-VT-IwZ" firstAttribute="top" secondItem="dVy-Tr-Tbu" secondAttribute="bottom" id="mHa-h7-DSB"/>
                         </constraints>
@@ -1552,6 +1539,67 @@
             </objects>
             <point key="canvasLocation" x="1225" y="-3198"/>
         </scene>
+        <!--Table View Controller-->
+        <scene sceneID="Tnm-qN-7pJ">
+            <objects>
+                <tableViewController id="69d-SR-wXQ" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="OCX-eh-3xN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        <sections>
+                            <tableViewSection headerTitle="    Piano Terra" id="NjY-I0-Wv5">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="401" id="Pjg-KO-FZB">
+                                        <rect key="frame" x="0.0" y="55" width="320" height="401"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Pjg-KO-FZB" id="Gsw-CZ-0ra">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="400"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="piano_terra.png" translatesAutoresizingMaskIntoConstraints="NO" id="1Cj-oQ-jYh">
+                                                    <rect key="frame" x="0.0" y="47" width="320" height="400"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                </imageView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="     primo piano" id="Flh-hx-kVO">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="1200" id="1bU-oN-RiD">
+                                        <rect key="frame" x="0.0" y="504" width="320" height="1200"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" tableViewCell="1bU-oN-RiD" id="2i8-y4-8h4">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="1199"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="piano-museo-test2.png" translatesAutoresizingMaskIntoConstraints="NO" id="mLN-eB-IWE">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="1199"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                </imageView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="69d-SR-wXQ" id="F6D-cW-DL1"/>
+                            <outlet property="delegate" destination="69d-SR-wXQ" id="UE8-Fj-k2N"/>
+                        </connections>
+                    </tableView>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n8l-1o-dUx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1631" y="-3276"/>
+        </scene>
     </scenes>
     <resources>
         <image name="LogoMB.jpg" width="567" height="455"/>
@@ -1566,8 +1614,8 @@
         <image name="mail.png" width="128" height="128"/>
         <image name="menu.png" width="28" height="20"/>
         <image name="museum.png" width="128" height="128"/>
+        <image name="piano-museo-test2.png" width="320" height="1200"/>
         <image name="piano_terra.png" width="320" height="401"/>
-        <image name="primo_piano.png" width="320" height="412"/>
         <image name="saccopastore1_logo.png" width="605" height="510"/>
         <image name="saccopastore2_logo.png" width="605" height="510"/>
         <image name="sapienza_logo.png" width="1464" height="440"/>
@@ -1586,7 +1634,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Mmo-hD-cQ8"/>
+        <segue reference="dXF-6E-UtG"/>
         <segue reference="11d-GD-gfm"/>
         <segue reference="cI2-C3-2d9"/>
     </inferredMetricsTieBreakers>

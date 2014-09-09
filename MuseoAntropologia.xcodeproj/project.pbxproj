@@ -62,6 +62,8 @@
 		4A5AE7C719B723AC00FCA06A /* FPPopoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5AE7C219B723AC00FCA06A /* FPPopoverController.m */; };
 		4A5AE7C819B723AC00FCA06A /* FPPopoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5AE7C419B723AC00FCA06A /* FPPopoverView.m */; };
 		4A5AE7C919B723AC00FCA06A /* FPTouchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5AE7C619B723AC00FCA06A /* FPTouchView.m */; };
+		4A6221FB19BE217D00D0633D /* piano-museo-test2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A6221F919BE217D00D0633D /* piano-museo-test2.png */; };
+		4A6221FC19BE217D00D0633D /* piano-museo-test3.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A6221FA19BE217D00D0633D /* piano-museo-test3.png */; };
 		4A81455B19826B57006FB54E /* AnotherTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A81455819826B57006FB54E /* AnotherTableViewController.m */; };
 		4A81457D19826B94006FB54E /* DSLCalendarDayCalloutView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A81455F19826B94006FB54E /* DSLCalendarDayCalloutView.m */; };
 		4A81457E19826B94006FB54E /* DSLCalendarDayCalloutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A81456019826B94006FB54E /* DSLCalendarDayCalloutView.xib */; };
@@ -190,6 +192,8 @@
 		4A5AE7C519B723AC00FCA06A /* FPTouchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPTouchView.h; sourceTree = "<group>"; };
 		4A5AE7C619B723AC00FCA06A /* FPTouchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPTouchView.m; sourceTree = "<group>"; };
 		4A5AE7CC19B7422100FCA06A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		4A6221F919BE217D00D0633D /* piano-museo-test2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "piano-museo-test2.png"; sourceTree = "<group>"; };
+		4A6221FA19BE217D00D0633D /* piano-museo-test3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "piano-museo-test3.png"; sourceTree = "<group>"; };
 		4A81455719826B57006FB54E /* AnotherTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AnotherTableViewController.h; path = ../AnotherTableViewController.h; sourceTree = "<group>"; };
 		4A81455819826B57006FB54E /* AnotherTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AnotherTableViewController.m; path = ../AnotherTableViewController.m; sourceTree = "<group>"; };
 		4A81455E19826B94006FB54E /* DSLCalendarDayCalloutView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSLCalendarDayCalloutView.h; sourceTree = "<group>"; };
@@ -486,6 +490,8 @@
 			isa = PBXGroup;
 			children = (
 				2215B2CE19B84C7500C79D50 /* icon.png */,
+				4A6221F919BE217D00D0633D /* piano-museo-test2.png */,
+				4A6221FA19BE217D00D0633D /* piano-museo-test3.png */,
 				1BF54B9519802762001CAF82 /* LogoMB.jpg */,
 				119FA51519BDBE01002DE3BA /* piano_terra.png */,
 				119FA51619BDBE01002DE3BA /* primo_piano.png */,
@@ -610,6 +616,7 @@
 				4A8145A119826E6F006FB54E /* timeline_blu_end.png in Resources */,
 				4A81458D19826B94006FB54E /* DSLCalendarDaySelection-middle.png in Resources */,
 				1BBEA4E419796F1E005B04B0 /* timeline_blu_65.png in Resources */,
+				4A6221FB19BE217D00D0633D /* piano-museo-test2.png in Resources */,
 				4A81457E19826B94006FB54E /* DSLCalendarDayCalloutView.xib in Resources */,
 				4A81458E19826B94006FB54E /* DSLCalendarDaySelection-middle@2x.png in Resources */,
 				F4EECF26177C99F400778578 /* Default@2x.png in Resources */,
@@ -638,6 +645,7 @@
 				F4EECF6B177F4C0200778578 /* menu@2x.png in Resources */,
 				4A81458119826B94006FB54E /* DSLCalendarMonthSelectorView.xib in Resources */,
 				4A81459019826B94006FB54E /* DSLCalendarDaySelection-right@2x.png in Resources */,
+				4A6221FC19BE217D00D0633D /* piano-museo-test3.png in Resources */,
 				1BB79105197FF74F00DC42E9 /* ceprano_logo.png in Resources */,
 				4A81458519826B94006FB54E /* DSLCalendar-nextMonth.png in Resources */,
 				1BD1AB63197F0A2B0069C6F7 /* Maiella.obj in Resources */,
