@@ -31,6 +31,7 @@
     label.textColor = [UIColor blackColor];
     label.text = self.navigationItem.title;
     label.textAlignment = NSTextAlignmentCenter;
+    
     self.navigationItem.titleView = label;
     
     
@@ -38,13 +39,15 @@
     sectionTitles = [[NSArray alloc]initWithObjects:@"Direttore Prof. G. Manzi", @"Contatta il museo", nil];
     
     array = @{@"Direttore Prof. G. Manzi" : @[contatti],
-              @"Contatta il museo" : @[@"Telefono: 06-49912495", @"Email"],
+              @"Contatta il museo" : @[@"06-49912495", @"museo-antropologia@uniroma1.it"],
               };
+    
     
     
     _sidebarButton.tintColor = [UIColor colorWithWhite:0.1f alpha:0.9f];
     _sidebarButton.target = self.revealViewController;
     _sidebarButton.action = @selector(revealToggle:);
+    
     
     // Set the gesture
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
@@ -97,7 +100,7 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
-    cell.textLabel.font = [UIFont fontWithName:@"STHeitiTC-Light" size:18.0f];
+    cell.textLabel.font = [UIFont fontWithName:@"STHeitiTC-Light" size:15.0f];
     
     if (indexPath.section==0) {
         cell.textLabel.font = [UIFont fontWithName:@"STHeitiTC-Light" size:12.0f];

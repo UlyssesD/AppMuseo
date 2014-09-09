@@ -12,6 +12,7 @@ extern NSString * const Saccop2;
 extern NSString * const Guattari;
 extern NSString * const Maiella;
 extern NSString * const Entrata;
+extern NSString * const Piano;
 
 extern NSString * const phoneNumber;
 

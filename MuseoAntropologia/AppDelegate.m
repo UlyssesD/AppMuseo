@@ -10,10 +10,13 @@
 #import "Constants.h"
 #import "CraniViewController.h"
 #import "TourVirtualeTableViewController.h"
+#import "SWRevealViewController.h"
+#import "MapViewController.h"
 
 @implementation AppDelegate
 {
     CLLocationManager *_locationManager;
+    SWRevealViewController *revealViewController;
     //    NSUserDefaults *defaults;
     
 }
@@ -24,6 +27,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    revealViewController = (SWRevealViewController *)self.window.rootViewController;
     
     // Change the background color of navigation bar
     [[UINavigationBar appearance] setBarTintColor:[UIColor whiteColor]];
@@ -116,6 +120,13 @@
     region6.notifyEntryStateOnDisplay = YES;
     [_locationManager startMonitoringForRegion:region6];
     
+    //Beacon 1.7 - BEACON ENTRATA MUSEO
+    CLBeaconRegion *region7;
+    //qui si definisce la regione dei beacon, questa è quella del beacon 7.
+    region7 = [[CLBeaconRegion alloc] initWithProximityUUID:[[NSUUID alloc] initWithUUIDString:@"14A184BD-26B6-4D40-B14E-DEF5EB92B3DA"] major: 1 minor: 7 	identifier:Piano ];
+    region7.notifyEntryStateOnDisplay = YES;
+    [_locationManager startMonitoringForRegion:region7];
+    
     
     //    UILocalNotification *localNotification = [launchOptions objectForKey:UIApplicationLaunchOptionsLocalNotificationKey];
     //    if(localNotification)
@@ -165,155 +176,222 @@
         
         //local notification
         //inserire if sullo stato del cranio da sbloccare (se è già sbloccato non entra)
-        //SBLOCCO CEPRANO
-        if([region.identifier isEqualToString:Ceprano] && [[NSUserDefaults standardUserDefaults] boolForKey:@"locked1"])
-        {
-            //test alert in background
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Hai sbloccato il cranio di Ceprano"  message:@"Guardalo subito nella sezione Augmented Tour!" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
-            [alert show];
-            
-            UILocalNotification *localNotif = [[UILocalNotification alloc] init];
-            if (localNotif) {
-                localNotif.alertBody = [[NSString alloc] initWithFormat:@"Hai sbloccato il cranio di %@!",region.identifier];
-                localNotif.alertAction = NSLocalizedString(@"Ok", nil);
-                localNotif.applicationIconBadgeNumber = [[UIApplication sharedApplication] applicationIconBadgeNumber]+1;
-                [[UIApplication sharedApplication] presentLocalNotificationNow:localNotif];
-            }
-            [defaults setBool:NO forKey:@"locked1"];
-            [defaults synchronize];
-        }
-        //SBLOCCO SACCO1
-        if([region.identifier isEqualToString:Saccop1] && [[NSUserDefaults standardUserDefaults] boolForKey:@"locked2"])
-        {
-            //test alert in background
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Hai sbloccato il cranio di Saccopastore 1"  message:@"Guardalo subito nella sezione Augmented Tour!" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
-            [alert show];
-            
-            UILocalNotification *localNotif = [[UILocalNotification alloc] init];
-            if (localNotif) {
-                localNotif.alertBody = [[NSString alloc] initWithFormat:@"Hai sbloccato il cranio di %@!",region.identifier];
-                localNotif.alertAction = NSLocalizedString(@"Ok", nil);
-                localNotif.applicationIconBadgeNumber = [[UIApplication sharedApplication] applicationIconBadgeNumber]+1;
-                [[UIApplication sharedApplication] presentLocalNotificationNow:localNotif];
-            }
-            [defaults setBool:NO forKey:@"locked2"];
-            [defaults synchronize];
-        }
-        //SBLOCCO SACCO2
-        if([region.identifier isEqualToString:Saccop2] && [[NSUserDefaults standardUserDefaults] boolForKey:@"locked3"])
-        {
-            //test alert in background
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Hai sbloccato il cranio di Saccopastore 2"  message:@"Guardalo subito nella sezione Augmented Tour!" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
-            [alert show];
-            
-            UILocalNotification *localNotif = [[UILocalNotification alloc] init];
-            if (localNotif) {
-                localNotif.alertBody = [[NSString alloc] initWithFormat:@"Hai sbloccato il cranio di %@!",region.identifier];
-                localNotif.alertAction = NSLocalizedString(@"Ok", nil);
-                localNotif.applicationIconBadgeNumber = [[UIApplication sharedApplication] applicationIconBadgeNumber]+1;
-                [[UIApplication sharedApplication] presentLocalNotificationNow:localNotif];
-            }
-            [defaults setBool:NO forKey:@"locked3"];
-            [defaults synchronize];
-        }
-        //SBLOCCO GUATTARI
-        if([region.identifier isEqualToString:Guattari] && [[NSUserDefaults standardUserDefaults] boolForKey:@"locked4"])
-        {
-            //test alert in background
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Hai sbloccato il cranio di Saccopastore 1"  message:@"Guardalo subito nella sezione Augmented Tour!" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
-            [alert show];
-            
-            UILocalNotification *localNotif = [[UILocalNotification alloc] init];
-            if (localNotif) {
-                localNotif.alertBody = [[NSString alloc] initWithFormat:@"Hai sbloccato il cranio di %@!",region.identifier];
-                localNotif.alertAction = NSLocalizedString(@"Ok", nil);
-                localNotif.applicationIconBadgeNumber = [[UIApplication sharedApplication] applicationIconBadgeNumber]+1;
-                [[UIApplication sharedApplication] presentLocalNotificationNow:localNotif];
-            }
-            [defaults setBool:NO forKey:@"locked4"];
-            [defaults synchronize];
-        }
         
         
-        //SBLOCCO MAIELLA
-        if([region.identifier isEqualToString:Maiella] && [[NSUserDefaults standardUserDefaults] boolForKey:@"locked5"])
-        {
-            //test alert in background
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Hai sbloccato il cranio di Maiella"  message:@"Guardalo subito nella sezione Augmented Tour!" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
-            [alert show];
-            
-            UILocalNotification *localNotif = [[UILocalNotification alloc] init];
-            if (localNotif) {
-                localNotif.alertBody = [[NSString alloc] initWithFormat:@"Hai sbloccato il cranio di %@!",region.identifier];
-                localNotif.alertAction = NSLocalizedString(@"Ok", nil);
-                localNotif.applicationIconBadgeNumber = [[UIApplication sharedApplication] applicationIconBadgeNumber]+1;
-                [[UIApplication sharedApplication] presentLocalNotificationNow:localNotif];
-            }
-            [defaults setBool:NO forKey:@"locked5"];
-            [defaults synchronize];
-        }
+        //NSDate *fromDateTime = (NSDate *)[defaults objectForKey:@"ultimaNotificaApp"];
         
-        //NOTIFICA BEACON ALL'ENTRATA -> 1 AL MESE
-        if([region.identifier isEqualToString:Entrata]){
-            NSDate *fromDateTime = (NSDate *)[defaults objectForKey:@"dataUltimaNotificaEntrata"];
-            
-            NSInteger day;
-            
-            if(fromDateTime != nil){
-                
-                NSLog(@"fromdate: %@", fromDateTime);
-                
-                NSDate *toDateTime = [NSDate date];
-                
-                //diff
-                NSDate *fromDate;
-                NSDate *toDate;
-                
-                NSCalendar *calendar = [NSCalendar currentCalendar];
-                
-                [calendar rangeOfUnit:NSDayCalendarUnit startDate:&fromDate
-                             interval:NULL forDate:fromDateTime];
-                [calendar rangeOfUnit:NSDayCalendarUnit startDate:&toDate
-                             interval:NULL forDate:toDateTime];
-                
-                NSDateComponents *difference = [calendar components:NSDayCalendarUnit
-                                                           fromDate:fromDate toDate:toDate options:0];
-                
-                
-                day = [difference day];
-            }else{
-                //fromdate mai impostato -> forzo la prima notifica con valore day > 30
-                
-                NSLog(@"forzo fromdate");
-                day = 31;
-            }
-            
-            //NSLog(@"giorni diff :%d", day);
-            
-            if(day  > 30){
+        if(1 /*TODO: sono passati più di 30 sec dall ultima notifica*/){
+            //SBLOCCO CEPRANO
+            if([region.identifier isEqualToString:Ceprano] && [[NSUserDefaults standardUserDefaults] boolForKey:@"locked1"])
+            {
                 //test alert in background
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sei arrivato davanti al museo di antropologia della Sapienza"  message:@"Entra a visitare il  museo!" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Hai sbloccato il cranio di Ceprano"  message:@"Guardalo subito nella sezione Augmented Tour!" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
                 [alert show];
                 
                 UILocalNotification *localNotif = [[UILocalNotification alloc] init];
                 if (localNotif) {
-                    localNotif.alertBody = [[NSString alloc] initWithFormat:@"Sei arrivato davanti al museo di antropologia della Sapienza!"];
+                    localNotif.alertBody = [[NSString alloc] initWithFormat:@"Hai sbloccato il cranio di %@!",region.identifier];
                     localNotif.alertAction = NSLocalizedString(@"Ok", nil);
                     localNotif.applicationIconBadgeNumber = [[UIApplication sharedApplication] applicationIconBadgeNumber]+1;
-                    
                     [[UIApplication sharedApplication] presentLocalNotificationNow:localNotif];
                 }
-                
-                //aggiorno data ultima notifica
-                NSDate *now = [NSDate date];
-                [defaults setObject:now forKey:@"dataUltimaNotificaEntrata"];
+                [defaults setBool:NO forKey:@"locked1"];
                 [defaults synchronize];
-            }else{
-                NSLog(@"meno di 30 gg dall'ultima notifica entrata");
+            }
+            //SBLOCCO SACCO1
+            if([region.identifier isEqualToString:Saccop1] && [[NSUserDefaults standardUserDefaults] boolForKey:@"locked2"])
+            {
+                //test alert in background
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Hai sbloccato il cranio di Saccopastore 1"  message:@"Guardalo subito nella sezione Augmented Tour!" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+                [alert show];
+                
+                UILocalNotification *localNotif = [[UILocalNotification alloc] init];
+                if (localNotif) {
+                    localNotif.alertBody = [[NSString alloc] initWithFormat:@"Hai sbloccato il cranio di %@!",region.identifier];
+                    localNotif.alertAction = NSLocalizedString(@"Ok", nil);
+                    localNotif.applicationIconBadgeNumber = [[UIApplication sharedApplication] applicationIconBadgeNumber]+1;
+                    [[UIApplication sharedApplication] presentLocalNotificationNow:localNotif];
+                }
+                [defaults setBool:NO forKey:@"locked2"];
+                [defaults synchronize];
+            }
+            //SBLOCCO SACCO2
+            if([region.identifier isEqualToString:Saccop2] && [[NSUserDefaults standardUserDefaults] boolForKey:@"locked3"])
+            {
+                //test alert in background
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Hai sbloccato il cranio di Saccopastore 2"  message:@"Guardalo subito nella sezione Augmented Tour!" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+                [alert show];
+                
+                UILocalNotification *localNotif = [[UILocalNotification alloc] init];
+                if (localNotif) {
+                    localNotif.alertBody = [[NSString alloc] initWithFormat:@"Hai sbloccato il cranio di %@!",region.identifier];
+                    localNotif.alertAction = NSLocalizedString(@"Ok", nil);
+                    localNotif.applicationIconBadgeNumber = [[UIApplication sharedApplication] applicationIconBadgeNumber]+1;
+                    [[UIApplication sharedApplication] presentLocalNotificationNow:localNotif];
+                }
+                [defaults setBool:NO forKey:@"locked3"];
+                [defaults synchronize];
+            }
+            //SBLOCCO GUATTARI
+            if([region.identifier isEqualToString:Guattari] && [[NSUserDefaults standardUserDefaults] boolForKey:@"locked4"])
+            {
+                //test alert in background
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Hai sbloccato il cranio di Saccopastore 1"  message:@"Guardalo subito nella sezione Augmented Tour!" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+                [alert show];
+                
+                UILocalNotification *localNotif = [[UILocalNotification alloc] init];
+                if (localNotif) {
+                    localNotif.alertBody = [[NSString alloc] initWithFormat:@"Hai sbloccato il cranio di %@!",region.identifier];
+                    localNotif.alertAction = NSLocalizedString(@"Ok", nil);
+                    localNotif.applicationIconBadgeNumber = [[UIApplication sharedApplication] applicationIconBadgeNumber]+1;
+                    [[UIApplication sharedApplication] presentLocalNotificationNow:localNotif];
+                }
+                [defaults setBool:NO forKey:@"locked4"];
+                [defaults synchronize];
             }
             
             
+            //SBLOCCO MAIELLA
+            if([region.identifier isEqualToString:Maiella] && [[NSUserDefaults standardUserDefaults] boolForKey:@"locked5"])
+            {
+                //test alert in background
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Hai sbloccato il cranio di Maiella"  message:@"Guardalo subito nella sezione Augmented Tour!" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+                [alert show];
+                
+                UILocalNotification *localNotif = [[UILocalNotification alloc] init];
+                if (localNotif) {
+                    localNotif.alertBody = [[NSString alloc] initWithFormat:@"Hai sbloccato il cranio di %@!",region.identifier];
+                    localNotif.alertAction = NSLocalizedString(@"Ok", nil);
+                    localNotif.applicationIconBadgeNumber = [[UIApplication sharedApplication] applicationIconBadgeNumber]+1;
+                    [[UIApplication sharedApplication] presentLocalNotificationNow:localNotif];
+                }
+                [defaults setBool:NO forKey:@"locked5"];
+                [defaults synchronize];
+            }
+            
+            //NOTIFICA BEACON ALL'ENTRATA -> 1 AL MESE
+            if([region.identifier isEqualToString:Entrata]){
+                NSDate *fromDateTime = (NSDate *)[defaults objectForKey:@"dataUltimaNotificaEntrata"];
+                
+                NSInteger day;
+                
+                if(fromDateTime != nil){
+                    
+                    NSLog(@"fromdate: %@", fromDateTime);
+                    
+                    NSDate *toDateTime = [NSDate date];
+                    
+                    //diff
+                    NSDate *fromDate;
+                    NSDate *toDate;
+                    
+                    NSCalendar *calendar = [NSCalendar currentCalendar];
+                    
+                    [calendar rangeOfUnit:NSDayCalendarUnit startDate:&fromDate
+                                 interval:NULL forDate:fromDateTime];
+                    [calendar rangeOfUnit:NSDayCalendarUnit startDate:&toDate
+                                 interval:NULL forDate:toDateTime];
+                    
+                    NSDateComponents *difference = [calendar components:NSDayCalendarUnit
+                                                               fromDate:fromDate toDate:toDate options:0];
+                    
+                    
+                    day = [difference day];
+                }else{
+                    //fromdate mai impostato -> forzo la prima notifica con valore day > 30
+                    NSLog(@"forzo fromdate");
+                    day = 31;
+                }
+                
+                //NSLog(@"giorni diff :%d", day);
+                
+                if(day  > 30){
+                    //test alert in background
+                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sei arrivato davanti al museo di antropologia della Sapienza"  message:@"Entra a visitare il  museo!" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+                    [alert show];
+                    
+                    UILocalNotification *localNotif = [[UILocalNotification alloc] init];
+                    if (localNotif) {
+                        localNotif.alertBody = [[NSString alloc] initWithFormat:@"Sei arrivato davanti al museo di antropologia della Sapienza!"];
+                        localNotif.alertAction = NSLocalizedString(@"Ok", nil);
+                        localNotif.applicationIconBadgeNumber = [[UIApplication sharedApplication] applicationIconBadgeNumber]+1;
+                        
+                        [[UIApplication sharedApplication] presentLocalNotificationNow:localNotif];
+                    }
+                    
+                    //aggiorno data ultima notifica
+                    NSDate *now = [NSDate date];
+                    [defaults setObject:now forKey:@"dataUltimaNotificaEntrata"];
+                    [defaults synchronize];
+                }else{
+                    NSLog(@"meno di 30 gg dall'ultima notifica entrata");
+                }
+                
+                
+            }
+            
+            //NOTIFICA BEACON AL PRIMO PIANO -> 1 AL MESE
+            if([region.identifier isEqualToString:Piano]){
+                NSDate *fromDateTime = (NSDate *)[defaults objectForKey:@"dataUltimaNotificaPiano"];
+                
+                NSInteger day;
+                
+                if(fromDateTime != nil){
+                    
+                    NSLog(@"fromdate: %@", fromDateTime);
+                    
+                    NSDate *toDateTime = [NSDate date];
+                    
+                    //diff
+                    NSDate *fromDate;
+                    NSDate *toDate;
+                    
+                    NSCalendar *calendar = [NSCalendar currentCalendar];
+                    
+                    [calendar rangeOfUnit:NSDayCalendarUnit startDate:&fromDate
+                                 interval:NULL forDate:fromDateTime];
+                    [calendar rangeOfUnit:NSDayCalendarUnit startDate:&toDate
+                                 interval:NULL forDate:toDateTime];
+                    
+                    NSDateComponents *difference = [calendar components:NSDayCalendarUnit
+                                                               fromDate:fromDate toDate:toDate options:0];
+                    
+                    
+                    day = [difference day];
+                }else{
+                    //fromdate mai impostato -> forzo la prima notifica con valore day > 30
+                    NSLog(@"forzo fromdate");
+                    day = 31;
+                }
+                
+                //NSLog(@"giorni diff :%d", day);
+                
+                if(day  > 30){
+                    //test alert in background
+                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sei arrivato al primo piano del museo di antropologia della Sapienza"  message:@"Entra a visitare il  museo!" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+                    [alert show];
+                    
+                    UILocalNotification *localNotif = [[UILocalNotification alloc] init];
+                    if (localNotif) {
+                        localNotif.alertBody = [[NSString alloc] initWithFormat:@"Sei arrivato al primo piano del museo di antropologia della Sapienza!"];
+                        localNotif.alertAction = NSLocalizedString(@"Ok", nil);
+                        localNotif.applicationIconBadgeNumber = [[UIApplication sharedApplication] applicationIconBadgeNumber]+1;
+                        
+                        [[UIApplication sharedApplication] presentLocalNotificationNow:localNotif];
+                    }
+                    
+                    //aggiorno data ultima notifica
+                    NSDate *now = [NSDate date];
+                    [defaults setObject:now forKey:@"dataUltimaNotificaPiano"];
+                    [defaults synchronize];
+                }else{
+                    NSLog(@"meno di 30 gg dall'ultima notifica piano");
+                }
+                
+                
+            }
         }
+        
         
     }
     else if(state == CLRegionStateOutside) {
@@ -350,6 +428,7 @@
 
 - (void)locationManager:(CLLocationManager *)manager didRangeBeacons:(NSArray *)beacons inRegion:(CLBeaconRegion *)region
 {
+    
     // I commented out the line below because otherwise you see this every second in the logs
     //    NSLog(@"locationManager didRangeBeacons");
     //
@@ -397,6 +476,37 @@
     application.applicationIconBadgeNumber = 0;//badge notifiche beacon trovati
     
     
+    
+//    [revealViewController.rearViewController performSegueWithIdentifier:@"tourWC" sender: self];
+    //[revealViewController.navigationController performSegueWithIdentifier:@"tourWC" sender:self];
+    NSLog(@"open view : %@",revealViewController.storyboard.description);
+    
+    
+    
+    
+    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+    MapViewController *dest = (MapViewController *) [storyBoard instantiateViewControllerWithIdentifier:@"TourViewController"];
+    
+    [revealViewController.navigationController popToRootViewControllerAnimated:NO];
+    
+    [revealViewController.navigationController setViewControllers: @[dest]  animated: NO ];
+    
+    
+    
+    //[self dismissViewControllerAnimated:YES completion:nil];
+
+    
+//    NSString *segueId = @"tourWC"; //ID view controller tour virtuale
+//    
+//    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+//    
+//    UIViewController *vc = [storyboard instantiateViewControllerWithIdentifier:segueId];
+//  //  [[[[UIApplication sharedApplication]delegate]window]addSubview:vc.view];
+//  
+//   
+//    self.window.rootViewController = vc;
+
+
     //
     //    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"MainStoryboard"
     //                                                             bundle: nil];

@@ -34,7 +34,7 @@
 {
     [super viewDidLoad];
     
-    _menuItems = @[@"title", @"Il Museo", @"Prenotazioni", @"Visita", @"Come raggiungerci", @"Contatti", @"Credits"];
+    _menuItems = @[@"title", @"Il Museo",@"Come raggiungerci", @"Prenotazioni", @"Visita",  @"Contatti", @"Credits"];
 }
 
 - (void)didReceiveMemoryWarning
