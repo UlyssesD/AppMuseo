@@ -33,6 +33,11 @@
     // Change the background color of navigation bar
     [[UINavigationBar appearance] setBarTintColor:[UIColor whiteColor]];
     
+    UIPageControl *pageControl = [UIPageControl appearance];
+    pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
+    pageControl.currentPageIndicatorTintColor = [UIColor colorWithRed:0/255.0 green:122/255.0 blue:255/255.0 alpha:1];
+    pageControl.backgroundColor = [UIColor colorWithWhite:255/255.0 alpha:0.1];
+    
     defaults = [NSUserDefaults standardUserDefaults];
     
     if ([defaults objectForKey:@"locked1"] == nil) {

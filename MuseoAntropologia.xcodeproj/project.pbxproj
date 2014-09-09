@@ -59,11 +59,16 @@
 		2215B2CF19B84C7500C79D50 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2215B2CE19B84C7500C79D50 /* icon.png */; };
 		224B833619B775FA00D23CC0 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 224B833519B775FA00D23CC0 /* Reachability.m */; };
 		224B833819B7763700D23CC0 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 224B833719B7763700D23CC0 /* SystemConfiguration.framework */; };
+		4A4D57F119BF0814000A3F1D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4A4D57E919BF0814000A3F1D /* InfoPlist.strings */; };
+		4A4D57F219BF0814000A3F1D /* MainStoryboard (Copia in conflitto di Andrea Novelli 2014-07-07).storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A4D57EB19BF0814000A3F1D /* MainStoryboard (Copia in conflitto di Andrea Novelli 2014-07-07).storyboard */; };
+		4A4D57F319BF0814000A3F1D /* MainStoryboard (Copia in conflitto di tommaso pasini 2014-07-07).storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A4D57ED19BF0814000A3F1D /* MainStoryboard (Copia in conflitto di tommaso pasini 2014-07-07).storyboard */; };
+		4A4D57F419BF0814000A3F1D /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A4D57EF19BF0814000A3F1D /* MainStoryboard.storyboard */; };
 		4A5AE7C719B723AC00FCA06A /* FPPopoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5AE7C219B723AC00FCA06A /* FPPopoverController.m */; };
 		4A5AE7C819B723AC00FCA06A /* FPPopoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5AE7C419B723AC00FCA06A /* FPPopoverView.m */; };
 		4A5AE7C919B723AC00FCA06A /* FPTouchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5AE7C619B723AC00FCA06A /* FPTouchView.m */; };
 		4A6221FB19BE217D00D0633D /* piano-museo-test2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A6221F919BE217D00D0633D /* piano-museo-test2.png */; };
 		4A6221FC19BE217D00D0633D /* piano-museo-test3.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A6221FA19BE217D00D0633D /* piano-museo-test3.png */; };
+		4A6221FF19BE33F700D0633D /* CreditsAltTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A6221FE19BE33F700D0633D /* CreditsAltTableViewController.m */; };
 		4A81455B19826B57006FB54E /* AnotherTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A81455819826B57006FB54E /* AnotherTableViewController.m */; };
 		4A81457D19826B94006FB54E /* DSLCalendarDayCalloutView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A81455F19826B94006FB54E /* DSLCalendarDayCalloutView.m */; };
 		4A81457E19826B94006FB54E /* DSLCalendarDayCalloutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A81456019826B94006FB54E /* DSLCalendarDayCalloutView.xib */; };
@@ -94,6 +99,8 @@
 		4A8145A219826E6F006FB54E /* timeline_red_end.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A81459E19826E6F006FB54E /* timeline_red_end.png */; };
 		4A8145A319826E6F006FB54E /* timeline_top.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A81459F19826E6F006FB54E /* timeline_top.png */; };
 		4A947BAC19B607E9001BC0D8 /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A947BAB19B607E9001BC0D8 /* CalendarViewController.m */; };
+		4AA32CF819BF25E1006C7616 /* PageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA32CF719BF25E1006C7616 /* PageContentViewController.m */; };
+		4AA32CFB19BF2AFD006C7616 /* InsideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA32CFA19BF2AFD006C7616 /* InsideViewController.m */; };
 		4AA577B7198290DE009C0F9B /* PrenotazioneTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA577B6198290DE009C0F9B /* PrenotazioneTableViewController.m */; };
 		4AA93E2D19866102002B883A /* NotesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA93E2C19866102002B883A /* NotesTableViewController.m */; };
 		4ACEDA53198295E600B2B7F4 /* CompleteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACEDA52198295E600B2B7F4 /* CompleteViewController.m */; };
@@ -184,6 +191,10 @@
 		224B833419B775E800D23CC0 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = SOURCE_ROOT; };
 		224B833519B775FA00D23CC0 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = SOURCE_ROOT; };
 		224B833719B7763700D23CC0 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		4A4D57EA19BF0814000A3F1D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = InfoPlist.strings; sourceTree = "<group>"; };
+		4A4D57EC19BF0814000A3F1D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = "MainStoryboard (Copia in conflitto di Andrea Novelli 2014-07-07).storyboard"; sourceTree = "<group>"; };
+		4A4D57EE19BF0814000A3F1D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = "MainStoryboard (Copia in conflitto di tommaso pasini 2014-07-07).storyboard"; sourceTree = "<group>"; };
+		4A4D57F019BF0814000A3F1D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		4A5AE7C019B723AC00FCA06A /* ARCMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARCMacros.h; sourceTree = "<group>"; };
 		4A5AE7C119B723AC00FCA06A /* FPPopoverController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPPopoverController.h; sourceTree = "<group>"; };
 		4A5AE7C219B723AC00FCA06A /* FPPopoverController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPPopoverController.m; sourceTree = "<group>"; };
@@ -194,6 +205,8 @@
 		4A5AE7CC19B7422100FCA06A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		4A6221F919BE217D00D0633D /* piano-museo-test2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "piano-museo-test2.png"; sourceTree = "<group>"; };
 		4A6221FA19BE217D00D0633D /* piano-museo-test3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "piano-museo-test3.png"; sourceTree = "<group>"; };
+		4A6221FD19BE33F700D0633D /* CreditsAltTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreditsAltTableViewController.h; sourceTree = "<group>"; };
+		4A6221FE19BE33F700D0633D /* CreditsAltTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreditsAltTableViewController.m; sourceTree = "<group>"; };
 		4A81455719826B57006FB54E /* AnotherTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AnotherTableViewController.h; path = ../AnotherTableViewController.h; sourceTree = "<group>"; };
 		4A81455819826B57006FB54E /* AnotherTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AnotherTableViewController.m; path = ../AnotherTableViewController.m; sourceTree = "<group>"; };
 		4A81455E19826B94006FB54E /* DSLCalendarDayCalloutView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSLCalendarDayCalloutView.h; sourceTree = "<group>"; };
@@ -234,6 +247,10 @@
 		4A81459F19826E6F006FB54E /* timeline_top.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = timeline_top.png; sourceTree = "<group>"; };
 		4A947BAA19B607E9001BC0D8 /* CalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CalendarViewController.h; path = ../CalendarViewController.h; sourceTree = "<group>"; };
 		4A947BAB19B607E9001BC0D8 /* CalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CalendarViewController.m; path = ../CalendarViewController.m; sourceTree = "<group>"; };
+		4AA32CF619BF25E1006C7616 /* PageContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageContentViewController.h; sourceTree = "<group>"; };
+		4AA32CF719BF25E1006C7616 /* PageContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageContentViewController.m; sourceTree = "<group>"; };
+		4AA32CF919BF2AFD006C7616 /* InsideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InsideViewController.h; sourceTree = "<group>"; };
+		4AA32CFA19BF2AFD006C7616 /* InsideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InsideViewController.m; sourceTree = "<group>"; };
 		4AA577B5198290DE009C0F9B /* PrenotazioneTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrenotazioneTableViewController.h; sourceTree = "<group>"; };
 		4AA577B6198290DE009C0F9B /* PrenotazioneTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrenotazioneTableViewController.m; sourceTree = "<group>"; };
 		4AA93E2B19866102002B883A /* NotesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotesTableViewController.h; sourceTree = "<group>"; };
@@ -309,6 +326,17 @@
 				1BD1AB5D197F0A2B0069C6F7 /* Saccopastore 2.obj */,
 			);
 			name = Crani;
+			sourceTree = "<group>";
+		};
+		4A4D57E819BF0814000A3F1D /* en.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				4A4D57E919BF0814000A3F1D /* InfoPlist.strings */,
+				4A4D57EB19BF0814000A3F1D /* MainStoryboard (Copia in conflitto di Andrea Novelli 2014-07-07).storyboard */,
+				4A4D57ED19BF0814000A3F1D /* MainStoryboard (Copia in conflitto di tommaso pasini 2014-07-07).storyboard */,
+				4A4D57EF19BF0814000A3F1D /* MainStoryboard.storyboard */,
+			);
+			path = en.lproj;
 			sourceTree = "<group>";
 		};
 		4A5AE7BF19B723AC00FCA06A /* FPPopover */ = {
@@ -412,6 +440,13 @@
 				4ADAC2A519B757EA002476CD /* LegendaViewController.h */,
 				4ADAC2A619B757EA002476CD /* LegendaViewController.m */,
 				F4EECF29177C99F400778578 /* MainStoryboard.storyboard */,
+				4AA32CF919BF2AFD006C7616 /* InsideViewController.h */,
+				4AA32CFA19BF2AFD006C7616 /* InsideViewController.m */,
+				4AA32CF619BF25E1006C7616 /* PageContentViewController.h */,
+				4AA32CF719BF25E1006C7616 /* PageContentViewController.m */,
+				4A4D57E819BF0814000A3F1D /* en.lproj */,
+				4A6221FD19BE33F700D0633D /* CreditsAltTableViewController.h */,
+				4A6221FE19BE33F700D0633D /* CreditsAltTableViewController.m */,
 				4A947BAA19B607E9001BC0D8 /* CalendarViewController.h */,
 				4A947BAB19B607E9001BC0D8 /* CalendarViewController.m */,
 				4A81455719826B57006FB54E /* AnotherTableViewController.h */,
@@ -610,13 +645,16 @@
 				1BBEA4EC197973BC005B04B0 /* timeline_red.png in Resources */,
 				1B4241AC197EDF3600EF5CB4 /* done.png in Resources */,
 				1B4241AA197EDF2F00EF5CB4 /* locked.png in Resources */,
+				4A4D57F319BF0814000A3F1D /* MainStoryboard (Copia in conflitto di tommaso pasini 2014-07-07).storyboard in Resources */,
 				1B7C522B197A86D700B53F4D /* museum.png in Resources */,
+				4A4D57F419BF0814000A3F1D /* MainStoryboard.storyboard in Resources */,
 				1BB79106197FF74F00DC42E9 /* saccopastore2_logo.png in Resources */,
 				F4EECF24177C99F400778578 /* Default.png in Resources */,
 				4A8145A119826E6F006FB54E /* timeline_blu_end.png in Resources */,
 				4A81458D19826B94006FB54E /* DSLCalendarDaySelection-middle.png in Resources */,
 				1BBEA4E419796F1E005B04B0 /* timeline_blu_65.png in Resources */,
 				4A6221FB19BE217D00D0633D /* piano-museo-test2.png in Resources */,
+				4A4D57F119BF0814000A3F1D /* InfoPlist.strings in Resources */,
 				4A81457E19826B94006FB54E /* DSLCalendarDayCalloutView.xib in Resources */,
 				4A81458E19826B94006FB54E /* DSLCalendarDaySelection-middle@2x.png in Resources */,
 				F4EECF26177C99F400778578 /* Default@2x.png in Resources */,
@@ -630,6 +668,7 @@
 				F4EECF2B177C99F400778578 /* MainStoryboard.storyboard in Resources */,
 				F4EECF67177F4AB000778578 /* nav_bg.png in Resources */,
 				1BD1AB5E197F0A2B0069C6F7 /* Ceprano.mtl in Resources */,
+				4A4D57F219BF0814000A3F1D /* MainStoryboard (Copia in conflitto di Andrea Novelli 2014-07-07).storyboard in Resources */,
 				1B3635E7195ADD8E00B221DD /* shop.png in Resources */,
 				1B840239197E724500B4D222 /* icon2.png in Resources */,
 				1BD1AB5F197F0A2B0069C6F7 /* Ceprano.obj in Resources */,
@@ -669,6 +708,7 @@
 			files = (
 				4ACEDA581982B65500B2B7F4 /* HistoryTableViewController.m in Sources */,
 				1B7C5219197A79D200B53F4D /* Constants.m in Sources */,
+				4AA32CF819BF25E1006C7616 /* PageContentViewController.m in Sources */,
 				1B0FFF73197814E300D6496C /* CraniViewController.m in Sources */,
 				F4D9AD1F1871725500E2D912 /* SWRevealViewController.m in Sources */,
 				1B6985AF197C138C004023FF /* CranioTableViewCell.m in Sources */,
@@ -682,7 +722,9 @@
 				4A5AE7C819B723AC00FCA06A /* FPPopoverView.m in Sources */,
 				1BAE81E1196ECF640060EA98 /* ContattiViewController.m in Sources */,
 				F4EECF2E177C99F400778578 /* MainViewController.m in Sources */,
+				4AA32CFB19BF2AFD006C7616 /* InsideViewController.m in Sources */,
 				4A81459319826B94006FB54E /* NSDate+DSLCalendarView.m in Sources */,
+				4A6221FF19BE33F700D0633D /* CreditsAltTableViewController.m in Sources */,
 				4A81459819826BB2006FB54E /* DataSetTableViewController.m in Sources */,
 				4AA93E2D19866102002B883A /* NotesTableViewController.m in Sources */,
 				1BB790FA197FC07400DC42E9 /* BDAppDelegate.m in Sources */,
@@ -706,6 +748,38 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		4A4D57E919BF0814000A3F1D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4A4D57EA19BF0814000A3F1D /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		4A4D57EB19BF0814000A3F1D /* MainStoryboard (Copia in conflitto di Andrea Novelli 2014-07-07).storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4A4D57EC19BF0814000A3F1D /* en */,
+			);
+			name = "MainStoryboard (Copia in conflitto di Andrea Novelli 2014-07-07).storyboard";
+			sourceTree = "<group>";
+		};
+		4A4D57ED19BF0814000A3F1D /* MainStoryboard (Copia in conflitto di tommaso pasini 2014-07-07).storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4A4D57EE19BF0814000A3F1D /* en */,
+			);
+			name = "MainStoryboard (Copia in conflitto di tommaso pasini 2014-07-07).storyboard";
+			sourceTree = "<group>";
+		};
+		4A4D57EF19BF0814000A3F1D /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4A4D57F019BF0814000A3F1D /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
 		F4EECF1A177C99F400778578 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
