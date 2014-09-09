@@ -249,7 +249,7 @@
 		4ADB659A19869FF500714E7C /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		F4D9AD1D1871725500E2D912 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		F4D9AD1E1871725500E2D912 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
-		F4EECF0E177C99F400778578 /* MuseoAntropologia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MuseoAntropologia.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4EECF0E177C99F400778578 /* MAn Roma.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MAn Roma.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4EECF11177C99F400778578 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F4EECF13177C99F400778578 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F4EECF15177C99F400778578 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -384,7 +384,7 @@
 		F4EECF0F177C99F400778578 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F4EECF0E177C99F400778578 /* MuseoAntropologia.app */,
+				F4EECF0E177C99F400778578 /* MAn Roma.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -548,7 +548,7 @@
 			);
 			name = MuseoAntropologia;
 			productName = MuseoAntropologia;
-			productReference = F4EECF0E177C99F400778578 /* MuseoAntropologia.app */;
+			productReference = F4EECF0E177C99F400778578 /* MAn Roma.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -795,7 +795,7 @@
 				INFOPLIST_FILE = "MuseoAntropologia/MuseoAntropologia-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = NO;
-				PRODUCT_NAME = MuseoAntropologia;
+				PRODUCT_NAME = "MAn Roma";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				VALID_ARCHS = armv7;
@@ -817,7 +817,7 @@
 				INFOPLIST_FILE = "MuseoAntropologia/MuseoAntropologia-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = NO;
-				PRODUCT_NAME = MuseoAntropologia;
+				PRODUCT_NAME = "MAn Roma";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				VALID_ARCHS = armv7;
