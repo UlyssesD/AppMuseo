@@ -446,7 +446,7 @@
 				ORGANIZATIONNAME = Appcoda;
 				TargetAttributes = {
 					F4EECF0D177C99F400778578 = {
-						DevelopmentTeam = E27RJVVPF4;
+						DevelopmentTeam = 4UVHD887LG;
 					};
 				};
 			};

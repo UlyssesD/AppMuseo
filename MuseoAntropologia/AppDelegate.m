@@ -20,6 +20,13 @@
     BOOL isActive;
     //    NSUserDefaults *defaults;
     
+    //region beacon crani
+    CLBeaconRegion *region1;
+    CLBeaconRegion *region2;
+    CLBeaconRegion *region3;
+    CLBeaconRegion *region4;
+    CLBeaconRegion *region5;
+    
 }
 
 
@@ -76,7 +83,6 @@
      */
     
     //Beacon 1.1 - CEPRANO
-    CLBeaconRegion *region1;
     //qui si definisce la regione dei beacon, questa è quella del beacon 1.
     region1 = [[CLBeaconRegion alloc] initWithProximityUUID:[[NSUUID alloc] initWithUUIDString:@"14A184BD-26B6-4D40-B14E-DEF5EB92B3DA"] major: 1 minor: 1 identifier: Ceprano ];
     region1.notifyEntryStateOnDisplay = YES;
@@ -84,7 +90,7 @@
     [_locationManager startRangingBeaconsInRegion: region1];
     
     //Beacon 1.2 - SACCOPASTORE 1
-    CLBeaconRegion *region2;
+//    CLBeaconRegion *region2;
     //qui si definisce la regione dei beacon, questa è quella del beacon 2.
     region2 = [[CLBeaconRegion alloc] initWithProximityUUID:[[NSUUID alloc] initWithUUIDString:@"14A184BD-26B6-4D40-B14E-DEF5EB92B3DA"] major: 1 minor: 2 identifier: Saccop1];
     region2.notifyEntryStateOnDisplay = YES;
@@ -92,7 +98,7 @@
     [_locationManager startRangingBeaconsInRegion: region2];
     
     //Beacon 1.3 - SACCOPASTORE 2
-    CLBeaconRegion *region3;
+//    CLBeaconRegion *region3;
     //qui si definisce la regione dei beacon, questa è quella del beacon 3.
     region3 = [[CLBeaconRegion alloc] initWithProximityUUID:[[NSUUID alloc] initWithUUIDString:@"14A184BD-26B6-4D40-B14E-DEF5EB92B3DA"] major: 1 minor: 3 identifier: Saccop2];
     region3.notifyEntryStateOnDisplay = YES;
@@ -101,7 +107,7 @@
     
     
     //Beacon 1.4 - GUATTARI
-    CLBeaconRegion *region4;
+//    CLBeaconRegion *region4;
     //qui si definisce la regione dei beacon, questa è quella del beacon 4.
     region4 = [[CLBeaconRegion alloc] initWithProximityUUID:[[NSUUID alloc] initWithUUIDString:@"14A184BD-26B6-4D40-B14E-DEF5EB92B3DA"] major: 1 minor: 4 	identifier: Guattari];
     region4.notifyEntryStateOnDisplay = YES;
@@ -109,7 +115,7 @@
     [_locationManager startRangingBeaconsInRegion: region4];
     
     //Beacon 1.5 - MAIELLA
-    CLBeaconRegion *region5;
+//    CLBeaconRegion *region5;
     //qui si definisce la regione dei beacon, questa è quella del beacon 5.
     region5 = [[CLBeaconRegion alloc] initWithProximityUUID:[[NSUUID alloc] initWithUUIDString:@"14A184BD-26B6-4D40-B14E-DEF5EB92B3DA"] major: 1 minor: 5 	identifier: Maiella];
     region5.notifyEntryStateOnDisplay = YES;
@@ -149,6 +155,20 @@
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
     isActive = NO;
+    
+    NSLog(@"riavvio region monitoring");
+    //riavvio monitoring region per bug notifiche
+    [_locationManager stopMonitoringForRegion:region1];
+    [_locationManager stopMonitoringForRegion:region2];
+    [_locationManager stopMonitoringForRegion:region3];
+    [_locationManager stopMonitoringForRegion:region4];
+    [_locationManager stopMonitoringForRegion:region5];
+    
+    [_locationManager startMonitoringForRegion:region1];
+    [_locationManager startMonitoringForRegion:region2];
+    [_locationManager startMonitoringForRegion:region3];
+    [_locationManager startMonitoringForRegion:region4];
+    [_locationManager startMonitoringForRegion:region5];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
@@ -178,17 +198,17 @@
 
 - (void)locationManager:(CLLocationManager *)manager didDetermineState:(CLRegionState)state forRegion:(CLRegion *)region
 {
-    //stop monitor se tutti crani sbloccati
-    if([[NSUserDefaults standardUserDefaults] boolForKey:@"locked1"]&&
-       [[NSUserDefaults standardUserDefaults] boolForKey:@"locked2"]&&
-       [[NSUserDefaults standardUserDefaults] boolForKey:@"locked3"]&&
-       [[NSUserDefaults standardUserDefaults] boolForKey:@"locked4"]&&
-       [[NSUserDefaults standardUserDefaults] boolForKey:@"locked5"])
-    {
-        
-        [manager stopMonitoringForRegion:region];
-        
-    }
+//    //stop monitor se tutti crani sbloccati
+//    if([[NSUserDefaults standardUserDefaults] boolForKey:@"locked1"]&&
+//       [[NSUserDefaults standardUserDefaults] boolForKey:@"locked2"]&&
+//       [[NSUserDefaults standardUserDefaults] boolForKey:@"locked3"]&&
+//       [[NSUserDefaults standardUserDefaults] boolForKey:@"locked4"]&&
+//       [[NSUserDefaults standardUserDefaults] boolForKey:@"locked5"])
+//    {
+//        
+//        [manager stopMonitoringForRegion:region];
+//        
+//    }
     //quando sei dentro l'area di un beacon, quello definito dalla region
     if(state == CLRegionStateInside) {
         NSLog(@"locationManager didDetermineState INSIDE for %@", region.identifier);
@@ -198,7 +218,6 @@
         //inserire if sullo stato del cranio da sbloccare (se è già sbloccato non entra)
         
         if(!isActive){ //APP non attiva
-            
             
             
             //SBLOCCO CEPRANO
@@ -609,56 +628,13 @@
         
     }
     
-    
-    
-    //
-    //    if ([beacons count] > 0) {
-    //        CLBeacon *nearestExhibit = [beacons firstObject];
-    //
-    //        NSLog(@"%i", [beacons count]);
-    //
-    //        // Present the exhibit-specific UI only when
-    //        // the user is relatively close to the exhibit.
-    //        if (CLProximityImmediate == nearestExhibit.proximity) {
-    //            //[self presentExhibitInfoWithMajorValue:nearestExhibit.major.integerValue];
-    //
-    //            //SBLOCCO CEPRANO
-    //            if([region.identifier isEqualToString:Ceprano] && [[NSUserDefaults standardUserDefaults] boolForKey:@"locked1"])
-    //            {
-    //                //test alert in background
-    //                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Hai sbloccato il cranio di Ceprano"  message:@"Guardalo subito nella sezione Augmented Tour!" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
-    //                [alert show];
-    //
-    //                UILocalNotification *localNotif = [[UILocalNotification alloc] init];
-    //                if (localNotif) {
-    //                    localNotif.alertBody = [[NSString alloc] initWithFormat:@"Hai sbloccato il cranio di %@!",region.identifier];
-    //                    localNotif.alertAction = NSLocalizedString(@"Ok", nil);
-    //                    localNotif.applicationIconBadgeNumber = [[UIApplication sharedApplication] applicationIconBadgeNumber]+1;
-    //                    [[UIApplication sharedApplication] presentLocalNotificationNow:localNotif];
-    //                }
-    //                [defaults setBool:NO forKey:@"locked1"];
-    //                [defaults synchronize];
-    //            }
-    //
-    //
-    //
-    //
-    //
-    //        } else {
-    //            //[self dismissExhibitInfo];
-    //        }
-    //    }
-    
 }
 
 -(void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
 {
     application.applicationIconBadgeNumber = 0;//badge notifiche beacon trovati
     
-    
-    
-    //    [revealViewController.rearViewController performSegueWithIdentifier:@"tourWC" sender: self];
-    //[revealViewController.navigationController performSegueWithIdentifier:@"tourWC" sender:self];
+    //quando riceve notifica apre view sezione crani
     UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
     MapViewController *dest = (MapViewController *) [storyBoard instantiateViewControllerWithIdentifier:@"TourViewController"];
     
@@ -666,63 +642,6 @@
     
     [self.nav setViewControllers: @[dest]  animated: NO ];
     
-    NSLog(@"%@",self.nav);
-    
-    
-    
-    
-//    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
-//    MapViewController *dest = (MapViewController *) [storyBoard instantiateViewControllerWithIdentifier:@"TourViewController"];
-//    
-//    [revealViewController.navigationController popToRootViewControllerAnimated:NO];
-//    
-//    [revealViewController.navigationController setViewControllers: @[dest]  animated: NO ];
-    
-    
-    
-    //[self dismissViewControllerAnimated:YES completion:nil];
-    
-    
-    //    NSString *segueId = @"tourWC"; //ID view controller tour virtuale
-    //
-    //    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
-    //
-    //    UIViewController *vc = [storyboard instantiateViewControllerWithIdentifier:segueId];
-    //  //  [[[[UIApplication sharedApplication]delegate]window]addSubview:vc.view];
-    //
-    //
-    //    self.window.rootViewController = vc;
-    
-    
-    //
-    //    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"MainStoryboard"
-    //                                                             bundle: nil];
-    //
-    //    TourVirtualeTableViewController *controller = (TourVirtualeTableViewController *) [mainStoryboard
-    //                                                                                       instantiateViewControllerWithIdentifier: @"craniView"];
-    //
-    //
-    //    UINavigationController *pp = self.window.rootViewController.navigationController;
-    //
-    //    [pp setViewControllers:@[controller] animated:NO];
-    //    [pp        dismissViewControllerAnimated:YES completion:nil];
-    
-    
-    //save the root view controller
-    //
-    //    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
-    //    CraniViewController *view = (CraniViewController *)[storyboard instantiateViewControllerWithIdentifier:@"craniView"];
-    //
-    //    [self.window.rootViewController.navigationController setViewControllers:@[view] animated:NO];
-    
-    //[[CraniViewController alloc] initWithNibName:nil bundle:nil];
-	//[self presentViewController:second animated:YES completion:nil];
-    //
-    //    NSLog(@"TEST LOCAL NOTIFICATION");
-    //    UINavigationController *nav = (UINavigationController *)self.window.rootViewController;
-    //    //UINavigationController *nav = [UINavigationController ];
-    //
-    //    //[ nav setViewControllers:@[view] animated:NO];
     
     
 }
