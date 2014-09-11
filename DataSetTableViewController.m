@@ -44,6 +44,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     _nome.delegate = self;
     _cognome.delegate = self;
     _email.delegate = self;
@@ -54,16 +55,6 @@
     _submit.userInteractionEnabled = NO;
     
     _notes.text = @"";
-    
-    /*UIToolbar* numberToolbar = [[UIToolbar alloc]initWithFrame:CGRectMake(0, 0, 320, 50)];
-    numberToolbar.barStyle = UIBarStyleDefault;
-    numberToolbar.items = [NSArray arrayWithObjects:
-                           [[UIBarButtonItem alloc]initWithTitle:@"Cancella" style:UIBarButtonItemStyleBordered target:self action:@selector(cancelNumberPad)],
-                           [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil],
-                           [[UIBarButtonItem alloc]initWithTitle:@"Finito" style:UIBarButtonItemStyleDone target:self action:@selector(doneWithNumberPad)],
-                           nil];
-    [numberToolbar sizeToFit];
-    _cellulare.inputAccessoryView = numberToolbar;*/
     
    [self addInfoMessage];
 }
@@ -90,7 +81,7 @@
                          [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil],
                          nil];
     [infoToolbar sizeToFit];
-    //infoToolbar.alpha = 0.7;
+    
     _nome.inputAccessoryView = infoToolbar;
     _cognome.inputAccessoryView = infoToolbar;
     _email.inputAccessoryView = infoToolbar;

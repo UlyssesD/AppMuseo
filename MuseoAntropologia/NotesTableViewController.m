@@ -29,7 +29,21 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     _notes.text = _text;
+    
+    UIBarButtonItem *message = [[UIBarButtonItem alloc]initWithTitle:@"Trascina verso il basso per chiudere" style:UIBarButtonItemStylePlain target:self action:nil];
+    message.enabled = NO;
+    UIToolbar* infoToolbar = [[UIToolbar alloc]initWithFrame:CGRectMake(0, 0, 320, 40)];
+    infoToolbar.barStyle = UIBarStyleDefault;
+    infoToolbar.items = [NSArray arrayWithObjects:
+                         [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil],
+                         message,
+                         [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil],
+                         nil];
+    [infoToolbar sizeToFit];
+    //infoToolbar.alpha = 0.7;
+    _notes.inputAccessoryView = infoToolbar;
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     

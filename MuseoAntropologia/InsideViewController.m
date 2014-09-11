@@ -26,7 +26,7 @@
 {
     [super viewDidLoad];
     
-    _pageTitles = @[@"Piano terra", @"Primo piano"];
+    _pageTitles = @[@"Piano terra", @"Secondo piano"];
     _pageImages = @[@"piano_terra.png", @"piano-museo-5.png",];
     
     self.pageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PageViewController"];

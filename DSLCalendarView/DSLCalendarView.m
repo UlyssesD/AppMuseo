@@ -190,7 +190,7 @@
     formatter.dateFormat = @"MMMM yyyy";
     
     NSDate *date = [month.calendar dateFromComponents:month];
-    self.monthSelectorView.titleLabel.text = [formatter stringFromDate:date];
+    self.monthSelectorView.titleLabel.text = [[formatter stringFromDate:date]capitalizedString];
 }
 
 - (NSString*)monthViewKeyForMonth:(NSDateComponents*)month {

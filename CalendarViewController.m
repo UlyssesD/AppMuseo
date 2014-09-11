@@ -91,7 +91,7 @@ NSMutableArray *jsonArray;
         NSString *fData2 = [f2 stringFromDate:_date];
         
         NSString *controlla = [self checkData :fData2];
-        NSString *testo = [NSString stringWithFormat:@"%@", [f stringFromDate:range.startDay.date]];
+        NSString *testo = [[NSString stringWithFormat:@"%@", [f stringFromDate:range.startDay.date]]capitalizedString];
         
         
         UIActionSheet *actionSheet = [[UIActionSheet alloc]
