@@ -351,6 +351,19 @@
     return [emailPredicate evaluateWithObject:email];
 }
 
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    NSUInteger newLength = [textField.text length] + [string length] - range.length;
+    
+    switch (textField.tag) {
+        case 0:
+            return (newLength > 16) ? NO : YES;
+            break;
+            
+        default:
+            break;
+    }
+
+}
 /*
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
