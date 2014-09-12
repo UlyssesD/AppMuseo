@@ -21,11 +21,11 @@
     //    NSUserDefaults *defaults;
     
     //region beacon crani
-    CLBeaconRegion *region1;
-    CLBeaconRegion *region2;
-    CLBeaconRegion *region3;
-    CLBeaconRegion *region4;
-    CLBeaconRegion *region5;
+    CLBeaconRegion *region1; //Ceprano
+    CLBeaconRegion *region2; //Saccopastore 1 e 2
+    CLBeaconRegion *region3; //Maiella
+    CLBeaconRegion *region4; //Guattari
+    //CLBeaconRegion *region5;
     
 }
 
@@ -47,11 +47,11 @@
     defaults = [NSUserDefaults standardUserDefaults];
     
     if ([defaults objectForKey:@"locked1"] == nil) {
-        [defaults setBool:YES forKey:@"locked1"];
-        [defaults setBool:YES forKey:@"locked2"];
-        [defaults setBool:YES forKey:@"locked3"];
-        [defaults setBool:YES forKey:@"locked4"];
-        [defaults setBool:YES forKey:@"locked5"];
+        [defaults setBool:YES forKey:@"locked1"]; //Ceprano
+        [defaults setBool:YES forKey:@"locked2"]; //Saccopastore1
+        [defaults setBool:YES forKey:@"locked3"]; //Saccopastore2
+        [defaults setBool:YES forKey:@"locked4"]; //Guattarei
+        [defaults setBool:YES forKey:@"locked5"]; //Ceprano
         [defaults synchronize];
     }
     
@@ -89,7 +89,7 @@
     [_locationManager startMonitoringForRegion:region1];
     [_locationManager startRangingBeaconsInRegion: region1];
     
-    //Beacon 1.2 - SACCOPASTORE 1
+    //Beacon 1.2 - SACCOPASTORE 1 e 2
 //    CLBeaconRegion *region2;
     //qui si definisce la regione dei beacon, questa è quella del beacon 2.
     region2 = [[CLBeaconRegion alloc] initWithProximityUUID:[[NSUUID alloc] initWithUUIDString:@"14A184BD-26B6-4D40-B14E-DEF5EB92B3DA"] major: 1 minor: 2 identifier: Saccop1];
@@ -97,10 +97,10 @@
     [_locationManager startMonitoringForRegion:region2];
     [_locationManager startRangingBeaconsInRegion: region2];
     
-    //Beacon 1.3 - SACCOPASTORE 2
+    //Beacon 1.3 - MAIELLA
 //    CLBeaconRegion *region3;
     //qui si definisce la regione dei beacon, questa è quella del beacon 3.
-    region3 = [[CLBeaconRegion alloc] initWithProximityUUID:[[NSUUID alloc] initWithUUIDString:@"14A184BD-26B6-4D40-B14E-DEF5EB92B3DA"] major: 1 minor: 3 identifier: Saccop2];
+    region3 = [[CLBeaconRegion alloc] initWithProximityUUID:[[NSUUID alloc] initWithUUIDString:@"14A184BD-26B6-4D40-B14E-DEF5EB92B3DA"] major: 1 minor: 3 identifier: Maiella];
     region3.notifyEntryStateOnDisplay = YES;
     [_locationManager startMonitoringForRegion:region3];
     [_locationManager startRangingBeaconsInRegion: region3];
@@ -114,13 +114,13 @@
     [_locationManager startMonitoringForRegion:region4];
     [_locationManager startRangingBeaconsInRegion: region4];
     
-    //Beacon 1.5 - MAIELLA
+    //Beacon 1.5 - EX -MAIELLA
 //    CLBeaconRegion *region5;
     //qui si definisce la regione dei beacon, questa è quella del beacon 5.
-    region5 = [[CLBeaconRegion alloc] initWithProximityUUID:[[NSUUID alloc] initWithUUIDString:@"14A184BD-26B6-4D40-B14E-DEF5EB92B3DA"] major: 1 minor: 5 	identifier: Maiella];
-    region5.notifyEntryStateOnDisplay = YES;
-    [_locationManager startMonitoringForRegion:region5];
-    [_locationManager startRangingBeaconsInRegion: region5];
+//    region5 = [[CLBeaconRegion alloc] initWithProximityUUID:[[NSUUID alloc] initWithUUIDString:@"14A184BD-26B6-4D40-B14E-DEF5EB92B3DA"] major: 1 minor: 5 	identifier: Maiella];
+//    region5.notifyEntryStateOnDisplay = YES;
+//    [_locationManager startMonitoringForRegion:region5];
+//    [_locationManager startRangingBeaconsInRegion: region5];
     
     //Beacon 1.6 - BEACON ENTRATA MUSEO
     CLBeaconRegion *region6;
@@ -130,11 +130,11 @@
     [_locationManager startMonitoringForRegion:region6];
     
     //Beacon 1.7 - BEACON ENTRATA MUSEO
-    CLBeaconRegion *region7;
-    //qui si definisce la regione dei beacon, questa è quella del beacon 7.
-    region7 = [[CLBeaconRegion alloc] initWithProximityUUID:[[NSUUID alloc] initWithUUIDString:@"14A184BD-26B6-4D40-B14E-DEF5EB92B3DA"] major: 1 minor: 7 	identifier:Piano ];
-    region7.notifyEntryStateOnDisplay = YES;
-    [_locationManager startMonitoringForRegion:region7];
+//    CLBeaconRegion *region7;
+//    //qui si definisce la regione dei beacon, questa è quella del beacon 7.
+//    region7 = [[CLBeaconRegion alloc] initWithProximityUUID:[[NSUUID alloc] initWithUUIDString:@"14A184BD-26B6-4D40-B14E-DEF5EB92B3DA"] major: 1 minor: 7 	identifier:Piano ];
+//    region7.notifyEntryStateOnDisplay = YES;
+//    [_locationManager startMonitoringForRegion:region7];
     
     
     //    UILocalNotification *localNotification = [launchOptions objectForKey:UIApplicationLaunchOptionsLocalNotificationKey];
@@ -158,17 +158,17 @@
     
     NSLog(@"riavvio region monitoring");
     //riavvio monitoring region per bug notifiche
-    [_locationManager stopMonitoringForRegion:region1];
-    [_locationManager stopMonitoringForRegion:region2];
-    [_locationManager stopMonitoringForRegion:region3];
-    [_locationManager stopMonitoringForRegion:region4];
-    [_locationManager stopMonitoringForRegion:region5];
+    [_locationManager stopMonitoringForRegion:region1];//Ceprano
+    [_locationManager stopMonitoringForRegion:region2];//Saccopastore 1 e 2
+    [_locationManager stopMonitoringForRegion:region3];//Mailla
+    [_locationManager stopMonitoringForRegion:region4];//Guattari
+    //[_locationManager stopMonitoringForRegion:region5];
     
     [_locationManager startMonitoringForRegion:region1];
     [_locationManager startMonitoringForRegion:region2];
     [_locationManager startMonitoringForRegion:region3];
     [_locationManager startMonitoringForRegion:region4];
-    [_locationManager startMonitoringForRegion:region5];
+    //[_locationManager startMonitoringForRegion:region5];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
@@ -240,8 +240,8 @@
                 
                 
             }
-            //SBLOCCO SACCO1
-            if([region.identifier isEqualToString:Saccop1] && [[NSUserDefaults standardUserDefaults] boolForKey:@"locked2"])
+            //SBLOCCO SACCOPASTORE 1 E SACCOPASTORE 2
+            if([region.identifier isEqualToString:Saccop1] && [[NSUserDefaults standardUserDefaults] boolForKey:@"locked2"]  && [[NSUserDefaults standardUserDefaults] boolForKey:@"locked3"])
             {
                 
                 UILocalNotification *localNotif = [[UILocalNotification alloc] init];
@@ -253,29 +253,30 @@
                 }
                 
                 [defaults setBool:NO forKey:@"locked2"];
-                [defaults synchronize];
-                
-                //[manager stopMonitoringForRegion:region];
-                
-            }
-            //SBLOCCO SACCO2
-            if([region.identifier isEqualToString:Saccop2] && [[NSUserDefaults standardUserDefaults] boolForKey:@"locked3"])
-            {
-                
-                UILocalNotification *localNotif = [[UILocalNotification alloc] init];
-                if (localNotif) {
-                    localNotif.alertBody = [[NSString alloc] initWithFormat:@"Hai sbloccato il cranio di %@!",region.identifier];
-                    localNotif.alertAction = NSLocalizedString(@"Ok", nil);
-                    localNotif.applicationIconBadgeNumber = [[UIApplication sharedApplication] applicationIconBadgeNumber]+1;
-                    [[UIApplication sharedApplication] presentLocalNotificationNow:localNotif];
-                }
-                
                 [defaults setBool:NO forKey:@"locked3"];
                 [defaults synchronize];
                 
                 //[manager stopMonitoringForRegion:region];
                 
             }
+//            //SBLOCCO SACCO2
+//            if([region.identifier isEqualToString:Saccop2] && [[NSUserDefaults standardUserDefaults] boolForKey:@"locked3"])
+//            {
+//                
+//                UILocalNotification *localNotif = [[UILocalNotification alloc] init];
+//                if (localNotif) {
+//                    localNotif.alertBody = [[NSString alloc] initWithFormat:@"Hai sbloccato il cranio di %@!",region.identifier];
+//                    localNotif.alertAction = NSLocalizedString(@"Ok", nil);
+//                    localNotif.applicationIconBadgeNumber = [[UIApplication sharedApplication] applicationIconBadgeNumber]+1;
+//                    [[UIApplication sharedApplication] presentLocalNotificationNow:localNotif];
+//                }
+//                
+//                [defaults setBool:NO forKey:@"locked3"];
+//                [defaults synchronize];
+//                
+//                //[manager stopMonitoringForRegion:region];
+//                
+//            }
             //SBLOCCO GUATTARI
             if([region.identifier isEqualToString:Guattari] && [[NSUserDefaults standardUserDefaults] boolForKey:@"locked4"])
             {
@@ -377,63 +378,63 @@
         
         
         //NOTIFICA BEACON AL PRIMO PIANO -> 1 AL MESE
-        if([region.identifier isEqualToString:Piano]){
-            NSDate *fromDateTime = (NSDate *)[defaults objectForKey:@"dataUltimaNotificaPiano"];
-            
-            NSInteger day;
-            
-            if(fromDateTime != nil){
-                
-                NSLog(@"fromdate: %@", fromDateTime);
-                
-                NSDate *toDateTime = [NSDate date];
-                
-                //diff
-                NSDate *fromDate;
-                NSDate *toDate;
-                
-                NSCalendar *calendar = [NSCalendar currentCalendar];
-                
-                [calendar rangeOfUnit:NSDayCalendarUnit startDate:&fromDate
-                             interval:NULL forDate:fromDateTime];
-                [calendar rangeOfUnit:NSDayCalendarUnit startDate:&toDate
-                             interval:NULL forDate:toDateTime];
-                
-                NSDateComponents *difference = [calendar components:NSDayCalendarUnit
-                                                           fromDate:fromDate toDate:toDate options:0];
-                
-                
-                day = [difference day];
-            }else{
-                //fromdate mai impostato -> forzo la prima notifica con valore day > 30
-                NSLog(@"forzo fromdate");
-                day = 31;
-            }
-            
-            if(day  > 30){
-                //test alert in background
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sei arrivato al primo piano del museo di antropologia della Sapienza"  message:@"Entra a visitare il  museo!" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
-                [alert show];
-                
-                UILocalNotification *localNotif = [[UILocalNotification alloc] init];
-                if (localNotif) {
-                    localNotif.alertBody = [[NSString alloc] initWithFormat:@"Sei arrivato al primo piano del museo di antropologia della Sapienza!"];
-                    localNotif.alertAction = NSLocalizedString(@"Ok", nil);
-                    localNotif.applicationIconBadgeNumber = [[UIApplication sharedApplication] applicationIconBadgeNumber]+1;
-                    
-                    [[UIApplication sharedApplication] presentLocalNotificationNow:localNotif];
-                }
-                
-                //aggiorno data ultima notifica
-                NSDate *now = [NSDate date];
-                [defaults setObject:now forKey:@"dataUltimaNotificaPiano"];
-                [defaults synchronize];
-            }else{
-                NSLog(@"meno di 30 gg dall'ultima notifica piano");
-            }
-            
-            
-        }
+//        if([region.identifier isEqualToString:Piano]){
+//            NSDate *fromDateTime = (NSDate *)[defaults objectForKey:@"dataUltimaNotificaPiano"];
+//            
+//            NSInteger day;
+//            
+//            if(fromDateTime != nil){
+//                
+//                NSLog(@"fromdate: %@", fromDateTime);
+//                
+//                NSDate *toDateTime = [NSDate date];
+//                
+//                //diff
+//                NSDate *fromDate;
+//                NSDate *toDate;
+//                
+//                NSCalendar *calendar = [NSCalendar currentCalendar];
+//                
+//                [calendar rangeOfUnit:NSDayCalendarUnit startDate:&fromDate
+//                             interval:NULL forDate:fromDateTime];
+//                [calendar rangeOfUnit:NSDayCalendarUnit startDate:&toDate
+//                             interval:NULL forDate:toDateTime];
+//                
+//                NSDateComponents *difference = [calendar components:NSDayCalendarUnit
+//                                                           fromDate:fromDate toDate:toDate options:0];
+//                
+//                
+//                day = [difference day];
+//            }else{
+//                //fromdate mai impostato -> forzo la prima notifica con valore day > 30
+//                NSLog(@"forzo fromdate");
+//                day = 31;
+//            }
+//            
+//            if(day  > 30){
+//                //test alert in background
+//                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sei arrivato al primo piano del museo di antropologia della Sapienza"  message:@"Entra a visitare il  museo!" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+//                [alert show];
+//                
+//                UILocalNotification *localNotif = [[UILocalNotification alloc] init];
+//                if (localNotif) {
+//                    localNotif.alertBody = [[NSString alloc] initWithFormat:@"Sei arrivato al primo piano del museo di antropologia della Sapienza!"];
+//                    localNotif.alertAction = NSLocalizedString(@"Ok", nil);
+//                    localNotif.applicationIconBadgeNumber = [[UIApplication sharedApplication] applicationIconBadgeNumber]+1;
+//                    
+//                    [[UIApplication sharedApplication] presentLocalNotificationNow:localNotif];
+//                }
+//                
+//                //aggiorno data ultima notifica
+//                NSDate *now = [NSDate date];
+//                [defaults setObject:now forKey:@"dataUltimaNotificaPiano"];
+//                [defaults synchronize];
+//            }else{
+//                NSLog(@"meno di 30 gg dall'ultima notifica piano");
+//            }
+//            
+//            
+//        }
         
         
         
@@ -544,18 +545,19 @@
         
         
         //SBLOCCO SACCO1
-        if((minorBeacon == 2) && [[NSUserDefaults standardUserDefaults] boolForKey:@"locked2"])
+        if((minorBeacon == 2) && [[NSUserDefaults standardUserDefaults] boolForKey:@"locked2"] && [[NSUserDefaults standardUserDefaults] boolForKey:@"locked3"])
         {
             if(isActive){
                 if(secondiUtlimaNotifica > 30){
                     //test alert in background
-                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Hai sbloccato il cranio di Saccopastore 1"  message:@"Guardalo subito nella sezione Augmented Tour!" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Hai sbloccato il cranio di Saccopastore 1 e Saccopastore 2"  message:@"Guardalo subito nella sezione Augmented Tour!" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
                     [alert show];
                     
                     [defaults setObject:[NSDate date] forKey:@"ultimaNotificaApp"];
                     [defaults synchronize];
                     
                     [defaults setBool:NO forKey:@"locked2"];
+                    [defaults setBool:NO forKey:@"locked3"];
                     [defaults synchronize];
                     
                     //[manager stopRangingBeaconsInRegion:region];
@@ -563,25 +565,25 @@
                 
             }
         }
-        //SBLOCCO SACCO2
-        if((minorBeacon == 3) && [[NSUserDefaults standardUserDefaults] boolForKey:@"locked3"])
-        {
-            if(isActive){
-                if(secondiUtlimaNotifica > 30){
-                    //test alert in background
-                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Hai sbloccato il cranio di Saccopastore 2"  message:@"Guardalo subito nella sezione Augmented Tour!" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
-                    [alert show];
-                    
-                    [defaults setObject:[NSDate date] forKey:@"ultimaNotificaApp"];
-                    [defaults synchronize];
-                    
-                    [defaults setBool:NO forKey:@"locked3"];
-                    [defaults synchronize];
-                    
-                    //[manager stopRangingBeaconsInRegion:region];
-                }
-            }
-        }
+//        //SBLOCCO SACCO2
+//        if((minorBeacon == 3) && [[NSUserDefaults standardUserDefaults] boolForKey:@"locked3"])
+//        {
+//            if(isActive){
+//                if(secondiUtlimaNotifica > 30){
+//                    //test alert in background
+//                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Hai sbloccato il cranio di Saccopastore 2"  message:@"Guardalo subito nella sezione Augmented Tour!" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+//                    [alert show];
+//                    
+//                    [defaults setObject:[NSDate date] forKey:@"ultimaNotificaApp"];
+//                    [defaults synchronize];
+//                    
+//                    [defaults setBool:NO forKey:@"locked3"];
+//                    [defaults synchronize];
+//                    
+//                    //[manager stopRangingBeaconsInRegion:region];
+//                }
+//            }
+//        }
         //SBLOCCO GUATTARI
         if( (minorBeacon == 4) && [[NSUserDefaults standardUserDefaults] boolForKey:@"locked4"])
         {
@@ -606,7 +608,7 @@
         
         //SBLOCCO MAIELLA
         
-        if((minorBeacon == 5) && [[NSUserDefaults standardUserDefaults] boolForKey:@"locked5"])
+        if((minorBeacon == 3) && [[NSUserDefaults standardUserDefaults] boolForKey:@"locked5"])
         {
             if(isActive){
                 if(secondiUtlimaNotifica > 30){

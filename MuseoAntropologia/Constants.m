@@ -8,7 +8,7 @@
 
 
 NSString * const Ceprano = @"Ceprano";
-NSString * const Saccop1 = @"Saccopastore 1";
+NSString * const Saccop1 = @"Saccopastore 1 e Saccopastore 2";
 NSString * const Saccop2 = @"Saccopastore 2";
 NSString * const Guattari = @"Guattari";
 NSString * const Maiella = @"Maiella";
