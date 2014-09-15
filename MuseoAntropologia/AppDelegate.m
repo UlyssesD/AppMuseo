@@ -227,7 +227,7 @@
                 
                 UILocalNotification *localNotif = [[UILocalNotification alloc] init];
                 if (localNotif) {
-                    localNotif.alertBody = [[NSString alloc] initWithFormat:@"Hai sbloccato il cranio di %@!",region.identifier];
+                    localNotif.alertBody = [[NSString alloc] initWithFormat:@"Hai sbloccato il cranio di %@!", region.identifier];
                     localNotif.alertAction = NSLocalizedString(@"Ok", nil);
                     localNotif.applicationIconBadgeNumber = [[UIApplication sharedApplication] applicationIconBadgeNumber]+1;
                     [[UIApplication sharedApplication] presentLocalNotificationNow:localNotif];
@@ -246,7 +246,7 @@
                 
                 UILocalNotification *localNotif = [[UILocalNotification alloc] init];
                 if (localNotif) {
-                    localNotif.alertBody = [[NSString alloc] initWithFormat:@"Hai sbloccato il cranio di %@!",region.identifier];
+                    localNotif.alertBody = [[NSString alloc] initWithFormat:@"Hai sbloccato il cranio di Saccopastore 1 e Saccopastore 2!"];
                     localNotif.alertAction = NSLocalizedString(@"Ok", nil);
                     localNotif.applicationIconBadgeNumber = [[UIApplication sharedApplication] applicationIconBadgeNumber]+1;
                     [[UIApplication sharedApplication] presentLocalNotificationNow:localNotif];
